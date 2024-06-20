@@ -1,3 +1,41 @@
+% Takasuka et al. (2024), A protocol and analysis of year-long simulations of global storm-resolving models and beyond
+% Knight et al. (2024), Cloud properties and boundary layer stability above Southern Ocean sea ice and coastal Antarctica
+% Zheng et al. (2024), Using Satellite and ARM Observations to Evaluate Cold Air Outbreak Cloud Transitions in E3SM Global Storm-Resolving Simulations
+% Schmidt et al. (2024), Effects of vertical grid spacing on the climate simulated in the ICON-Sapphire global storm-resolving model
+% Fons et al. (2024), Investigating the sign of stratocumulus adjustments to aerosols in the global storm-resolving model ICON
+% Fiddes et al. (2024), A machine learning approach for evaluating Southern Ocean cloud radiative biases in a global atmosphere model
+% Mooers et al. (2023), Comparing storm resolving models and climates via unsupervised machine learning
+% Zhang et al. (2023), Understanding models' global sea surface temperature bias in mean state: from CMIP5 to CMIP6
+% Grundner (2023), Data-Driven Cloud Cover Parameterizations for the ICON Earth System Model Using Deep Learning and Symbolic Regression [thesis]
+% Luo et al. (2023), Origins of Southern Ocean warm sea surface temperature bias in CMIP6 models
+% Sherriff-Tadano et al. (2023), Southern Ocean Surface Temperatures and Cloud Biases in Climate Models Connected to the Representation of Glacial Deep Ocean Circulation
+% Danker et al. (2022), Exploring relations between cloud morphology, cloud phase, and cloud radiative properties in Southern Ocean's stratocumulus clouds
+% Possner et al. (2022), Resolution Dependence of Southern Ocean Mixed-Phase Clouds in ICON
+% Mauritsen et al. (2022), Early Development and Tuning of a Global Coupled Cloud Resolving Model, and its Fast Response to Increasing CO2
+% Wall et al. (2022), Observational Constraints on Southern Ocean Cloud-Phase Feedback
+% Grundner et al. (2022), Deep learning based cloud cover parameterization for ICON
+% Cesana et al. (2022), Southern Ocean Solar Reflection Biases in CMIP6 Models Linked to Cloud Phase and Vertical Structure Representations
+% Fiddes et al. (2022), Southern Ocean cloud and shortwave radiation biases in a nudged climate model simulation: does the model ever get it right?
+% Zhao et al. (2022), Compensating Errors in Cloud Radiative and Physical Properties over the Southern Ocean in the CMIP6 Climate Models
+% Konsta et al. (2022), Low-Level Marine Tropical Clouds in Six CMIP6 Models Are Too Few, Too Bright but Also Too Compact and Too Homogeneous
+% Lin and Yu (2022), The potential impact of model horizontal resolution on the simulation of atmospheric cloud radiative effect in CMIP6 models
+% Ramadoss et al. (2021), An evaluation of kilometre scale ICON simulations of mixed-phase stratocumulus over the Southern Ocean durin CAPRICORN [poster]
+% Miao et al. (2021), A Regime-based Investigation into the Errors of CMIP6 Simulated Cloud Radiative Effects Using Satellite Observations
+% Roh et al. (2021), Intercomparison of cloud properties in DYAMOND simulations over the Atlantic Ocean
+% Caldwell et al. (2021), Convection-Permitting Simulations With the E3SM Global Atmosphere Model
+% Schuddeboom and McDonald (2021), The Southern Ocean Radiative Bias, Cloud Compensating Errors, and Equilibrium Climate Sensitivity in CMIP6 Models
+% Ramadoss et al. (2020), Simulating mixed-phase cloud properties with ICON around the CAPRICORN ﬁeld campaign at the kilometre scale [poster]
+% Heim et al. (2021), Inter-model Variability in Convection-Resolving Simulations of Subtropical Marine Low Clouds
+% Seiki and Roh (2020), Improvements in Supercooled Liquid Water Simulations of Low-Level Mixed-Phase Clouds over the Southern Ocean Using a Single-Column Model
+% Stevens et al. (2020), The added value of large-eddy and storm-resolving models for simulating clouds and precipitation
+% Atlas et al. (2020), How well do large‐eddy simulations and global climate models represent observed boundary layer structures and low clouds over the summertime Southern Ocean?
+% Korn et al. (2020), ICON‐O: The Ocean Component of the ICON Earth System Model—Global Simulation Characteristics and Local Telescoping Capability
+% Vignesh et al. (2020), Assessment of CMIP6 Cloud Fraction and Comparison with Satellite Observations
+% Chen et al. (2022), Evaluation of Simulated Cloud Diurnal Variation in CMIP6 Climate Models
+% Jian et al. (2020), Evaluation of the CMIP6 planetary albedo climatology using satellite observations
+% Satoh et al. (2019), Global Cloud-Resolving Models
+% Hyder et al. (2018), Critical Southern Ocean climate model biases traced to atmospheric model cloud errors
+
 \documentclass[12pt,a4paper]{article}
 \usepackage{fontspec}
 \usepackage[margin=2cm]{geometry}
@@ -40,91 +78,196 @@ $^\mathsf{2}$School of Physical and Chemical Sciences, University of Canterbury,
 
 \section*{Abstract}
 
-Currently, a new generation of km-scale resolution global climate models are in development as the forthcoming phase of climate modelling. One such model is a 5-km version of the Icosahedral Nonhydrostatic Weather and Climate Model (ICON) developed jointly by Deutscher Wetterdienst (DWD) and the Max-Planck-Institute for Meteorology (MPI-M). Because of the high resolution, most parametrisations, such as that of convection and clouds, can be avoided.
+Currently, a new generation of km-scale (also called `k-scale') resolution
+global climate models are in development as the forthcoming phase of climate
+modelling. One such model is a 5-km version of the Icosahedral Nonhydrostatic
+Weather and Climate Model (ICON) developed jointly by Deutscher Wetterdienst
+(DWD) and the Max-Planck-Institute for Meteorology (MPI-M). Because of the high
+resolution, most parametrisations, such as that of convection and clouds, can
+be avoided.
 
-Previous studies have identified substantial large-scale biases in model clouds over the Southern Ocean (SO), affecting sea surface temperature and the Earth's albedo overall. Our aim is to quantify how well the high-resolution ICON model is simulating clouds in this region, particularly in light of the fact that subgrid-scale clouds are not parametrised in this model. This region is mostly dominated by boundary layer clouds generated by shallow convection, and these are problematic to observe by spaceborne lidar and radars, which are affected by attenuation by overlapping and thick clouds and ground clutter, respectively. Therefore, we choose to use a large set of ship-based observations conducted with ceilometers and lidars on board of RV \textit{Polarstern} and other voyages. Altogether, we analyse over 2000 days (about 6 years) of data from 31 voyages and 1 sub-antarctic station covering diverse longitudes of the SO. To achieve a like-for-like comparison with the model, we use a ground-based lidar simulator called the Automatic Lidar and Ceilometer Framework (ALCF). We contrast the results with the ECMWF Reanalysis 5 (ERA5) and the Modern-Era Retrospective analysis for Research and Applications, Version 2 (MERRA-2).
+Previous studies have identified substantial large-scale biases in model clouds
+over the Southern Ocean (SO), affecting sea surface temperature and the Earth's
+albedo overall. Our aim is to quantify how well the high-resolution ICON model
+is simulating clouds in this region, particularly in light of the fact that
+subgrid-scale clouds are not parametrised in this model. This region is mostly
+dominated by boundary layer clouds generated by shallow convection, and these
+are problematic to observe by spaceborne lidar and radars, which are affected
+by attenuation by overlapping and thick clouds and ground clutter,
+respectively. Therefore, we choose to use a large set of ship-based
+observations conducted with ceilometers and lidars on board of Research Vessel
+(RV) \textit{Polarstern} and other voyages. Altogether, we analyse over 2000
+days (about 6 years) of data from 31 voyages and 1 sub-antarctic station
+covering diverse longitudes of the SO. To achieve a like-for-like comparison
+with the model, we use a ground-based lidar simulator called the Automatic
+Lidar and Ceilometer Framework (ALCF). We contrast the results with the ECMWF
+Reanalysis 5 (ERA5) and the Modern-Era Retrospective analysis for Research and
+Applications, Version 2 (MERRA-2).
 
-We show that the model underestimates the total cloud fraction by about 10\%, with overestimation of cloud below 2 km, and underestimation of cloud above 2 km. The reanalyses also underestimate the total cloud fraction by about 20\%. ERA5 overestimates cloud below 1 km but underestimates near-surface cloud or fog. In addition to lidar data, we compare radiosonde profiles acquired on the RV \textit{Polarstern} voyages with ICON. Notably, the model exhibits smaller natural variability than observations, and its lifting condensation level tends to be higher. This might explain why cloud occurrence is peaking higher in the model (at 500 m) than in observations (at the surface).
+We show that the model underestimates the total cloud fraction by about 10\%,
+with overestimation of cloud below 2 km, and underestimation of cloud above 2
+km. The reanalyses also underestimate the total cloud fraction by about 20\%.
+ERA5 overestimates cloud below 1 km but underestimates near-surface cloud or
+fog. In addition to lidar data, we compare radiosonde profiles acquired on the
+RV \textit{Polarstern} voyages with ICON. Notably, the model exhibits smaller
+natural variability than observations, and its lifting condensation level tends
+to be higher. This might explain why cloud occurrence is peaking higher in the
+model (at 500 m) than in observations (at the surface).
 
-The results imply that the SO cloud biases are still a significant issue in a km-scale resolution model, even though an improvement over the lower-resolution reanalyses is notable. More effort is needed to improve model cloud simulations in this fast-changing and understudied region. The advancement from convection and cloud parametrisation to cloud-resolving models might not solve this bias without an additional effort.
+The results imply that the SO cloud biases are still a significant issue in a
+km-scale resolution model, even though an improvement over the lower-resolution
+reanalyses is notable. More effort is needed to improve model cloud simulations
+in this fast-changing and understudied region. The advancement from convection
+and cloud parametrisation to cloud-resolving models might not solve this bias
+without an additional effort.
 
 \section{Introduction}
 
-Increasing climate model resolution is a common way of improving model
-accuracy \citep{mauritsen2022}. This is of course limited by the available
-computational power and a trade-off with increasing parametrisation complexity.
-Current computational availability is progressing to enable km-scale Earth
-system models (ESMs) and coupled atmophsere--ocean general circulation models
+Increasing climate model resolution is a common way of improving model accuracy
+\citep{mauritsen2022}. This is of course limited by the available computational
+power and a tradeoff with increasing parametrisation complexity.  Current
+computational availability and acceleration from general-purpose computing on
+graphics processing units (GPGPUs) is progressing to enable km-scale Earth
+system models (ESMs) and coupled atmosphsere--ocean general circulation models
 (AOGCMs) in research conditions today and operationally in the forthcoming
-years. Therefore, it represents a natural advacement in climate modeling.
-Representative of this efforts is the DYnamics of the Atmospheric general
-circulation Modeled On Non-hydrostatic Domains (DYAMOND) project
-\citep{stevens2019}, which is an intercomparison of global storm-resolving
-models.
+years. Therefore, it represents a natural advancement in climate modeling.
+Global strom-resolving models (GSRMs) are emerging as a new front in the
+development of high-resolution global climate models, with horizontal grid
+resolutions of about 2--8 km \citep{satoh2019,stevens2019}. This is enough to
+resolve mesoscale convective storms, but smaller-scale convective plumes and
+smaller-scale cloud structure remain unresolved. At a 5-km scale,
+non-hydrostatic processes also become important, and for this reason such
+models are generally non-hydrostatic. The terms global cloud-resolving models
+(GCRMs), or global convection-permitting/-resolving models (GCPMs) are also
+sometimes used interchangeably with GSRMs but imply that clouds or convection
+are resolved explicitly, which is not entirely true for GSRMs, as this would
+require an even higher horizontal resolution \citep{satoh2019}.  Representative
+of these efforts is the DYnamics of the Atmospheric general circulation Modeled
+On Non-hydrostatic Domains (DYAMOND) project \citep{stevens2019,dyamond}, which
+is an intercomparison of nine global storm-resolving models (GSRMs) on two
+40-day time periods in summer (1 August -- 10 September 2016) and winter (20
+January - 1 March 2020). A new one-year GSRM intercomparison is currently
+proposed by \cite{takasuka2024}, with the hope of also evaluating the seasonal
+cycle and large-scale circulation.  An alternative to using a
+computantionally costly GSRM is to train an artificial neural network on GSRM
+output and use it for subgrid-scale clouds, as done with the GSRM ICON by
+\cite{grundner2022}; \cite{grundner2023}.
 
-% Danker et al. (2022), Exploring relations between cloud morphology, cloud phase, and cloud radiative properties in Southern Ocean's stratocumulus clouds
-% Possner et al. (2022), Resolution Dependence of Southern Ocean Mixed-Phase Clouds in ICON
-% Wall et al. (2022), Observational Constraints on Southern Ocean Cloud-Phase Feedback
-% Ramadoss et al. (2020), Simulating mixed-phase cloud properties with ICON around the CAPRICORN ﬁeld campaign at the kilometre scale [poster]
-% Ramadoss et al. (2021), An evaluation of kilometre scale ICON simulations of mixed-phase stratocumulus over the Southern Ocean durin CAPRICORN [poster]
-% Roh et al. (2021), Intercomparison of cloud properties in DYAMOND simulations over the Atlantic Ocean
-% Caldwell et al. (2021), Convection-Permitting Simulations With the E3SM Global Atmosphere Model
-% Mauritsen et al. (2022), Early Development and Tuning of a Global Coupled Cloud Resolving Model, and its Fast Response to Increasing CO2
-% Heim et al. (2021), Inter-model Variability in Convection-Resolving Simulations of Subtropical Marine Low Clouds
-% Zheng et al. (2024), Using Satellite and ARM Observations to Evaluate Cold Air Outbreak Cloud Transitions in E3SM Global Storm-Resolving Simulations
-% Mooers et al. (2023), Comparing storm resolving models and climates via unsupervised machine learning
-% Seiki and Roh (2020), Improvements in Supercooled Liquid Water Simulations of Low-Level Mixed-Phase Clouds over the Southern Ocean Using a Single-Column Model
-% Takasuka et al. (2024), A protocol and analysis of year-long simulations of global storm-resolving models and beyond
-% Grundner (2023), Data-Driven Cloud Cover Parameterizations for the ICON Earth System Model Using Deep Learning and Symbolic Regression
-% Stevens et al. (2020), The added value of large-eddy and storm-resolving models for simulating clouds and precipitation
-% Knight et al. (2024), Cloud properties and boundary layer stability above Southern Ocean sea ice and coastal Antarctica
-% Atlas et al. (2020), How well do large‐eddy simulations and global climate models represent observed boundary layer structures and low clouds over the summertime Southern Ocean?
-% Korn et al. (2020), ICON‐O: The Ocean Component of the ICON Earth System Model—Global Simulation Characteristics and Local Telescoping Capability
-% Schmidt et al. (2024), Effects of vertical grid spacing on the climate simulated in the ICON-Sapphire global storm-resolving model
-% Fons et al. (2024), Investigating the sign of stratocumulus adjustments to aerosols in the global storm-resolving model ICON
-% Grundner et al. (2022), Deep learning based cloud cover parameterization for ICON
-% Cesana et al. (2022), Southern Ocean Solar Reflection Biases in CMIP6 Models Linked to Cloud Phase and Vertical Structure Representations
-% Vignesh et al. (2020), Assessment of CMIP6 Cloud Fraction and Comparison with Satellite Observations
-% Miao et al. (2021), A Regime-based Investigation into the Errors of CMIP6 Simulated Cloud Radiative Effects Using Satellite Observations
-% Chen et al. (2022), Evaluation of Simulated Cloud Diurnal Variation in CMIP6 Climate Models
-% Zhang et al. (2023), Understanding models' global sea surface temperature bias in mean state: from CMIP5 to CMIP6
-% Schuddeboom and McDonald (2021), The Southern Ocean Radiative Bias, Cloud Compensating Errors, and Equilibrium Climate Sensitivity in CMIP6 Models
-% Zhao et al. (2022), Compensating Errors in Cloud Radiative and Physical Properties over the Southern Ocean in the CMIP6 Climate Models
-% Jian et al. (2020), Evaluation of the CMIP6 planetary albedo climatology using satellite observations
-% Konsta et al. (2022), Low-Level Marine Tropical Clouds in Six CMIP6 Models Are Too Few, Too Bright but Also Too Compact and Too Homogeneous
-% Lin and Yu (2022), The potential impact of model horizontal resolution on the simulation of atmospheric cloud radiative effect in CMIP6 models
-% Luo et al. (2023), Origins of Southern Ocean warm sea surface temperature bias in CMIP6 models
-% Hyder et al. (2018), Critical Southern Ocean climate model biases traced to atmospheric model cloud errors
-% Fiddes et al. (2022), Southern Ocean cloud and shortwave radiation biases in a nudged climate model simulation: does the model ever get it right?
-% Fiddes et al. (2024), A machine learning approach for evaluating Southern Ocean cloud radiative biases in a global atmosphere model
-% Sherriff-Tadano et al. (2023), Southern Ocean Surface Temperatures and Cloud Biases in Climate Models Connected to the Representation of Glacial Deep Ocean Circulation
+nextGEMS is an EU-funded project \citep{nextgems} focused on the research and
+development of GSRMs at multiple modelling centres and universities in Europe.
+The project also develops GSRM versions of the Icosahedral Nonhydrostatic
+Weather and Climate Model (ICON), the Integrated Forecasting System (IFS), and
+their ocean components at eddy-resolving resolutions: ICON-O coupled with ICON
+and Finite-Element/volumE Sea ice-Ocean Model (FESOM) and Nucleus for European
+Modelling of the Ocean (NEMO) coupled with IFS.  The project has so far
+produced ICON and IFS simulations in three cycles (Cycle 1--3) and pre-final
+simulation, with a final production simulation planned by the end of the
+project. nextGEMS is not the only project developing GSRMs. Other GSRMs (or
+GSRM versions of climate models) currently in development include:
+Convection-Permitting Simulations With the E3SM Global Atmosphere Model
+[SCREAM; \cite{caldwell2021}], Atmospheric Model [NICAM; \cite{satoh2008}],
+Unified Model (UM), eXperimental System for High-resolution modeling for
+Earth-to-Local Domain [X-SHiELD; \cite{shield}], Action de Recherche Petite
+Echelle Grande Echelle-NonHydrostatic version [ARPEGE-NH;
+\cite{bubnova1995,voldoire2017}], Finite-Volume Dynamical Core on the Cubed
+Sphere [FV3, \cite{lin2004}], NASA Goddard Earth Observing System global
+atmospheric model version 5 [GEOS5; \cite{putman2011}], Model for Prediction
+Across Scales [MPAS; \cite{skamarock2012}], and System for Atmospheric Modeling
+[SAM; \cite{khairoutdinov2003}].
 
-The NextGEMS project is focused on the research and
-development of high resolution (km-scale) global storm-resolving climate models
-(GSRMs), which are planned to be the next generation of operational climate
-models. Because of the high resolution, some previously parameterised physical
-processes can be resolved on the model grid. Thus, such parameterisations and
-related uncertainties can be eliminated.
+Multiple cloud properties have an effect on the shortwave (SW) and longwave
+(LW) radiation. On the first order, it is the total cloud fraction, cloud phase,
+and the liquid and ice water path. These are influenced by the atmopheric
+thermodynamics, convection and circulation, and indirect and direct effects
+of aerosols. On smaller orders, it is the cloud droplet size distribution, ice
+crystal habit, cloud lifetime, and direct radiative interaction with aerosols.
+In the 6th phase of the Coupled Model Intercomparison Project [CMIP6;
+\citep{eyring2016}], the cloud feedback has increased relative to CMIP5
+\citep{zelinka2020}, also being one of the main reasons for the higher climate
+sensitivity of CMIP6 models.
 
-The main aim of our research is to evaluate a high-resolution version of the
-Icosahedral Nonhydrostatic Weather and Climate Model (ICON), developed by
-NextGEMS jointly with Deutscher Wetterdienst (DWD) and the Max-Planck-Institute
+The Southern Ocean (SO) is known to be a problematic region for climate model
+biases due to reasons such as a lack of surface and in situ observations and
+being a lower priority region for numerical weather prediction (NWP) and
+climate model development because it is far away from populated areas of
+interest.  Nevertheless, radiation biases and changes over an area of its size
+have a very significant influence on the global climate, and the SO is an
+important part of the global ocean conveyor belt.  Marine clouds have
+disproportionate effect on top of atmosphere (TOA) SW radiation due to the
+relatively low albedo of the sea surface.  The longitudinal symmetry of the SO
+means that model cloud biases tend to be similar across longitudes.  Here, we
+will conventionally refer to the SO as ocean regions south of 40$^\circ$S,
+low-latitude SO as 40--55$^\circ$S and high-latitude SO as south of
+55$^\circ$S.
+
+SO radiation biases have been relatively large and systematic compared to the
+rest of the globe since at least CMIP3 \citep{trenberth2010}, and the SO SW CRE
+bias is still positive in eight analysed CMIP6 models analysed by
+\cite{schuddeboom2021} over high-latitude SO, whereas over low-latitude SO it
+tends to be more neutral or negative in some models. Too much absorbed SW
+radiation over the SO was also identified in the GSRM SCREAM
+\cite{caldwell2021}. Compensating biases are possible, such as the `too few too
+bright' cloud bias, characterised by too small cloud fraction and too large
+cloud albedo \citep{wall2017,kuma2020}, previously described by
+\cite{webb2001}, \cite{weare2004}, \cite{zhang2005}, \cite{karlsson2008},
+\cite{nam2012}, \cite{klein2013}, and \cite{bender2017} in other regions and
+models. That is, a model maintains a resonable SW radiation balance by
+reflecting too much SW radiation by cloudy sky but has too little cloudy sky
+area overall. A study by \cite{konsta2022} showed that this type bias is still
+present in six analysed CMIP6 models in tropical marine clouds, using the
+GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation
+(CALIPSO) Cloud Product [CALIPSO--GOCCP; \cite{chepfer2010}] and Polarization
+\& Anisotropy of Reflectances for Atmospheric Sciences coupled with
+Observations from a Lidar [PARASOL; \citep{lier2008}] as a reference. They
+suggest improper simulation of subgrid-scale cloud heterogeneity as a cause.
+Compensating cloud biases in the Australian Community Climate and Earth System
+Simulator (ACCESS) – Atmosphere-only model version 2 (AM2) over the SO were
+analysed by \cite{fiddes2022} and \cite{fiddes2024}.  \cite{possner2022} showed
+that over the SO, the DYAMOND GSRM ICON underestimates low-level cloud fraction
+on the order of 30\% [relative to the Moderate Resolution Imaging
+Spectroradiometer (MODIS)] and overestimates downwelling TOA SW radiation on
+the order of 10 Wm$^\mathrm{-2}$ in  [relative to the Clouds and the Earth’s
+Radiant Energy System (CERES)] in the highest model resolution run (2.5 km).
+\cite{zhao2022} reported a similar SW radiation bias in five analysed CMIP6
+models over high-latitude SO and total CF underestimation on the order of 10\%
+over the entire 40--60$^\circ$S SO.
+
+In general, SST biases in the SO can originate either in the atmosphere, caused
+by too much shortwave heating of the surface, too little longwave cooling of
+the surface, or in the ocean circulation.  Interactions of both are also
+possible, due to, for example SST affecting clouds and clouds affecting the
+surface radiation.  \cite{zhang2023} have shown that SST biases have improved
+in CMIP6 compared to CMIP5 (relative to ERA5), with SST overall increasing in
+the later CMIP phase. However, over the SO this resulted in an even higher
+positive bias, especially in the Atlantic Ocean (AO) sector of the SO,
+increasing by up to 1$^\circ$C.  \cite{luo2023} identified that the SO SST bias
+in an ensemble of 18 CMIP6 models originates not from the surface heat and
+radiation fluxes (using reanalyses as a reference), but from a warm bias in the
+Northern Atlantic Deep Water.
+
+The main aim of our research is to evaluate the GSRM version of ICON, developed
+jointly by nextGEMS, Deutscher Wetterdienst (DWD) and the Max-Planck-Institute
 for Meteorology (MPI-M). Previous studies have identified substantial
-large-scale biases in climate model clouds over the Southern Ocean (SO), affecting
-sea surface temperature and the Earth’s albedo overall. Our aim is to quantify
-how well the high-resolution ICON model is simulating clouds in this region,
-particularly in light of the fact that subgrid-scale clouds are not
+large-scale biases in climate model clouds over the Southern Ocean (SO),
+affecting sea surface temperature and the Earth’s albedo overall. Our aim is to
+quantify how well the high-resolution ICON model is simulating clouds in this
+region, particularly in light of the fact that subgrid-scale clouds are not
 parameterised in this model. This region is mostly dominated by boundary layer
 clouds generated by shallow convection, and these are problematic to observe by
 spaceborne lidar and radars, which are affected by attenuation by overlapping
-and thick clouds and ground clutter, respectively. Therefore, we chose to use
-a large set of ship-based observations conducted with ceilometers and lidars on
-board of the RV \emph{Polarstern} and other voyages and stations.
-
-Marine clouds have disproportionate effect on TOA shortwave radiation due to
-the relatively low albedo of the sea surface. The longitudinal symmetry of the
-SO means that model cloud biases tend to be similar across
-longitudes.
+and thick clouds and ground clutter, respectively.  Specifically, the radar on
+CloudSat and lidar on CALIPSO are affected by the abovementioned issues,
+resulting in a strong underestimation of cloud occurrence below 2 km relative to
+ground-based lidar observations \citep{mcerlich2021}.  This, in turn, can lead to
+systematic biases in low clouds in climate models, which are frequently
+evaluated against CloudSat--CALIPSO products. Reanalyses can also suffer from
+cloud biases, as these are usually parametrised in their atmospheric component,
+and also in regions where input observations are sparse.  This makes them a
+problematic reference for clouds over the SO, and any biases relative to a
+reanalysis should be interpreted with caution. Instead, we chose to use a large
+set of ship-based observations conducted with ceilometers and lidars on board
+of the RV \emph{Polarstern} and other voyages and stations as a reference for
+the model evaluation.
 
 Altogether, we analysed over 1500 days of data from 31 voyages and one
 sub-Antarctic station covering diverse longitudes of the SO. To
@@ -138,7 +281,15 @@ Modern-Era Retrospective analysis for Research and Applications, Version 2
 \begin{figure}
 \centering
 \includegraphics[width=0.65\textwidth]{img/map.png}
-\caption{A map showing the tracks of 31 voyages of RV \emph{Polarstern}, RSV \emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B. Palmer} and HMNZS \emph{Wellington} and one sub-Antractic station (Macquarie Island) analysed here. The tracks cover Antarctic sectors south of South Americ, the Atlantic Ocean, Africa, Australia and New Zealand in the years 2010 to 2021.}
+\caption{
+A map showing the tracks of 31 voyages of RV \emph{Polarstern}, RSV
+\emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B. Palmer}, and
+HMNZS \emph{Wellington} and one sub-Antarctic station (Macquarie Island)
+analysed here. The tracks cover Antarctic sectors south of South America, the
+Atlantic Ocean, Africa, Australia, and New Zealand in the years 2010 to 2021.
+The dashed line at 40$^\circ$S delineates the Southern Ocean area of our
+analysis.
+}
 \label{fig:map}
 \end{figure}
 
@@ -148,12 +299,12 @@ Modern-Era Retrospective analysis for Research and Applications, Version 2
 \subsection{Voyage and station data}
 
 Together, we analysed data from 31 voyages of RV \emph{Polarstern}, RSV
-\emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B. Palmer},
-HMNZS \emph{Wellington} and one sub-Antarctic station (Macquarie Island) in the
-SO south of 40°S between year 2010 and 2021 (Fig. \ref{fig:map} and
-Table \ref{tab:voyages}). Altogether, the voyages and the station comprised
-2421 days of data south of 40$^\circ$S, but the availability of ceilometer data
-was smaller.
+\emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B. Palmer}, Her
+Majesty's New Zealand Ship (HMNZS) \emph{Wellington} and one sub-Antarctic
+station (Macquarie Island) in the SO south of 40°S between year 2010 and 2021
+(Fig. \ref{fig:map} and Table \ref{tab:voyages}). Altogether, the voyages and
+the station comprised 2421 days of data south of 40$^\circ$S, but the
+availability of ceilometer data was smaller.
 
 These data sources contained ceilometer (lidar) observations with the Vaisala
 CL51 operating at 910 nm and the Lufft CHM-15k operating at 1064 nm. A
@@ -168,23 +319,36 @@ meteorological quantities were measured continuously.
 
 \subsection{ICON}
 
-A coupled storm-resolving version of the ICON model is in development by the
-NextGEMS project \citep{hohenegger2023}. NextGEMS has so far produced four
-cycles of model runs. In our research, we used a Cycle 3 run ngc3028 produced
-in 2023 \citep{nextgems2023a,nextgems2023b}. We could not use Cycle 4 due to unavailability of
-the necessary variables. The horizontal resolution of ngc3028 is about 5 km.
-Unlike current general circulation models (GCMs), the strom-resolving version
-of ICON does not use convective and cloud parameterisation but relies on
-explicit simulation of convection and clouds on the model grid. While this
-makes the code development simpler without having to rely on uncertain
-parameterisations, it can miss smaller-scale clouds below the grid resolution.
-Turbulence and cloud microphysics are still parameterised in this model. In our
-analysis, we used four years of coupled simulation output between years 2021
-and 2024 (inclusive). Because the model is free-running, weather and climate
+A coupled (atmosphere--ocean) GSRM version of the ICON model is in development
+by the nextGEMS project \citep{hohenegger2023}. nextGEMS has so far produced
+four cycles of model runs. In our research, we used a Cycle 3 run
+\emph{ngc3028} produced in 2023 \citep{nextgems2023a,nextgems2023b}. We could
+not use Cycle 4 due to unavailability of the necessary variables. The
+horizontal resolution of ngc3028 is about 5 km.  Unlike current general
+circulation models (GCMs), the strom-resolving version of ICON does not use
+convective and cloud parameterisation but relies on explicit simulation of
+convection and clouds on the model grid. While this makes the code development
+simpler without having to rely on uncertain parameterisations, it can miss
+smaller-scale clouds below the grid resolution.  Turbulence and cloud
+microphysics are still parameterised in this model. In our analysis, we used
+four years of coupled simulation output between years 2021 and 2024
+(inclusive). Because the model is free-running, weather and climate
 oscillations (such as the El Niño--Southern Oscillation) are not expected to be
 equivalent to reality at the same time and place. To compare with observations
 taken during different years (2010--2021), we compared the model output with
 observations at the same time of year and geographical location.
+
+ICON is a very versatile model, allowing for simulations ranging from
+coarse-resolution ESM simulations, GSRM simulations, limited area model (LAM)
+simulations, to large eddy simulations (LES), for both weather prediction and
+climate projections.
+
+ICON uses the atmospheric component ICON-A \citep{giorgetta2018}, whose
+physics is derived from ECHAM6 \citep{stevens2013}, and the ocean component
+ICON-O \citep{korn2022}.
+
+Earlier runs of the GSRM ICON from DYAMOND were evaluated by
+\cite{mauritsen2022}.
 
 \subsection{ALCF}
 
@@ -417,6 +581,10 @@ level (LCL) on all RV \emph{Polarstern} voyages.}
 \end{figure}
 
 \section{Discussion}
+
+Similar to our results \cite{cesana2022} showed that CMIP6 also tend to
+underestimate cloud occurrence above 2 km over the SO, although their analysis
+in this case was limited to liquid clouds.
 
 \section{Conclusions}
 
