@@ -29,7 +29,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.5679012"
-     inkscape:cx="387.77953"
+     inkscape:cx="365.77559"
      inkscape:cy="239.81102"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
@@ -153,11 +153,11 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.3206px;line-height:1.4;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect56397);display:inline;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.72183;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"><tspan
          x="2094.959"
          y="219.78724"
-         id="tspan21499"><tspan
+         id="tspan21539"><tspan
            style="font-weight:bold"
-           id="tspan21495">(a)</tspan><tspan
+           id="tspan21535">(a)</tspan><tspan
            style="baseline-shift:baseline;vector-effect:none;stop-color:#000000;stop-opacity:1"
-           id="tspan21497"> PS81/3 CL51 (observed)</tspan></tspan></text>
+           id="tspan21537"> PS81/3 CL51 (observed)</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27557862,0,0,0.27557862,-526.14644,36.697911)"
@@ -165,9 +165,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9219px;line-height:1.4;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect54928);display:inline;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.62874;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"><tspan
          x="2094.959"
          y="214.59882"
-         id="tspan21503"><tspan
+         id="tspan21543"><tspan
    style="font-weight:bold"
-   id="tspan21501">(b)</tspan> PS81/3 ERA5 CL51 (simulated)</tspan></text>
+   id="tspan21541">(b)</tspan> PS81/3 ERA5 CL51 (simulated)</tspan></text>
     <image
        width="209.00005"
        height="125.47801"
