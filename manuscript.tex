@@ -468,6 +468,16 @@ which are accumulations (from these we calculate daily means).
 Vertically-resolved quantities are specified on pressure levels. We interpolate
 these quantities to height levels as needed.
 
+\subsection{CERES}
+
+TOA radiation quantities are taken from the Clouds and the Earth’s Radiant
+Energy System (CERES) instruments on board of the Terra and Aqua satellites
+\citep{wielicki1996,loeb2018}. In our analysis we use the adjusted all sky SW
+and LW upwelling fluxes at TOA from the synoptic TOA and surface fluxes and
+clouds 1 degree daily edition 4A product
+(CER\_SYN1deg-Day\_Terra-Aqua-MODIS\_Edition4A)
+\citep{doelling2013,doelling2016}.
+
 \subsection{Cyclone tracking}
 
 We used a cyclone tracking algorithm to identify extratropical and polar
@@ -511,6 +521,19 @@ profiles as wet or dry was derived.
 The ANN achieved 65\% sensitivity and 87\% speciﬁcity when the true positive
 rate (26\%) was made to match observations. We considered these success rates
 satisfactory for the purpose of filtering precipitation profiles.
+
+\subsection{Data processing}
+
+The radiation calculations were done in such a way that they always represent
+averages of daily means. This is done in order to be consistent with the CERES
+SYN1deg data, which are expressed as daily means. Therefore, for every
+instantaneous profile in the simulated lidar data is assigned a daily mean
+radiation value corresonding to theo the day (in UTC). In turn, the average
+radiation during the entire voyage or station measurement is calculated as the
+average of the profile values. In the observed lidar data, the daily mean
+radiation value is taken from the spatially and temporally co-located CERES
+SYN1deg data for the day (in UTC). The voyage or station measurement average
+is calculated in the same way.
 
 \section{Results}
 \label{sec:results}
@@ -611,6 +634,17 @@ by cyclone tracking, \textbf{(d)}, \textbf{(e)} stable and unstable conditions
 as divided by the lower tropospheric stability criterion.
 }
 \label{fig:cloud-occurrence}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{img/clt_hist.pdf}
+\caption{
+Daily total cloud fraction histograms calculated as the average of all voyage
+and station histograms. The models and subsets are as in Fig.
+\ref{fig:cloud-occurrence}
+}
+\label{fig:clt-hist}
 \end{figure}
 
 \subsection{Thermodynamic proﬁles}
@@ -721,9 +755,12 @@ openly available from the Atmospheric Radiation Measurement (ARM)
 NASA Goddard Earth Sciences (GES) Data and Information Services Center (DISC)
 (\url{https://disc.gsfc.nasa.gov/datasets?project=MERRA-2}).  The ERA5 data are
 openly available from Copernicus Climate Data Store (CDS)
-(\url{https://cds.climate.copernicus.eu}).  The other voyage and station data
-are openly available on Zenodo (). Subsetted model and reanalysis data for the
-voyage tracks and the station and data processed with the ALCF are openly
+(\url{https://cds.climate.copernicus.eu}). The CERES products are available
+from the project website (\url{https://ceres.larc.nasa.gov}) and the NASA
+Atmospheric Science Data Centre
+(\url{https://asdc.larc.nasa.gov/project/CERES}).  The other voyage and station
+data are openly available on Zenodo (). Subsetted model and reanalysis data for
+the voyage tracks and the station and data processed with the ALCF are openly
 available on Zenodo ().
 
 \footnotesize
