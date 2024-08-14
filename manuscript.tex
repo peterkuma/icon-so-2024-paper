@@ -340,7 +340,7 @@ the availability of ceilometer data was smaller.
 
 Missing days in the ceilometer data were HMNZSW16 (7 days): 24--27 November, 10
 December, 16--17 December 2016; MARCUS (3 days): 8, 10 November, 10 December;
-MCQ16-18 (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
+MICRE (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
 February, 21 March 2017; TAN1502 (1 day): 24 January.
 
 These data sources contained ceilometer (lidar) observations with the Vaisala
@@ -463,11 +463,11 @@ Medium-Range Weather Forecasts (ECMWF). It is based on a numerical weather
 prediction (NWP) model Integrated Forecast System (IFS) version CY41R2.  The
 horizontal resolution is 0.25° in latitude and longitude, which is about
 28 km in the North--South direction and 14 km in the East--West direction at
-60°S. The model uses 137 vertical levels. In our analysis we use output
-at one hourly instantaeous time intervals, except for radiation quantities,
-which are accumulations (from these we calculate daily means).
-Vertically-resolved quantities are specified on pressure levels. We interpolate
-these quantities to height levels as needed.
+60°S. Internally, the model uses 137 vertical levels. In our analysis we use
+output at one hourly instantaeous time intervals, except for radiation
+quantities, which are accumulations (from these we calculate daily means).
+Vertically-resolved quantities are made available on 37 pressure levels. We
+interpolate these quantities to height levels as needed.
 
 \subsection{CERES}
 
@@ -547,10 +547,10 @@ is calculated in the same way.
 \begin{tabular}{llllllr}
 Name & Vessel & Ceil. & Region & Start & End & Days\\
 \hline
-AA15-16  & RSV \emph{Aurora Australis}   & CL51    & AU       & 2015-10-22 & 2016-02-22 & 124\\
+AA15-16  & RSV \emph{Aurora Australis}   & CL51    & AU       & 2015-10-22 & 2016-02-22 & 124 \\
 HMNZSW16 & HMNZS \emph{Wellington}       & CHM 15k & NZ       & 2016-11-23 & 2016-12-19 & 27 \\
-MARCUS   & RSV \emph{Aurora Australis}   & CL31    & AU       & 2017-10-29 & 2018-03-26 & 149\\
-MCQ16-18 & /                             & CL51    & AU/NZ    & 2016-04-03 & 2018-03-14 & 710\\
+MARCUS   & RSV \emph{Aurora Australis}   & CL31    & AU       & 2017-10-29 & 2018-03-26 & 149 \\
+MICRE    & [Macquarie Is. station]       & CL51    & AU/NZ    & 2016-04-03 & 2018-03-14 & 710 \\
 NBP1704  & RV \emph{Nathaniel B. Palmer} & CHM 15k & NZ       & 2017-04-14 & 2017-06-08 & 55 \\
 PS77/2   & RV \emph{Polarstern}          & CL51    & SA/AO/AF & 2010-12-01 & 2011-02-04 & 65 \\
 PS77/3   & RV \emph{Polarstern}          & CL51    & SA/AO/AF & 2011-02-07 & 2011-04-14 & 66 \\
@@ -585,12 +585,50 @@ TAN1802  & RV \emph{Tangaroa}            & CHM 15k & NZ       & 2018-02-07 & 201
 \normalsize
 \end{table}
 
+\begin{table}
+\caption{List of voyages and station references.}
+\label{tab:voyage-references}
+\small
+\begin{tabular}{ll}
+Name & References\\
+\hline
+AA15-16  & \cite{klekociuk2020} \\
+MARCUS   & \cite{mcfarquhar2016,mcfarquhar2019} \\
+MICRE    & \cite{marchand2015,marchand2020} \\
+PS77/2   & \cite{kniglanglo2011a,kniglanglo2011b,kniglanglo2011c,kniglanglo2014a,fahrbach2011} \\
+PS77/3   & \cite{kniglanglo2011d,kniglanglo2011e,kniglanglo2012a,kniglanglo2014b,knust2011} \\
+PS79/2   & \cite{kniglanglo2012b,kniglanglo2012c,kniglanglo2012d,kniglanglo2014c,kattner2012} \\
+PS79/3   & \cite{kniglanglo2012e,kniglanglo2012f,kniglanglo2012g,kniglanglo2014d,wolfgladrow2012} \\
+PS79/4   & \cite{kniglanglo2012h,kniglanglo2012i,kniglanglo2012j,kniglanglo2014e,lucassen2012} \\
+PS81/2   & \cite{kniglanglo2013a,kniglanglo2013b,kniglanglo2013c,kniglanglo2014f,boebel2013} \\
+PS81/3   & \cite{kniglanglo2013d,kniglanglo2013e,kniglanglo2013f,kniglanglo2014g,gutt2013} \\
+PS81/4   & \cite{kniglanglo2013g,kniglanglo2013h,kniglanglo2013i,kniglanglo2014f,bohrmann2013} \\
+PS81/5   & \cite{kniglanglo2013j,kniglanglo2013k,kniglanglo2013l,kniglanglo2014g,jokat2013} \\
+PS81/6   & \cite{kniglanglo2013m,kniglanglo2013n,kniglanglo2013o,kniglanglo2014h,lemke2013} \\
+PS81/7   & \cite{kniglanglo2013p,kniglanglo2013q,kniglanglo2014i,kniglanglo2016a,meyer2013} \\
+PS81/8   & \cite{kniglanglo2013r,kniglanglo2014j,kniglanglo2014k,kniglanglo2014l,schlindwein2014} \\
+PS81/9   & \cite{kniglanglo2014m,kniglanglo2014n,kniglanglo2014o,kniglanglo2014p,knust2014} \\
+PS89     & \cite{kniglanglo2015a,kniglanglo2015b,kniglanglo2015c,kniglanglo2015d,boebel2016}\\
+PS96     & \cite{kniglanglo2016b,kniglanglo2016c,kniglanglo2016d,kniglanglo2016e,schrder2017} \\
+PS97     & \cite{kniglanglo2016f,kniglanglo2016g,kniglanglo2016h,kniglanglo2016i,lamy2017} \\
+PS103    & \cite{kniglanglo2017a,kniglanglo2017b,kniglanglo2017c,kniglanglo2017d,boebel2018} \\
+PS104    & \cite{kniglanglo2017e,kniglanglo2017f,kniglanglo2017g,gohl2018,schmithsen2021a} \\
+PS111    & \cite{schmithsen2019a,schmithsen2020a,schmithsen2021b,schmithsen2021c,schrder2018} \\
+PS112    & \cite{schmithsen2019b,schmithsen2020b,schmithsen2021d,schmithsen2021e,meyer2018} \\
+PS117    & \cite{schmithsen2019c,schmithsen2020c,schmithsen2021f,schmithsen2021g,boebel2019} \\
+PS118    & \cite{schmithsen2019d,schmithsen2020d,schmithsen2021h,schmithsen2021i,dorschel2019} \\
+PS123    & \cite{schmithsen2021j,schmithsen2021m,schmithsen2021n,schmithsen2021k,hoppmann2023} \\
+PS124    & \cite{schmithsen2021o,schmithsen2021q,schmithsen2021p,hoppmann2023} \\
+TAN1802  & \cite{kremser2021} \\
+\end{tabular}
+\end{table}
+
 \begin{figure}
 \centerline{
 \includegraphics[width=1.06\textwidth]{img/cloud_occurrence_panel.pdf}
 }
 \caption{Cloud occurrence by height for the 31 voyages and one sub-Antarctic
-station (MCQ16-18) in observations (OBS), and simulated by the ALCF from the
+station (MICRE) in observations (OBS), and simulated by the ALCF from the
 ICON model, MERRA‐2 (M2) and ERA5 reanalysis data. The numbers in the legend
 indicate the total cloud fraction and the number of days of data.}
 \label{fig:cloud-occurrence-panel}
