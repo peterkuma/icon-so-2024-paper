@@ -52,7 +52,7 @@
 \hypersetup{
 	colorlinks=true,
 	urlcolor=blue,
-	pdftitle={Using ship observations to assess Southern Ocean clouds in a storm-resolving general circulation model ICON},
+	pdftitle={Ship and ground-based lidar and radiosonde evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON and the ERA5 and MERRA-2 reanalyses},
 	pdfauthor={Peter Kuma, Frida A.-M. Bender, Adrian J. McDonald and Thorsten Mauritsen}
 }
 \bibliographystyle{abbrvnat}
@@ -66,7 +66,7 @@
 
 \begin{document}
 
-\begin{center} \Large \sffamily\textbf{Using ship observations to assess Southern Ocean clouds in the storm-resolving general circulation model ICON}\\[0.4cm]
+\begin{center} \Large \sffamily\textbf{Ship and ground-based lidar and radiosonde evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON and the ERA5 and MERRA-2 reanalyses}\\[0.4cm]
 \large Peter Kuma$^\mathsf{1,}$*, Frida A.-M. Bender$^\mathsf{1}$, Adrian J. McDonald$^\mathsf{2}$ and Thorsten Mauritsen$^\mathsf{1}$\\[0.4cm]
 \small
 $^\mathsf{1}$Department of Meteorology (MISU) and Bolin Centre for Climate Research, Stockholm University, Stockholm SE-106 91, Sweden\\[0.2cm]
@@ -663,7 +663,7 @@ included to avoid comparing sea ice with open sea conditions.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{img/cl_agg.pdf}
+\includegraphics[width=\textwidth]{img/cl_agg_exp.pdf}
 \caption{
 Cloud occurrence by height calculated as the average of all voyages and stations
 for the observed (OBS) and simulated lidar cloud mask. The total cloud fraction
@@ -716,10 +716,17 @@ relatively unstable (< 12 K) and relatively stable (>= 12 K) conditions.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{img/radiosonde.pdf}
-\caption{Radiosonde proﬁles of potential temperature and lifting condensation
-level (LCL) on all RV \emph{Polarstern} voyages.}
-\label{fig:radiosonde}
+\includegraphics[width=0.72\textwidth]{img/theta_hur.pdf}
+\caption{
+Virtual potential temperature ($\theta_v$) and relative humidity (RH)
+determined from radiosonde launches and co-located profiles in
+ICON, ERA5 and MERRA-2 in subsets as in Fig. \ref{fig:cloud-occurrence}.
+The solid lines are the average calculated from the averages of every
+individual voyage and station. The bands span the
+16$^\mathrm{th}$--84$^\mathrm{th}$ percentiles calculated from the distribution
+of the voyage and station averages.
+}
+\label{fig:theta-hur}
 \end{figure}
 
 \section{Discussion}
