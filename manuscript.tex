@@ -317,10 +317,10 @@ period. Shown is also the cloud mask determined by the ALCF.
 \caption{
 Lower tropospheric stability (LTS) distribution in \textbf{(a)} ERA5 and
 \textbf{(b)} MERRA-2 calculated for the 31 voyage tracks and one station from
-the highest instantaneous temporal resolution data. Shown is also the chosen
-dividing threshold of 12 K for `stable' and `unstable' conditions.
+the highest instantaneous temporal resolution data available. Shown is also the
+chosen dividing threshold of 12 K for `stable' and `unstable' conditions.
 }
-\label{fig:lts-dist}
+\label{fig:lts}
 \end{figure}
 
 \section{Methods}
@@ -484,35 +484,35 @@ clouds 1 degree daily edition 4A product
 
 \subsection{Cyclone tracking}
 
-We partitioned our data into subsets by cyclonic activity. For this purpose,
-we used a cyclone tracking algorithm to identify extratropical and polar
-cyclones (ECs and PCs) over the SO in the reanalysis and ICON data,
-We used the open source cylone tracking package CyTRACK
-\citep{perez-alarcon2024}. Generally, what constitutes an EC is considered
-relatively arbitrary due to a very large variability of ECs \citep{neu2013}.
-We used the mean sea level pressure field and horizontal wind speed fields as
-input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
-thresholds as well as tracking across time steps to identify cyclone centres
-and radii. From this information, we could classify geographical areas as
-either cyclonic or non-cyclonic. Due to a relatively small total area covered,
-we chose a circle of a double radius (relative to one identified by CyTRACK)
-centred at the cyclone centre as a cyclonic area for every time step and
-cyclone. All other areas were identified as non-cyclonic.  For identifying
-cyclones in the observations, ERA5 pressure and wind fields were used as the
-input to CyTRACK. This is justified by the fact that large-scale pressure and
-wind fields are likely sufficiently close to the reality in ERA5. For
-identifying cyclones in ICON, ERA5, MERRA-2, their own pressure and wind fields
-were used as the input to CyTRACK.
+We partitioned our data into two subsets by cyclonic activity. For this
+purpose, we used a cyclone tracking algorithm to identify extratropical and
+polar cyclones (ECs and PCs) over the SO in the reanalysis and ICON data, We
+used the open source cylone tracking package CyTRACK \citep{perez-alarcon2024}.
+Generally, what constitutes an EC is considered relatively arbitrary due to a
+very large variability of ECs \citep{neu2013}.  We used the mean sea level
+pressure field and horizontal wind speed fields as input to the CyTRACK
+algorithm. The algorithm uses pressure and wind speed thresholds as well as
+tracking across time steps to identify cyclone centres and radii. From this
+information, we could classify geographical areas as either cyclonic or
+non-cyclonic. Due to a relatively small total area covered, we chose a circle
+of a double radius (relative to one identified by CyTRACK) centred at the
+cyclone centre as a cyclonic area for every time step and cyclone. All other
+areas were identified as non-cyclonic. For identifying cyclones in the
+observations and the reanalyses, ERA5 pressure and wind fields were used as the
+input to CyTRACK.  This is justified by the fact that the large-scale pressure
+and wind fields in ERA5 are likely sufficiently close to the reality. For
+identifying cyclones in ICON, its own pressure and wind fields were used as the
+input to CyTRACK, because the model is free-running, and thus the pressure and
+wind fields are different from reality.
 
 \subsection{Cloud occurrence by stability}
 
-We determine stability by calculating lower tropospheric stability (LTS)
-as the difference between potential temperature at 700 hPa and the surface.
-From a histogram of LTS in ERA5 and MERRA-2 calculated at all voyage tracks
-and the station (Fig. S1), we determined a dividing threshold of 12 K for
-relatively unstable (< 12 K) and relatively stable (>= 12 K) conditions.
-
-
+We partitioned our data into two subset by stability. We determined this by
+calculating lower tropospheric stability (LTS) as the difference between
+potential temperature at 700 hPa and the surface.  Based on a histogram of LTS
+in ERA5 and MERRA-2 calculated at all voyage tracks and stations (Fig.
+\ref{fig:lts}), we determined a dividing threshold of 12 K for relatively
+unstable (< 12 K) and relatively stable (>= 12 K) conditions.
 
 \subsection{Precipitation identification using machine learning}
 \label{sec:ann}
