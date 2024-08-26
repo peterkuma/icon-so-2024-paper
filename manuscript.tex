@@ -337,23 +337,28 @@ sub-Antarctic station (Macquarie Island) in the SO south of 40°S between year
 2010 and 2021 (Fig. \ref{fig:map}, Table \ref{tab:voyages} and
 \ref{tab:voyage-references}). Altogether, the voyages and the station comprised
 2421 days of data south of 40°S, but the availability of ceilometer data was
-smaller.
+smaller due to gaps in measurements. Missing days in the ceilometer data were
+HMNZSW16 (7 days): 24--27 November, 10 December, 16--17 December 2016; MARCUS
+(3 days): 8, 10 November, 10 December; MICRE (9 days): 7--8, 29 June, 5, 16
+July, 15 August, 17 October 2016, 11 February, 21 March 2017; TAN1502 (1 day):
+24 January.
 
-Missing days in the ceilometer data were HMNZSW16 (7 days): 24--27 November, 10
-December, 16--17 December 2016; MARCUS (3 days): 8, 10 November, 10 December;
-MICRE (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
-February, 21 March 2017; TAN1502 (1 day): 24 January.
-
-These data sources contained ceilometer (lidar) observations with the Vaisala
-CL51 and CL31 operating at 910 nm and the Lufft CHM-15k operating at 1064 nm. A
-ceilometer is a low-power vertically pointing lidar with the purpose of
+These data sources contained ceilometer observations with the Vaisala CL51 and
+CL31 operating at 910 nm and the Lufft CHM-15k operating at 1064 nm, described
+in detail below (Sections \ref{sec:cl51} and \ref{sec:chm15k}). A ceilometer is
+a low-power near-infrared vertically pointing lidar with the purpose of
 measuring the cloud base, but it also measures the full vertical structure of
-clouds as long as the laser signal is not attenuated by thick clouds. A total
-of about 1500 days of lidar observations were included in our analysis.
+clouds as long as the laser signal is not attenuated by thick clouds.
 
-Apart from lidar observations, radiosondes were launched on weather balloons
-at regular synoptic times on the RV \emph{Polarstern} voyages, and surface
-meteorological quantities were measured continuously.
+Apart from lidar observations, radiosondes were launched on weather balloons at
+regular synoptic times on the RV \emph{Polarstern}, MARCUS, NBP17024, TAN1702,
+and TAN1802 voyage, measuring pressure, temperature, relative humidity and
+global navigation satellite system coordinates. Derived thermodynamic (virtual
+potential temperature, lifting condensation level, \ldots) and dynamic
+quantities (wind speed and direction) for the measured vertical profiles were
+calculated with rstool \citep{rstool}. Surface meteorological quantities were
+measured continuously by an onboard automatic weather station or individual
+instruments.
 
 \subsection{ICON}
 
@@ -408,6 +413,7 @@ evaluation
 \citep{kuma2020,kremser2021,guyot2022,pei2023,whitehead2023,mcdonald2024}.
 
 \subsection{Vaisala CL51 and CL31}
+\label{sec:cl51}
 
 The Vaisala CL51 and CL31 are ceilometers operating at a near-infrared
 wavelength of 910 nm. The maximum range 15.4 km (CL51), 7.7 km (CL31 with 5 m
@@ -428,6 +434,7 @@ resolution of 30 m and 252 vertical levels.
 % TODO: Describe absolute calibration.
 
 \subsection{Lufft CHM 15k}
+\label{sec:chm15k}
 
 The Lufft CHM 15k is a ceilometer operating at a near-infrared wavelength of
 1064 nm. The maximum range is 15.4 km, vertical resolution is 5 m in the near
@@ -496,29 +503,38 @@ centres and radii.
 \subsection{Precipitation identification using machine learning}
 \label{sec:ann}
 
-It was not possible to include precipitation simulation in the ALCF due to the
-absence of required fields in our model output and reanalysis data (liquid and
-ice precipitation mass mixing ratios) because the required radiation
-calculations are not implemented in the ALCF. At the same time, it is relatively
-difficult to distinguish precipitation backscatter from cloud backscatter
-in lidar observations, especially when only one wavelength channel and no
-polarisation channel are available.
+Precipitation can cause strong enough lidar backscattering to be recognised as
+a cloud by the cloud detection method used in the ALCF. This is undesirable
+if equivalent precipitation backscatter is not included in the simulated lidar
+profiles. It was not possible to include precipitation simulation in the ALCF
+due to the absence of required fields in the ICON model output and the
+reanalysis data, the liquid and ice precipitation mass mixing ratios, and
+because the required radiation calculations for precipitation are not
+implemented in the ALCF. In this situation, in order to achieve a fair
+comparison of observations and models, one should exclude profiles with
+precipitation either manually or using an automated method. It is relatively
+difficult to distinguish precipitation backscatter from cloud backscatter in
+lidar observations, especially when only one wavelength channel and no
+polarisation channel are available. In models, the same can be accomplished
+relatively easily by excluding profiles with an amount of surface precipitation
+flux exceeding a given threshold. In the observations, using precipitation
+flux measurements can be very unreliable on ships due to ship movement and
+turbulence caused by nearby ship structures. Our analysis of rain gauge data
+from the RV \emph{Tangaroa} showed large discrepancies between the rain gauge
+time series and human-performed synoptic observations, as well as large
+inconsistencies in the rain gauge time series. Therefore, it is desirable to
+implement a method of detecting precipitation from observed backscatter
+profiles instead.
 
-In order to get a fair comparison of observations and models, one needs to
-exclude profiles with precipitation either manually or using an automated
-method. In models, this can be accomplished relatively easily by excluding
-profiles with an amount of surface precipitation flux exceeding a threshold.
-In observations, this can be more complicated, especially on voyages, because
-rain gauges are known to be unreliable on ships.
-
-On the RV \emph{Polarstern} voyages, regular synoptic observations were
-available.  These included precipitation observations by an observer. We
-used this dataset to train a convolutional artiﬁcial neural network (ANN)
-of the U-Net type \citep{ronneberger2015} to recognise precipitation in the
-lidar data. Samples of short time intervals (10 min) of near-surface
-backscatter (0–250 m) were classified as clear, rain, snow and fog, using the
-synoptic observations as a training set. From these, a binary classification of
-profiles as wet or dry was derived.
+On the RV \emph{Polarstern} voyages, regular human-performed synoptic
+observations were available and included precipitation presence and type. We
+used this dataset to train a convolutional artiﬁcial neural network (ANN) of
+the U-Net type \citep{ronneberger2015} to recognise profiles with precipitation
+from lidar backscatter. Samples of short time intervals (10 min) of
+near-surface backscatter (0–250 m) were classified as clear, rain, snow and
+fog, using the synoptic observations as a training dataset. From these, a
+binary classification of profiles as wet (rain or fog) and dry (clear or fog)
+was derived.
 
 The ANN achieved 65\% sensitivity and 87\% speciﬁcity when the true positive
 rate (26\%) was made to match observations. We considered these success rates
@@ -707,7 +723,7 @@ stable conditions.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{img/cl_agg_exp.pdf}
+\includegraphics[width=\textwidth]{img/cl_agg.pdf}
 \caption{
 Cloud occurrence by height calculated as the average of all voyages and stations
 for the observed (OBS) and simulated lidar cloud mask. The total cloud fraction
@@ -733,7 +749,11 @@ lidar profiles. The models and subsets are as in Fig.
 
 \subsection{Thermodynamic proﬁles}
 
-We compared about 2000 radiosonde proﬁles from 24 RV \emph{Polarstern}
+We analysed about 2300 radiosonde proﬁles south of 40°S from the 24 RV
+\emph{Polarstern} voyages, MARCUS, NBP1704, TAN1702, and TAN1802.
+
+
+
 voyages between the observations and the model. Proﬁles in the model were taken
 at the same geographical location and time relative to the start of the year.
 Only proﬁles for which the sea ice conditions (sea ice present or absent) are
