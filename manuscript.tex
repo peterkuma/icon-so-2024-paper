@@ -323,8 +323,6 @@ dividing threshold of 12 K for `stable' and `unstable' conditions.
 \label{fig:lts-dist}
 \end{figure}
 
-
-
 \section{Methods}
 \label{sec:methods}
 
@@ -406,11 +404,12 @@ ALCF is based on the instrument simulator Cloud Feedback Model
 Intercomparison Project (CFMIP) Observation Simulator Package (COSP)
 \citep{bodas-salcedo2011}. After the backscattered radiation is calculated, a
 cloud mask, cloud occurrence by height and the total cloud fraction are
-determined.
-
-ALCF has already been used by several research teams for model and reanalysis
-evaluation
+determined. ALCF has already been used by several research teams for model and
+reanalysis evaluation
 \citep{kuma2020,kremser2021,guyot2022,pei2023,whitehead2023,mcdonald2024}.
+Absolute calibration of the observed backscatter was performed by comparing
+the measured clear-sky molecular backscatter statistically with simulated
+clear-sky molecular backscatter.
 
 \subsection{Vaisala CL51 and CL31}
 \label{sec:cl51}
@@ -430,9 +429,6 @@ For the MARCUS voyage, Vaisala CL31 were made available by the Atmospheric
 Radiation Measurement (ARM) processed to a maximum range of 7.545 km, vertical
 resolution of 30 m and 252 vertical levels.
 
-
-% TODO: Describe absolute calibration.
-
 \subsection{Lufft CHM 15k}
 \label{sec:chm15k}
 
@@ -443,7 +439,6 @@ vertical levels is 1024.  NetCDF files containing uncalibrated backscatter
 produced by the instrument were processed with the ALCF to produce a cloud mask
 and cloud occurrence by height and the total cloud fraction.
 
-% TODO: Describe absolute calibration.
 % TODO: Check sampling rate.
 
 \subsection{MERRA-2}
@@ -489,16 +484,35 @@ clouds 1 degree daily edition 4A product
 
 \subsection{Cyclone tracking}
 
-We used a cyclone tracking algorithm to identify extratropical and polar
+We partitioned our data into subsets by cyclonic activity. For this purpose,
+we used a cyclone tracking algorithm to identify extratropical and polar
 cyclones (ECs and PCs) over the SO in the reanalysis and ICON data,
-for the purpose of partitioning the cloud occurrence data into cyclonic and
-non-cyclonic conditions. We used the open source package CyTRACK
+We used the open source cylone tracking package CyTRACK
 \citep{perez-alarcon2024}. Generally, what constitutes an EC is considered
 relatively arbitrary due to a very large variability of ECs \citep{neu2013}.
-We used the mean sea level pressure field and horizontal wind speed fields
-as input to the CyTRACK algorithm. The algorithm uses pressure and wind
-speed thresholds as well as tracking across time steps to identify cyclone
-centres and radii.
+We used the mean sea level pressure field and horizontal wind speed fields as
+input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
+thresholds as well as tracking across time steps to identify cyclone centres
+and radii. From this information, we could classify geographical areas as
+either cyclonic or non-cyclonic. Due to a relatively small total area covered,
+we chose a circle of a double radius (relative to one identified by CyTRACK)
+centred at the cyclone centre as a cyclonic area for every time step and
+cyclone. All other areas were identified as non-cyclonic.  For identifying
+cyclones in the observations, ERA5 pressure and wind fields were used as the
+input to CyTRACK. This is justified by the fact that large-scale pressure and
+wind fields are likely sufficiently close to the reality in ERA5. For
+identifying cyclones in ICON, ERA5, MERRA-2, their own pressure and wind fields
+were used as the input to CyTRACK.
+
+\subsection{Cloud occurrence by stability}
+
+We determine stability by calculating lower tropospheric stability (LTS)
+as the difference between potential temperature at 700 hPa and the surface.
+From a histogram of LTS in ERA5 and MERRA-2 calculated at all voyage tracks
+and the station (Fig. S1), we determined a dividing threshold of 12 K for
+relatively unstable (< 12 K) and relatively stable (>= 12 K) conditions.
+
+
 
 \subsection{Precipitation identification using machine learning}
 \label{sec:ann}
@@ -651,7 +665,7 @@ indicate the total cloud fraction and the number of days of data.}
 \label{fig:cloud-occurrence-panel}
 \end{figure}
 
-\subsection{Cloud occurrence}
+\subsection{Cloud occurrence by height}
 
 We used the ALCF to derive cloud occurrence by height and the total cloud
 fraction from observations, ICON and two reanalyses MERRA-2 and ERA5 (Fig.
@@ -744,39 +758,76 @@ as a fraction of cloudy (based on the cloud mask) observed (OBS) or simulated
 lidar profiles. The models and subsets are as in Fig.
 \ref{fig:cloud-occurrence}.
 }
-\label{fig:clt-hist}
+\label{fig:cloud-cover}
 \end{figure}
+
+\subsection{Cloud cover}
+
+We analysed daily cloud cover (total cloud fraction) distribution. This is a
+measure of cloudiness irrespective of height. A cloud detected at any height
+means that the lidar profile was classified as cloudy, otherwise it was
+classified as clear sky. When all profiles in a day are aggregated together,
+the cloud cover for the day is determied as the fraction of cloudy profiles in
+the total number of profiles, expressed in octas.
+
+In Fig.  \ref{fig:cloud-cover} we show the results for the same subsets as
+anlysed above. Observations show the greatest representation of high cloud
+cover (5--8 octas), peaking at 7 octas. This is not represented by ICON or the
+reanalyses.  While ICON is the closest, it tends to be 1 octa clearer the
+observations, peaking at 6 octas, and highly understimating days with 8 octas.
+Overall, the reanalyses show results similar to each other, underestimating
+cloud cover by about 2 octas, and strongly understimating days with 7 and 8
+octas. Of the two reanalyses, MERRA-2 shows slightly higher cloud cover and
+thus more consistent with observations.
+
+When analysed by subsets, the cyclonic subset show to highest cloud cover, with
+8 octas occurring on one half of such days (Fig. \ref{fig:cloud-cover}d).  This
+is not represented by ICON or the reanalyses at all. Interestingly, clear sky
+days (0 octas) also have a local maximum peaking at about 15\% in this subset.
+When we contrast the low and high latitude zones, we see that the high latitude
+zone tends to have greater cloud cover, peaking at 8 octas (Fig.
+\ref{cloud-cover}c). The high latitue also has almost no clear sky or small
+cloud cover cases (0--4 octas). ICON and the reanalyses represent at least this
+charactertic of the distribution well for 0--3 octas, but otherwise show bises
+similar to the general case. One of the greatest biases is present in ERA5 in
+the unstable subset, where it peaks at 3 octas, whereas the observations peak
+at 7 octas and show negligible cloud cover below 5 octas.
 
 \subsection{Thermodynamic proﬁles}
 
 We analysed about 2300 radiosonde proﬁles south of 40°S from the 24 RV
-\emph{Polarstern} voyages, MARCUS, NBP1704, TAN1702, and TAN1802.
+\emph{Polarstern} voyages, MARCUS, NBP1704, TAN1702, and TAN1802. Spatially and
+temporaly colocated profiles were taken from ICON and the reanalyses. Because
+the time period of the ICON model output was different from the observations,
+model time was chosen to be the same as the radiosonde launch time relative to
+the start of the year. The profiles were partitioned into the same subsets as
+the lidar observations: all, 40--55°S, 55+°S, cyclonic, non-cyclonic, stable,
+and unstable. The groups 40--55°S and 55+°S, cyclonic and non-cyclonic, and
+stable and unstable were mutually exclusive in pairs. Apart from relative
+humidity, we focus on comparing virtual potential temperature ($\theta_v$) due
+to its role in low-level tropospheric stability, being one of the primary
+factors affecting shallow convection and the associated low-level cloud
+formation and dissipation. The observed and model profiles of virtual potential
+temperature are shown in Fig. \ref{fig:potential-temperature}.
 
+Overall, the mean $\theta_v$ is relatively well represented in ICON and MERRA-2,
+being only slightly colder in the mid-to-high troposophere (less stable) in ICON
+than in observations (Fig. \ref{fig:potential-temperature}a). Large differences exist, however, exist in the 40--55°S
+zone, where ICON is colder in $\theta_v$ by up to about 5 K and more so
+at higher altitudes (Fig. \ref{fig:potential-temperature}b). In other subsets, the bias is relatively small. MERRA-2
+is very close to the observations, possibly due to a high accuracy of
+assimilation of this quantity. Notably, the variability of virtual potential
+temperature (as represented by the percentiles) is much smaller in ICON than in
+the observations. This indicates that the model's internal variability in the
+lower-tropospheric thermodynamic conditions in the SO is smaller then in the
+reality.
 
-
-voyages between the observations and the model. Proﬁles in the model were taken
-at the same geographical location and time relative to the start of the year.
-Only proﬁles for which the sea ice conditions (sea ice present or absent) are
-the same in the observations and the model were included. We derived potential
-temperature profiles, lifting condensation level (LCL), and aggregated the
-profiles by sea ice conditions (Fig. \ref{fig:radiosonde}).
-
-We found that the variability of potential temperature in the model to be
-smaller than in the observations. This indicates that the model does not
-represent the entire natural variability. The LCL peaks at the surface in the
-observations, but the peak in the model is higher (about 200 m). This probably
-relates to the greater occurrence of fog and the peak of cloud occurrence at
-the surface in observations, whereas in the model the peak is higher.
-
-\subsection{Cloud occurrence by cyclonic conditions}
-
-\subsection{Cloud occurrence by stability}
-
-We determine stability by calculating lower tropospheric stability (LTS)
-as the difference between potential temperature at 700 hPa and the surface.
-From a histogram of LTS in ERA5 and MERRA-2 calculated at all voyage tracks
-and the station (Fig. S1), we determined a dividing threshold of 12 K for
-relatively unstable (< 12 K) and relatively stable (>= 12 K) conditions.
+Relative humidity displays much larger biases. In all subsets, ICON is too
+humid in the first 1 km, but very accorate above, except for the 40--55°S zone
+and unstable conditions (Fig. \ref{fig:potential-temperature}b, g),  where it
+is too dry between about 1 and 3 km. MERRA-2, on the other hand, is much more
+humid then observations at all altitudes and in all subsets, by up to about
+20\% at 5 km.
 
 \begin{figure}
 \centering
@@ -790,16 +841,10 @@ individual voyage and station. The bands span the
 16$^\mathrm{th}$--84$^\mathrm{th}$ percentiles calculated from the distribution
 of the voyage and station averages.
 }
-\label{fig:theta-hur}
+\label{fig:potential-temperature}
 \end{figure}
 
-\section{Discussion}
-
-Similar to our results \cite{cesana2022} showed that CMIP6 also tend to
-underestimate cloud occurrence above 2 km over the SO, although their analysis
-in this case was limited to liquid clouds.
-
-\section{Conclusions}
+\section{Discussion and conclusions}
 
 We show that the model underestimates the total cloud fraction by about 10\%,
 with an overestimation of clouds below 2 km, and an underestimation of clouds
@@ -811,6 +856,12 @@ exhibits smaller natural variability than observations, and its lifting
 condensation level tends to be higher. This might explain why cloud occurrence
 is peaking higher in the model (at 500 m) than in observations (at the
 surface).
+
+Similar to our results \cite{cesana2022} showed that CMIP6 also tend to
+underestimate cloud occurrence above 2 km over the SO, although their analysis
+in this case was limited to liquid clouds.
+
+
 
 We compared radiosonde proﬁles acquired on the RV \emph{Polarstern} voyages
 with ICON.  The ICON model exhibits smaller internal variability than
@@ -851,11 +902,11 @@ Ice Data Center.
 
 \section*{Code availability}
 
-The ALCF is open source and is available at \url{https://alcf.peterkuma.net}.
-cl2nc is open source and is available at
-\url{https://github.com/peterkuma/cl2nc}, Our processing a plotting code is
-open source and available at
-\url{https://github.com/peterkuma/icon-so-2024-code}.
+The ALCF, cl2nc, rstool, and our plotting code are open source and available at
+\url{https://alcf.peterkuma.net}, \url{https://github.com/peterkuma/cl2nc}, and
+\url{https://github.com/peterkuma/rstool}, and
+\url{https://github.com/peterkuma/icon-so-2024-code}, respectively. CyTRACK
+is available at \url{https://github.com/apalarcon/CyTRACK}.
 
 \section*{Data availability}
 
