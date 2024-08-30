@@ -323,6 +323,19 @@ chosen dividing threshold of 12 K for `stable' and `unstable' conditions.
 \label{fig:lts}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{img/cyc_dist.pdf}
+\caption{
+Geographical distribution of cyclonic days in \textbf{(a)} ERA5 in years
+2010--2013 and \textbf{(b)} ICON in model years 2021--2023 (free running) as
+identified by CyTRACK, expressed as a fraction of the number of days with
+cyclonic activity, defined as grid points located within a double radius of any
+cyclone on a given day (UTC).
+}
+\label{fig:lts}
+\end{figure}
+
 \section{Methods}
 \label{sec:methods}
 
@@ -560,12 +573,12 @@ The radiation calculations were done in such a way that they always represent
 averages of daily means. This is done in order to be consistent with the CERES
 SYN1deg data, which are expressed as daily means. Therefore, for every
 instantaneous profile in the simulated lidar data is assigned a daily mean
-radiation value corresonding to theo the day (in UTC). In turn, the average
-radiation during the entire voyage or station measurement is calculated as the
-average of the profile values. In the observed lidar data, the daily mean
-radiation value is taken from the spatially and temporally co-located CERES
-SYN1deg data for the day (in UTC). The voyage or station measurement average
-is calculated in the same way.
+radiation value corresonding to the day (in the Coordinated Universal Time;
+UTC). In turn, the average radiation during the entire voyage or station
+measurement is calculated as the average of the profile values. In the observed
+lidar data, the daily mean radiation value is taken from the spatially and
+temporally co-located CERES SYN1deg data for the day (in UTC). The voyage or
+station measurement average is calculated in the same way.
 
 \section{Results}
 \label{sec:results}
