@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.1086736"
-     inkscape:cx="248.49514"
-     inkscape:cy="674.68009"
+     inkscape:zoom="1.5679012"
+     inkscape:cx="253.20473"
+     inkscape:cy="935.00789"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
@@ -6053,6 +6053,13 @@
            id="path10737" />
       </g>
     </g>
+    <rect
+       style="fill:#ffffff;stroke-width:0.264583;-inkscape-stroke:none;stop-color:#000000"
+       id="rect2310"
+       width="22.133541"
+       height="10.673935"
+       x="126.6582"
+       y="206.0928" />
     <g
        id="g10739"
        style="stroke-width:1.19484"
@@ -8071,79 +8078,144 @@
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="75.168037"
-       y="6.1909137"
+       x="75.61512"
+       y="6.7967448"
        id="text236"><tspan
          sodipodi:role="line"
          id="tspan234"
          style="font-weight:bold;font-size:2.82222px;stroke-width:0.264583"
-         x="75.168037"
-         y="6.1909137">(a) All</tspan></text>
+         x="75.61512"
+         y="6.7967448">(a) All</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;stroke-width:0.264583"
+         x="75.61512"
+         y="10.32452"
+         id="tspan9752">2291 profiles</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       x="132.91765"
-       y="145.98579"
+       x="144.16321"
+       y="138.85953"
        id="text2898"><tspan
          sodipodi:role="line"
          id="tspan2896"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-         x="132.91765"
-         y="145.98579">(c) 55+°S</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="144.16321"
+         y="138.85953">(c) 55+°S</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="144.16321"
+         y="142.3873"
+         id="tspan11622">RFO = 82%</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="144.16321"
+         y="145.91508"
+         id="tspan7886">1884 profiles</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="122.29133"
-       y="215.94115"
+       x="148.94658"
+       y="209.01643"
        id="text402"><tspan
          sodipodi:role="line"
          id="tspan400"
-         style="font-weight:bold;font-size:2.82222px;stroke-width:0.264583"
-         x="122.29133"
-         y="215.94115">(e) Non-cyclonic</tspan></text>
+         style="font-weight:bold;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="148.94658"
+         y="209.01643">(e) Non-cyclonic</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="148.94658"
+         y="212.5442"
+         id="tspan13493">RFO = 80%</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="148.94658"
+         y="216.07199"
+         id="tspan4153">1827 profiles</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="127.85033"
-       y="285.77463"
+       x="144.19133"
+       y="278.86505"
        id="text410"><tspan
          sodipodi:role="line"
          id="tspan408"
-         style="font-weight:bold;font-size:2.82222px;stroke-width:0.264583"
-         x="127.85033"
-         y="285.77463">(g) Unstable</tspan></text>
+         style="font-weight:bold;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="144.19133"
+         y="278.86505">(g) Unstable</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:bold;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="144.19133"
+         y="282.39282"
+         id="tspan2256">RFO = 40%</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="144.19133"
+         y="285.92059"
+         id="tspan4157">888 profiles</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       x="50.989964"
-       y="145.98578"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       x="65.592438"
+       y="138.86765"
        id="text2902"><tspan
          sodipodi:role="line"
          id="tspan2900"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-         x="50.989964"
-         y="145.98578">(b) 40–55°S</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="65.592438"
+         y="138.86765">(b) 40–55°S</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="65.592438"
+         y="142.39542"
+         id="tspan6021">RFO = 18%</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:end;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         x="65.592438"
+         y="145.9232"
+         id="tspan9754">407 profiles</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="49.936039"
-       y="215.90588"
+       x="65.51609"
+       y="208.95747"
        id="text290"><tspan
          sodipodi:role="line"
          id="tspan288"
-         style="font-weight:bold;font-size:2.82222px;stroke-width:0.264583"
-         x="49.936039"
-         y="215.90588">(d) Cyclonic</tspan></text>
+         style="font-weight:bold;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.51609"
+         y="208.95747">(d) Cyclonic</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.51609"
+         y="212.48524"
+         id="tspan13491">RFO = 20%</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.51609"
+         y="216.01303"
+         id="tspan2292">453 profiles</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="53.56469"
-       y="286.05905"
+       x="65.496246"
+       y="278.8309"
        id="text406"><tspan
          sodipodi:role="line"
          id="tspan404"
-         style="font-weight:bold;font-size:2.82222px;stroke-width:0.264583"
-         x="53.56469"
-         y="286.05905">(f) Stable</tspan></text>
+         style="font-weight:bold;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.496246"
+         y="278.8309">(f) Stable</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.496246"
+         y="282.35867"
+         id="tspan2254">RFO = 60%</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:2.82222px;text-align:end;text-anchor:end;stroke-width:0.264583"
+         x="65.496246"
+         y="285.88644"
+         id="tspan4155">1336 profiles</tspan></text>
   </g>
 </svg>
