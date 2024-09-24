@@ -364,30 +364,100 @@ Together, we analysed data from 31 voyages of RV \emph{Polarstern}, resupply
 vessel (RSV) \emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B.
 Palmer}, Her Majesty's New Zealand Ship (HMNZS) \emph{Wellington} and one
 sub-Antarctic station (Macquarie Island) in the SO south of 40°S between 2010
-and 2021 (Fig. \ref{fig:map}, Table \ref{tab:voyages} and
-\ref{tab:voyage-references}). Altogether, the voyages and the station comprised
+and 2021. Fig. \ref{fig:map} shows a map of the voyages, Table \ref{tab:voyages}
+list the voyages and stations, and \ref{tab:voyage-references} lists references
+where available. Altogether, the voyages and station dataset comprised
 2421 days of data south of 40°S, but the availability of ceilometer data was
-smaller due to gaps in measurements. Missing days in the ceilometer data were
-HMNZSW16 (7 days): 24--27 November, 10 December, 16--17 December 2016; MARCUS
-(3 days): 8, 10 November, 10 December; MICRE (9 days): 7--8, 29 June, 5, 16
-July, 15 August, 17 October 2016, 11 February, 21 March 2017; TAN1502 (1 day):
-24 January.
+slightly smaller due to gaps in measurements.
 
-These data sources contained ceilometer observations with the Vaisala CL51 and
-CL31 operating at 910 nm and the Lufft CHM-15k operating at 1064 nm, described
-in detail below (Sections \ref{sec:cl51} and \ref{sec:chm15k}). A ceilometer is
-a low-power near-infrared vertically pointing lidar with the purpose of
-measuring the cloud base, but it also measures the full vertical structure of
-clouds as long as the laser signal is not attenuated by thick clouds.
+Missing days in the ceilometer data were HMNZSW16 (7 days): 24--27 November, 10
+December, 16--17 December 2016; MARCUS (3 days): 8, 10 November, 10 December;
+MICRE (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
+February, 21 March 2017; TAN1502 (1 day): 24 January.
+
+The data sources contained ceilometer observations captured by the Vaisala CL51
+and CL31 operating at a wavelenght of 910 nm and the Lufft CHM-15k operating at
+1064 nm, described in detail below (Sections \ref{sec:cl51} and
+\ref{sec:chm15k}). A ceilometer is a low-power near-infrared vertically
+pointing lidar with the purpose of measuring the cloud base, but it also
+measures the full vertical structure of clouds as long as the laser signal is
+not attenuated by thick clouds, which can be used to infer additional
+information such as a cloud mask and cloud occurrence by height.
 
 Apart from lidar observations, radiosondes were launched on weather balloons at
 regular synoptic times on the RV \emph{Polarstern}, MARCUS, NBP17024, TAN1702,
 and TAN1802 voyages, measuring pressure, temperature, relative humidity, and
 global navigation satellite system coordinates. Derived thermodynamic (virtual
-potential temperature, lifting condensation level, etc.) and dynamic quantities
-(wind speed and direction) for the measured vertical profiles were calculated
-with rstool \citep{rstool}. Surface meteorological quantities were measured
-continuously by an onboard automatic weather station or individual instruments.
+potential temperature, lifting condensation level, etc.) and dynamic physical
+quantities (wind speed and direction) for the measured vertical profiles were
+calculated with rstool \citep{rstool}. Surface meteorological quantities were
+measured continuously by an onboard automatic weather station or individual
+instruments.
+
+\subsection{Vaisala CL51 and CL31}
+\label{sec:cl51}
+
+The Vaisala CL51 (photo in Fig. \ref{fig:map}d) and CL31 are ceilometers
+operating at a near-infrared wavelength of 910 nm. The maximum range is 15.4 km
+(CL51), 7.7 km (CL31 with 5 m vertical resolution), and 7.550 km (CL31 with 10
+m vertical resolution). The vertical resolution is 10 m (5 m configurable), and
+the sampling (temporal) resolution is 6 s (AA15‐16, MARCUS, and MICRE), 36 s (RV
+\emph{Polarstern}), and about 2.37 s (TAN1502). From the MARCUS voyage, unlike raw
+instrument data available for the other voyages and stations, the Vaisala CL31
+data were made available by the Atmospheric Radiation Measurement (ARM)
+processed to a maximum range of 7.545 km, a vertical resolution of 30 m, and
+sampling resolution of 16 s. The wavelength of 910 nm is affected by water
+vapour absorption of about 20\% in the mid-latitudes
+\citep{wiegner2015,wiegner2019}.  The instrument data files containing raw
+uncalibrated backscatter were first converted to NetCDF with cl2nc
+(\url{https://github.com/peterkuma/cl2nc}) and then processed with the ALCF
+(Section \ref{sec:alcf}) to produce absolutely calibrated attenuated volume
+backscattering coefficinet (AVBC), cloud mask, cloud occurrence by height and
+the total cloud fraction. CL51 can also be configured to emulate CL31. The
+Vaisala CL51 and CL31 instruments were used on most of the voyages and stations
+analysed here. Fig. \ref{fig:example}a shows an example of derived from the
+CL51 instrument.
+
+\subsection{Lufft CHM 15k}
+\label{sec:chm15k}
+
+The Lufft CHM 15k (photo in Fig. \ref{fig:map}c) is a ceilometer operating at a
+near-infrared wavelength of 1064 nm. The maximum range is 15.4 km, the vertical
+resolution is 5 m in the near range (up to 150 m) and 15 m above, the sampling
+(temporal) resolution is 2 s, and the number of vertical levels is 1024.
+NetCDF files containing uncalibrated backscatter produced by the instrument
+were processed with the ALCF (Section \ref{sec:alcf}) to produce AVBC, cloud
+mask, cloud occurrence by height and the total cloud fraction. The CHM 15k was
+used on a minority of voyages (HMNZSW16, TAN1702, TAN1802, and NBP1704).
+
+\subsection{ALCF}
+\label{sec:alcf}
+
+The Automatic Lidar and Ceilometer Framework (ALCF) is a ground-based lidar
+simulator and a tool for processing observed lidar data, supporting various
+instruments and models. It performs radiative transfer calculations to derive
+equivalent lidar AVBC in an atmospheric model, which can then be compared with
+observed AVBC \citep{kuma2021}. For this purpose, it takes atmospheric fields
+of cloud fraction, liquid and ice mass mixing ratio, temperature, and pressure
+fields as an input and can be run offline (on the model output rather than
+inside the model code). The lidar simulator in the ALCF is based on the
+instrument simulator Cloud Feedback Model Intercomparison Project (CFMIP)
+Observation Simulator Package (COSP) \citep{bodas-salcedo2011}.  After AVBC is
+calculated, a cloud mask, cloud occurrence by height, and the total cloud
+fraction are determined. The ALCF has already been used by several research
+teams for model and reanalysis evaluation
+\citep{kuma2020,kremser2021,guyot2022,pei2023,whitehead2023,mcdonald2024}.
+Absolute calibration of the observed backscatter was performed by comparing the
+measured clear-sky molecular backscatter statistically with simulated clear-sky
+molecular backscatter. AVBC is resampled to 5 min temporal resolution and 50 m
+vertical resolution to increase signal-to-noise ratio, while having enough
+resolution to detect small-scale cloud variability. Noise standard deviation is
+calculated from AVBC at the highest range, where no clouds are expected.  A
+cloud mask is calculated from AVBC using a fixed threshold of $\mathrm{2\times
+10^{-6} m^{-1}sr^{-1}}$ after subtracting 5 standard deviations of range-scale
+noise. Fig. \ref{fig:example}b shows an example of simulated Vaisala CL51
+backscatter from ERA5 data, corresponding to a day of measurements by the
+instrument on the PS81/3 voyage.
 
 \subsection{ICON}
 
@@ -421,56 +491,6 @@ is derived from ECHAM6 \citep{stevens2013}, and the ocean component ICON-O
 
 Earlier runs of the GSRM ICON from DYAMOND were evaluated by
 \cite{mauritsen2022}.
-
-\subsection{ALCF}
-
-The Automatic Lidar and Ceilometer Framework (ALCF) is a ground-based lidar
-simulator. It performs radiative transfer calculations to derive equivalent
-lidar backscattered radiation in an atmospheric model, which can then be
-compared with observed lidar backscatter \citep{kuma2021}. For this purpose, it
-takes atmospheric fields of cloud fraction, liquid and ice mass mixing ratio,
-temperature, and pressure fields as an input and can be run offline (on the
-model output rather than inside the model code). The lidar simulator in the
-ALCF is based on the instrument simulator Cloud Feedback Model Intercomparison
-Project (CFMIP) Observation Simulator Package (COSP) \citep{bodas-salcedo2011}.
-After the backscattered radiation is calculated, a cloud mask, cloud occurrence
-by height, and the total cloud fraction are determined. ALCF has already been
-used by several research teams for model and reanalysis evaluation
-\citep{kuma2020,kremser2021,guyot2022,pei2023,whitehead2023,mcdonald2024}.
-Absolute calibration of the observed backscatter was performed by comparing the
-measured clear-sky molecular backscatter statistically with simulated clear-sky
-molecular backscatter.
-
-\subsection{Vaisala CL51 and CL31}
-\label{sec:cl51}
-
-The Vaisala CL51 (Fig. \ref{fig:map}d) and CL31 are ceilometers operating at a
-near-infrared wavelength of 910 nm. The maximum range is 15.4 km (CL51), 7.7 km
-(CL31 with 5 m vertical resolution), and 7.550 km (CL31 with 10 m vertical
-resolution).  The vertical resolution is 10 m (5 m configurable). The
-wavelength is affected by water vapour absorption of about 20\% in the
-mid-latitudes \citep{wiegner2015,wiegner2019}.  The instrument data files
-containing uncalibrated backscatter were first converted to NetCDF with cl2nc
-(\url{https://github.com/peterkuma/cl2nc}) and then processed with the ALCF to
-produce a cloud mask and cloud occurrence by height and the total cloud
-fraction. CL51 can also be configured to emulate CL31.
-
-For the MARCUS voyage, Vaisala CL31 was made available by the Atmospheric
-Radiation Measurement (ARM) processed to a maximum range of 7.545 km, a
-vertical resolution of 30 m, and 252 vertical levels.
-
-\subsection{Lufft CHM 15k}
-\label{sec:chm15k}
-
-The Lufft CHM 15k (Fig. \ref{fig:map}c) is a ceilometer operating at a
-near-infrared wavelength of 1064 nm. The maximum range is 15.4 km, the vertical
-resolution is 5 m in the near range (up to 150 m) and 15 m above, the sampling
-rate is 2 s, and the number of vertical levels is 1024.  NetCDF files
-containing uncalibrated backscatter produced by the instrument were processed
-with the ALCF to produce a cloud mask and cloud occurrence by height and the
-total cloud fraction.
-
-% TODO: Check sampling rate.
 
 \subsection{MERRA-2}
 
@@ -620,12 +640,12 @@ nearest integer. CL51/31 indicates CL51 configured to emulate CL31.
 \label{tab:voyages}
 \small
 \begin{tabular}{llllllr}
-\textbf{Name} & \textbf{Vessel} & \textbf{Ceil.} & \textbf{Region} & \textbf{Start} & \textbf{End} & \textbf{Days}\\
+\textbf{Name} & \textbf{Vessel or station} & \textbf{Ceil.} & \textbf{Region} & \textbf{Start} & \textbf{End} & \textbf{Days}\\
 \hline
 AA15-16  & RSV \emph{Aurora Australis}   & CL51    & AU       & 2015-10-22 & 2016-02-22 & 124 \\
 HMNZSW16 & HMNZS \emph{Wellington}       & CHM 15k & NZ       & 2016-11-23 & 2016-12-19 & 27 \\
 MARCUS   & RSV \emph{Aurora Australis}   & CL31    & AU       & 2017-10-29 & 2018-03-26 & 149 \\
-MICRE    & [Macquarie Is. station]       & CL51    & AU/NZ    & 2016-04-03 & 2018-03-14 & 710 \\
+MICRE    & Macquarie Is. station         & CL51    & AU/NZ    & 2016-04-03 & 2018-03-14 & 710 \\
 NBP1704  & RV \emph{Nathaniel B. Palmer} & CHM 15k & NZ       & 2017-04-14 & 2017-06-08 & 55 \\
 PS77/2   & RV \emph{Polarstern}          & CL51    & SA/AO/AF & 2010-12-01 & 2011-02-04 & 65 \\
 PS77/3   & RV \emph{Polarstern}          & CL51    & SA/AO/AF & 2011-02-07 & 2011-04-14 & 66 \\
