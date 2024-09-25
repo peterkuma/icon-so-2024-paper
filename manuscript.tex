@@ -938,6 +938,44 @@ is too dry between about 1 and 3 km. MERRA-2, on the other hand, is much more
 humid than observations at all altitudes and in all subsets, by up to about
 20\% at 5 km.
 
+\section{Limitations}
+
+Limitations of our study are numerous. The spatial coverage of our dataset
+does not include most parts of the the Indian Ocean and Pacific Ocean sectors
+of the SO. Even though climatological features of the SO are typically
+relatively uniform zonally, variantions exist, such as those related to the
+Antarctic Peninsula and the southern of South America. The voyages were
+mostly undertaken in the Austral summer months, and only rarely in the winter
+months, due to the poor accesibility of this region during winter. Therefore,
+our results are mostly representative of summer, and to lesser extent spring
+and autumn conditions.
+
+The time period of ICON is relatively short with only four full years of
+simulation available. Moreover, the simulation was free running, which means
+that observations had to be temporally mapped to this time period (at the same
+time relative to the start of the year) for the comparison. For these reasons,
+one can expect the results to be slightly different due to reasons unrelated to
+model biases, such as different weather conditions and the phase of climatic
+oscillations such as the ENSO in the observations and the model.
+
+Ground-based lidar observations are affected by attenuation by thick cloud
+layers, and for this reason the results are mostly representative of BL clouds,
+while higher-level clouds are only occassionaly visible to the lidar when BL
+are not present. Ground-based lidar observations can be regarded as superior to
+satellite lidar observations for low-level clouds in this region, while mid-
+and high-level clouds are better represented in satellite observations
+\citep{mcerlich2021}.
+
+We attempted to remove lidar profiles with precipitation, which could not be
+properly simulated with the lidar simulator (Section \ref{sec:ann}). However,
+the approach was limited by relatively low sensitivity of the ANN (65\%), and
+the fact that we had to choose a fixed threshold for surface precipitation flux
+in the model and renalyses, which might not exactly correspond to detection by
+the ANN applied to obseravations. Also, we did not make an attempt to remove
+profiles with precipitation not reaching the surface. The above reasons can
+result in artificial bias in the comparison, even though we exect this to be
+much smaller than the identified model biases.
+
 \section{Discussion and conclusions}
 
 We analysed a total of about 2421 days of lidar and radiosonde data from 31
@@ -955,6 +993,27 @@ findings of large boundary layer cloud biases in models, and their subsequent
 effect on the radiative transfer. This also applies to the new ICON GSRM,
 but the biases are lower than in the reanalyses, despite the reanalyses having
 the advantage of assimilation of the observed meteorological conditions.
+The GSRM has, on the other hand, the advange of a much higher spatial
+resolution and, to some extent, explicit calculation of traditionally
+subgrid-scale processes such as convection.
+
+The relationship between cloud biases and radiation has a number of notable
+features. Perhaps unsurprisingly, The reanalyses exhibit the too few,
+too bright type of bias previously identified in models. In our results,
+this is characterised by outgoing SW radiation similar to or higher
+than in satellite observations, while at the same time total cloud fraction
+is substantially underestimated relative to the ground-based lidar observation.
+This feature seems to be much more pronounced in ERA5 than in MERRA-2. On
+the other hand, this type of relationship is not present in ICON. This model
+mostly predicts smaller outgoing SW radiation and smaller total cloud fraction
+than observations, and the deficit of outgoing SW radiation is approximately
+proportial to the deficit of the total cloud fraction. While this might be a
+welcome feature and an improvement over previous models, it does mean that the
+outgoing SW radiation is overall underestimated, instead of being compensated
+by a higher cloud albedo. This can, of course, lead to undesirable secondary
+effects such as overestimated solar heating of the sea surface, but a
+combination of many factors have been found to be responsible for SO SST biases
+in climate models \citep{zhang2023,luo2023}.
 
 We show that the model underestimates the total cloud fraction by about 10\%,
 with an overestimation of clouds below 2 km, and an underestimation of clouds
@@ -1024,16 +1083,18 @@ The RV \emph{Polarstern} data are openly available from Pangaea
 (\url{https://pangaea.de}). The MARCUS and Macquarie Island (MICRE) data are
 openly available from the Atmospheric Radiation Measurement (ARM)
 (\url{https://www.arm.gov}). The MERRA-2 data are openly available from the
-NASA NASA Goddard Earth Sciences (GES) Data and Information Services Center
+NASA Goddard Earth Sciences (GES) Data and Information Services Center
 (DISC) (\url{https://disc.gsfc.nasa.gov/datasets?project=MERRA-2}).  The ERA5
 data are openly available from the Copernicus Climate Data Store (CDS)
-(\url{https://cds.climate.copernicus.eu}). The CERES products are available
-from the project website (\url{https://ceres.larc.nasa.gov}) and the NASA
-Atmospheric Science Data Centre
-(\url{https://asdc.larc.nasa.gov/project/CERES}).  The other voyage and station
-data are openly available on Zenodo (). Subsetted model and reanalysis data for
-the voyage tracks and the station and data processed with the ALCF are openly
-available on Zenodo ().
+(\url{https://cds.climate.copernicus.eu}). The ICON data are available on the
+Levante cluster of the Deutsches Klimarechenzentrum (DKRZ;
+\url{https://www.dkrz.de/en/systems/hpc/hlre-4-levante}) after registration at
+\url{https://luv.dkrz.de/register/}. The CERES products are available from the
+project website (\url{https://ceres.larc.nasa.gov}) and the NASA Atmospheric
+Science Data Centre (\url{https://asdc.larc.nasa.gov/project/CERES}). The other
+voyage and station data are openly available on Zenodo (). Subsetted model and
+reanalysis data for the voyage tracks and the station and data processed with
+the ALCF are openly available on Zenodo ().
 
 \footnotesize
 \setlength{\bibsep}{0.0pt}
