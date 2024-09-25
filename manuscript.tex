@@ -308,7 +308,7 @@ vessel (RSV) \emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B.
 Palmer}, Her Majesty's New Zealand Ship (HMNZS) \emph{Wellington} and one
 sub-Antarctic station (Macquarie Island) in the SO south of 40°S between 2010
 and 2021. Fig. \ref{fig:map} shows a map of the voyages, Table
-\ref{tab:voyages} list the voyages and stations, and Table
+\ref{tab:voyages} list the voyages, campaigns and stations, and Table
 \ref{tab:voyage-references} lists references where available. Altogether, the
 voyages and station dataset comprised 2421 days of data south of 40°S, but the
 availability of ceilometer data was slightly smaller due to gaps in
@@ -330,22 +330,23 @@ information such as a cloud mask and cloud occurrence by height.
 
 Apart from lidar observations, radiosondes were launched on weather balloons at
 regular synoptic times on the RV \emph{Polarstern}, MARCUS, NBP17024, TAN1702,
-and TAN1802 voyages, measuring pressure, temperature, relative humidity, and
-global navigation satellite system coordinates. Derived thermodynamic (virtual
-potential temperature, lifting condensation level, etc.) and dynamic physical
-quantities (wind speed and direction) for the measured vertical profiles were
-calculated with rstool \citep{rstool}. Surface meteorological quantities were
-measured continuously by an onboard automatic weather station or individual
-instruments.
+and TAN1802 voyages and campaigns, measuring pressure, temperature, relative
+humidity, and global navigation satellite system coordinates. Derived
+thermodynamic (virtual potential temperature, lifting condensation level, etc.)
+and dynamic physical quantities (wind speed and direction) for the measured
+vertical profiles were calculated with rstool \citep{rstool}. Surface
+meteorological quantities were measured continuously by an onboard automatic
+weather station or individual instruments.
 
 \begin{table}[p!]
 % TODO: Add sampling intervals.
 \caption{
-List of voyages and stations. Start, end, and days (UTC; inclusive)
-indicate the time period when the vessel was south of 40°S. Abbreviations:
-ceilometer (ceil.), Australia (AU), New Zealand (NZ), South America (SA),
-Atlantic Ocean (AO) and Africa (AF). The number of days is rounded to the
-nearest integer. CL51/31 indicates CL51 configured to emulate CL31.
+An overview of the analysed voyages, campaigns and stations. Start, end, and days
+(UTC; inclusive) indicate the time period when the vessel was south of 40°S.
+Abbreviations: ceilometer (ceil.), Australia (AU), New Zealand (NZ), South
+America (SA), Atlantic Ocean (AO) and Africa (AF). The number of days is
+rounded to the nearest integer. CL51/31 indicates CL51 configured to emulate
+CL31.
 }
 \label{tab:voyages}
 \small
@@ -391,7 +392,7 @@ TAN1802  & RV \emph{Tangaroa}            & CHM 15k & NZ       & 2018-02-07 & 201
 \end{table}
 
 \begin{table}[t!]
-\caption{List of voyage and station references.}
+\caption{Voyage, campaign and station publication references.}
 \label{tab:voyage-references}
 \small
 \begin{tabular}{lp{14.5cm}}
@@ -436,7 +437,7 @@ operating at a near-infrared wavelength of 910 nm. The maximum range is 15.4 km
 (CL51), 7.7 km (CL31 with 5 m vertical resolution), and 7.550 km (CL31 with 10
 m vertical resolution). The vertical resolution is 10 m (5 m configurable), and
 the sampling (temporal) resolution is 6 s (AA15‐16, MARCUS, and MICRE), 36 s (RV
-\emph{Polarstern}), and about 2.37 s (TAN1502). From the MARCUS voyage, unlike raw
+\emph{Polarstern}), and about 2.37 s (TAN1502). From the MARCUS campaign, unlike raw
 instrument data available for the other voyages and stations, the Vaisala CL31
 data were made available by the Atmospheric Radiation Measurement (ARM)
 processed to a maximum range of 7.545 km, a vertical resolution of 30 m, and
