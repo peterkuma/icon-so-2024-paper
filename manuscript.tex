@@ -447,6 +447,7 @@ calculated, a cloud mask, cloud occurrence by height, and the total cloud
 fraction are determined. The ALCF has already been used by several research
 teams for model and reanalysis evaluation
 \citep{kuma2020,kremser2021,guyot2022,pei2023,whitehead2023,mcdonald2024}.
+
 Absolute calibration of the observed backscatter was performed by comparing the
 measured clear-sky molecular backscatter statistically with simulated clear-sky
 molecular backscatter. AVBC is resampled to 5 min temporal resolution and 50 m
@@ -462,35 +463,37 @@ instrument on the PS81/3 voyage.
 \subsection{ICON}
 
 A coupled (atmosphere--ocean) GSRM version of the ICON model is in development
-by the nextGEMS project \citep{hohenegger2023}. nextGEMS has so far produced
-four cycles of model runs. In our research, we used a Cycle 3 run
-\emph{ngc3028} produced in 2023 \citep{nextgems2023a,nextgems2023b}. We could
-not use Cycle 4 due to the unavailability of the necessary variables. The
-horizontal resolution of ngc3028 is about 5 km.  Unlike current general
-circulation models (GCMs), the strom-resolving version of ICON does not use
-convective and cloud parameterisation but relies on explicit simulation of
+by the nextGEMS project \citep{hohenegger2023}. ICON is a very versatile model,
+allowing for simulations ranging from coarse-resolution ESM simulations, GSRM
+simulations, limited area model (LAM) simulations, to large eddy simulations
+(LES), for both weather prediction and climate projections. ICON uses the
+atmospheric component ICON-A \citep{giorgetta2018}, whose physics is derived
+from ECHAM6 \citep{stevens2013}, and the ocean component ICON-O
+\citep{korn2022}. Earlier runs of the GSRM ICON from DYAMOND were evaluated by
+\cite{mauritsen2022}.
+
+Here, we use a free running (i.e. \emph{not} nudged or using prescribed SST)
+coupled GSRM simulation made for the purpse of climate projection.  nextGEMS
+has so far produced four cycles of model runs. We used a Cycle 3 run
+\emph{ngc3028} produced in 2023 \citep{nextgems2023a,nextgems2023b} for a model
+time period of 20 January 2020 to 22 July 2025, of which we analysed the full
+years 2021--2024 (inclusive). While a Cycle 4 run was available, we could not
+use due it to the unavailability of the necessary variables. The horizontal
+resolution of ngc3028 is about 5 km.  The model output is available on 90
+vertical levels and 3-hourly instantaneous temporal resolution.  Unlike current
+general circulation models (GCMs), the strom-resolving version of ICON does not
+use convective and cloud parameterisation but relies on explicit simulation of
 convection and clouds on the model grid. While this makes the code development
 simpler without having to rely on uncertain parameterisations, it can miss
 smaller-scale clouds below the grid resolution.  Turbulence and cloud
-microphysics are still parameterised in this model. In our analysis, we used
-four years of coupled simulation output between years 2021 and 2024
-(inclusive). Because the model is free-running, weather and climate
-oscillations (such as the El Niño--Southern Oscillation) are not expected to be
-equivalent to reality at the same time and place. To compare with observations
-taken during different years (2010--2021, inclusive), we compared the model
-output with observations at the same time of year and geographical location.
+microphysics are still parameterised in this model.
 
-ICON is a very versatile model, allowing for simulations ranging from
-coarse-resolution ESM simulations, GSRM simulations, limited area model (LAM)
-simulations, to large eddy simulations (LES), for both weather prediction and
-climate projections.
-
-ICON uses the atmospheric component ICON-A \citep{giorgetta2018}, whose physics
-is derived from ECHAM6 \citep{stevens2013}, and the ocean component ICON-O
-\citep{korn2022}.
-
-Earlier runs of the GSRM ICON from DYAMOND were evaluated by
-\cite{mauritsen2022}.
+Because the model is free-running, weather and climate oscillations (such as
+the El Niño--Southern Oscillation) are not expected to be equivalent to reality
+at the same time and place. To compare with the observations collected on
+different years (2010--2021, inclusive), we compared the model output with
+observations at the same time of year and geographical location, as determined
+for each data point such as a lidar profile or a radiosonde launch.
 
 \subsection{MERRA-2}
 
@@ -499,14 +502,13 @@ The Modern-Era Retrospective analysis for Research and Applications, Version 2
 Office at the NASA Goddard Space Flight Center \citep{gelaro2017}.  It uses
 version 5.12.4 of the Goddard Earth Observing System (GEOS) atmospheric model
 \citep{rienecker2008,molod2015}. The reanalysis output analysed here is
-available at a spatial resolution of 0.5° in latitude and 0.625° in longitude,
+available at a spatial resolution of 0.5° of latitude and 0.625° of longitude,
 which is about 56 km in the North--South direction and 35 km in the East--West
-direction at 60°S. The number of vertical model levels is 72, which we
-interpolate to height levels as needed. In our analysis we use the following
-products: 1-hourly instantaneous 2D single-level diagnostics (M2I1NXASM) for
-2-m temperature and humidity; 3-hourly instantaneous 3D assimilated
-meteorological fields (M2I3NVASM) for cloud quantities, pressure, and
-temperature; 1-hourly average 2D surface flux diagnostics (M2T1NXFLX) for
+direction at 60°S. The number of vertical model levels is 72. Here, we use the
+following products: 1-hourly instantaneous 2D single-level diagnostics
+(M2I1NXASM) for 2-m temperature and humidity; 3-hourly instantaneous 3D
+assimilated meteorological fields (M2I3NVASM) for cloud quantities, pressure,
+and temperature; 1-hourly average 2D surface flux diagnostics (M2T1NXFLX) for
 precipitation and sea ice; and 1-hourly average 2D radiation diagnostics
 (M2T1NXRAD) for radiation quantities \citep{merra2}.
 
@@ -517,11 +519,10 @@ Medium-Range Weather Forecasts (ECMWF). It is based on a numerical weather
 prediction (NWP) model Integrated Forecast System (IFS) version CY41R2.  The
 horizontal resolution is 0.25° in latitude and longitude, which is about 28 km
 in the North--South direction and 14 km in the East--West direction at 60°S.
-Internally, the model uses 137 vertical levels. In our analysis we use output
-at one hourly instantaeous time intervals, except for radiation quantities,
-which are accumulations (from these we calculate daily means).
-Vertically-resolved quantities are made available on 37 pressure levels. We
-interpolate these quantities to height levels as needed.
+Internally, the model uses 137 vertical levels. Here, we use output at 1-hourly
+instantaeous time intervals, except for radiation quantities, which are
+accumulations (from these we calculate daily means).  Vertically-resolved
+quantities are made available on 37 pressure levels.
 
 \subsection{CERES}
 
@@ -533,37 +534,17 @@ clouds 1 degree daily edition 4A product
 (CER\_SYN1deg-Day\_Terra-Aqua-MODIS\_Edition4A)
 \citep{doelling2013,doelling2016}.
 
-\subsection{Cyclone tracking}
-
-We partitioned our data into two subsets by cyclonic activity. For this
-purpose, we used a cyclone tracking algorithm to identify extratropical and
-polar cyclones (ECs and PCs) over the SO in the reanalysis and ICON data. We
-used the open source cyclone tracking package CyTRACK
-\citep{perez-alarcon2024}.  Generally, what constitutes an EC is considered
-relatively arbitrary due to the very large variability of ECs \citep{neu2013}.
-We used the mean sea level pressure field and horizontal wind speed fields as
-input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
-thresholds as well as tracking across time steps to identify cyclone centres
-and radii. From this information, we could classify geographical areas as
-either cyclonic or non-cyclonic. Due to a relatively small total area covered,
-we chose a circle of a double radius (relative to one identified by CyTRACK)
-centred at the cyclone centre as a cyclonic area for every time step and
-cyclone. All other areas were identified as non-cyclonic. For identifying
-cyclones in the observations and the reanalyses, ERA5 pressure and wind fields
-were used as the input to CyTRACK.  This is justified by the fact that the
-large-scale pressure and wind fields in ERA5 are likely sufficiently close to
-reality. For identifying cyclones in ICON, its own pressure and wind fields
-were used as the input to CyTRACK, because the model is free-running, and thus
-the pressure and wind fields are different from reality.
-
-\subsection{Cloud occurrence by stability}
-
-We partitioned our data into two subsets by stability. We determined this by
-calculating lower tropospheric stability (LTS) as the difference between the
-potential temperature at 700 hPa and the surface.  Based on a histogram of LTS
-in ERA5 and MERRA-2 calculated at all voyage tracks and stations (Fig.
-\ref{fig:lts}), we determined a dividing threshold of 12 K for relatively
-unstable (< 12 K) and relatively stable (>= 12 K) conditions.
+Radiation calculations presented in the results (Section \ref{sec:results})
+were done in such a way that they always represent averages of daily means.
+This is done in order to be consistent with the CERES SYN1deg data, which are
+available as daily means. Therefore, every instantaneous profile in the
+simulated lidar data is assigned a daily mean radiation value corresponding to
+the day (in the Coordinated Universal Time; UTC). In turn, the average
+radiation during the entire voyage or station observation period is calculated
+as the average of the profile values. In the observed lidar data, the daily
+mean radiation value is taken from the spatially and temporally co-located
+CERES SYN1deg data of the day (in UTC). The voyage or station average is
+calculated in the same way.
 
 \subsection{Precipitation identification using machine learning}
 \label{sec:ann}
@@ -612,18 +593,35 @@ satisfactory for the purpose of filtering precipitation profiles. Fig.
 \ref{fig:ann}d shows examples of the predicted precipitation compared to
 human-performed observations.
 
-\subsection{Data processing}
+\subsection{Partitioning by cyclonic activity and stability}
 
-The radiation calculations were done in such a way that they always represent
-averages of daily means. This is done in order to be consistent with the CERES
-SYN1deg data, which are expressed as daily means. Therefore, for every
-instantaneous profile in the simulated lidar data is assigned a daily mean
-radiation value corresponding to the day (in the Coordinated Universal Time;
-UTC). In turn, the average radiation during the entire voyage or station
-measurement is calculated as the average of the profile values. In the observed
-lidar data, the daily mean radiation value is taken from the spatially and
-temporally co-located CERES SYN1deg data for the day (in UTC). The voyage or
-station measurement average is calculated in the same way.
+We partitioned our data into two subsets by cyclonic activity. For this
+purpose, we used a cyclone tracking algorithm to identify extratropical and
+polar cyclones (ECs and PCs) over the SO in the reanalysis and ICON data. We
+used the open source cyclone tracking package CyTRACK
+\citep{perez-alarcon2024}.  Generally, what constitutes an EC is considered
+relatively arbitrary due to the very large variability of ECs \citep{neu2013}.
+We used the mean sea level pressure field and horizontal wind speed fields as
+input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
+thresholds as well as tracking across time steps to identify cyclone centres
+and radii. From this information, we could classify geographical areas as
+either cyclonic or non-cyclonic. Due to a relatively small total area covered,
+we chose a circle of a double radius (relative to one identified by CyTRACK)
+centred at the cyclone centre as a cyclonic area for every time step and
+cyclone. All other areas were identified as non-cyclonic. For identifying
+cyclones in the observations and the reanalyses, ERA5 pressure and wind fields
+were used as the input to CyTRACK.  This is justified by the fact that the
+large-scale pressure and wind fields in ERA5 are likely sufficiently close to
+reality. For identifying cyclones in ICON, its own pressure and wind fields
+were used as the input to CyTRACK, because the model is free-running, and thus
+the pressure and wind fields are different from reality.
+
+In addition to the above, we partitioned our data into two subsets by
+stability. We determined this by calculating lower tropospheric stability (LTS)
+as the difference between the potential temperature at 700 hPa and the surface.
+Based on a histogram of LTS in ERA5 and MERRA-2 calculated at all voyage tracks
+and stations (Fig.  \ref{fig:lts}), we determined a dividing threshold of 12 K
+for relatively unstable (< 12 K) and relatively stable (>= 12 K) conditions.
 
 \section{Results}
 \label{sec:results}
