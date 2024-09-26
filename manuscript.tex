@@ -50,7 +50,15 @@
 \usepackage{lineno}
 \linenumbers
 \setsansfont{Source Sans Pro}
-\setmainfont{Crimson Text}
+%\setmainfont{Crimson Text}
+\setmainfont{CrimsonText}[
+	Path=./fonts/,
+	Extension=.ttf,
+	UprightFont=*-Regular,
+	BoldFont=*-Bold,
+	ItalicFont=*-Italic,
+	BoldItalicFont=*-BoldItalic
+]
 \setmonofont[Scale=0.8]{Space Mono}
 \hypersetup{
 	colorlinks=true,
