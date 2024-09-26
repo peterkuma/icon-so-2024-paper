@@ -341,7 +341,7 @@ MICRE (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
 February, 21 March 2017; TAN1502 (1 day): 24 January.
 
 The data sources contained ceilometer observations captured by the Vaisala CL51
-and CL31 operating at a wavelenght of 910 nm and the Lufft CHM-15k operating at
+operating at a wavelenght of 910 nm and the Lufft CHM-15k operating at
 1064 nm, described in detail below (Sections \ref{sec:cl51} and
 \ref{sec:chm15k}). A ceilometer is a low-power near-infrared vertically
 pointing lidar with the purpose of measuring the cloud base, but it also
@@ -376,7 +376,7 @@ CL31.
 \hline
 AA15-16  & RSV \emph{Aurora Australis}   & CL51    & AU       & 2015-10-22 & 2016-02-22 & 124 \\
 HMNZSW16 & HMNZS \emph{Wellington}       & CHM 15k & NZ       & 2016-11-23 & 2016-12-19 & 27 \\
-MARCUS   & RSV \emph{Aurora Australis}   & CL31    & AU       & 2017-10-29 & 2018-03-26 & 149 \\
+MARCUS   & RSV \emph{Aurora Australis}   & CL51    & AU       & 2017-10-29 & 2018-03-26 & 149 \\
 MICRE    & Macquarie Is. station         & CL51    & AU/NZ    & 2016-04-03 & 2018-03-14 & 710 \\
 NBP1704  & RV \emph{Nathaniel B. Palmer} & CHM 15k & NZ       & 2017-04-14 & 2017-06-08 & 55 \\
 PS77/2   & RV \emph{Polarstern}          & CL51    & SA/AO/AF & 2010-12-01 & 2011-02-04 & 65 \\
@@ -450,29 +450,29 @@ TAN1802  & \cite{kremser2020,kremser2021} \\
 \end{tabular}
 \end{table}
 
-\subsection{Vaisala CL51 and CL31}
+\subsection{Vaisala CL51}
 \label{sec:cl51}
 
-The Vaisala CL51 (photo in Fig. \ref{fig:map}d) and CL31 are ceilometers
-operating at a near-infrared wavelength of 910 nm. The maximum range is 15.4 km
-(CL51), 7.7 km (CL31 with 5 m vertical resolution), and 7.550 km (CL31 with 10
-m vertical resolution). The vertical resolution is 10 m (5 m configurable), and
-the sampling (temporal) resolution is 6 s (AA15‐16, MARCUS, and MICRE), 36 s (RV
-\emph{Polarstern}), and about 2.37 s (TAN1502). From the MARCUS campaign, unlike raw
-instrument data available for the other voyages and stations, the Vaisala CL31
-data were made available by the Atmospheric Radiation Measurement (ARM)
-processed to a maximum range of 7.545 km, a vertical resolution of 30 m, and
-sampling resolution of 16 s. The wavelength of 910 nm is affected by water
-vapour absorption of about 20\% in the mid-latitudes
-\citep{wiegner2015,wiegner2019}.  The instrument data files containing raw
-uncalibrated backscatter were first converted to NetCDF with cl2nc
-(\url{https://github.com/peterkuma/cl2nc}) and then processed with the ALCF
-(Section \ref{sec:alcf}) to produce absolutely calibrated attenuated volume
-backscattering coefficinet (AVBC), cloud mask, cloud occurrence by height and
-the total cloud fraction. CL51 can also be configured to emulate CL31. The
-Vaisala CL51 and CL31 instruments were used on most of the voyages and stations
-analysed here. Fig. \ref{fig:example}a shows an example of derived from the
-CL51 instrument.
+The Vaisala CL51 (photo in Fig. \ref{fig:map}d) is a ceilometer operating at a
+near-infrared wavelength of 910 nm. CL51 can also be configured to emulate the
+Vaisala CL31. The maximum range is 15.4 km (CL51), 7.7 km (CL31 emulation mode
+with 5 m vertical resolution), and 7.550 km (CL31 emulation mode with 10 m
+vertical resolution). The vertical resolution is 10 m (5 m configurable), and
+the sampling (temporal) resolution is 6 s (AA15‐16, MARCUS, and MICRE), 36 s
+(RV \emph{Polarstern}), and about 2.37 s (TAN1502). From the MARCUS and MICRE
+campaigns, unlike raw instrument data available for the other voyages and
+stations, the Vaisala CL51 data were made available by the Atmospheric
+Radiation Measurement (ARM) processed to a maximum range of 7.545 km, a
+vertical resolution of 30 m, and sampling resolution of 16 s. The wavelength of
+910 nm is affected by water vapour absorption of about 20\% in the
+mid-latitudes \citep{wiegner2015,wiegner2019}.  The instrument data files
+containing raw uncalibrated backscatter were first converted to NetCDF with
+cl2nc (\url{https://github.com/peterkuma/cl2nc}) and then processed with the
+ALCF (Section \ref{sec:alcf}) to produce absolutely calibrated attenuated
+volume backscattering coefficinet (AVBC), cloud mask, cloud occurrence by
+height and the total cloud fraction.  The Vaisala CL51 instruments were used on
+most of the voyages and stations analysed here. Fig. \ref{fig:example}a shows
+an example of derived from the CL51 instrument.
 
 \begin{figure}[b!]
 \centering
@@ -1091,25 +1091,25 @@ stability using lower tropospheric stability and estimated inversion strength.
 \section*{Acknowledgements}
 
 We acknowledge the RV \emph{Polarstern} datasets provided by the Alfred Wegener
-Institute and Pangaea, AA15-16 dataset provided by the
-Australian Antarctic Division (AAD) and University of Canterbury (UC), RV
-\emph{Tangaroa} datasets provided by the National Institute of Water and
-Atmospheric Research and UC, RV \emph{Nathaniel B. Palmer} dataset provided
-by the National Science Foundation, Cooperative Institute for Research in
-Environmental Sciences, University of Colorado and UC, HMNZS \emph{Wellington}
-dataset provided by the Royal New Zealand Navy and UC, the MARCUS dataset was
-provided by the Atmospheric Radiation Measurement (ARM). The MICRE dataset was
-provided by ARM, the Australian Bureau of Meteorology, AAD and UC.  We thank
-the scientific staff, the crew, and everyone involved in collecting data on the
-voyages and stations, especially Kelly Schick, Peter Guest, John J.  Cassano,
-Simon Parsons, Graeme Plank, Sally Garrett, Jamie Halla, Sean Hartery, Mike J.
-Harvey (†), Simon P.  Alexander and Alex Schuddeboom. We acknowledge the ICON
-model output provided by the nextGEMS project and the Deutsches
-Klimarechenzentrum (DKRZ), reanalysis dataset ERA5 provided by the Copernicus
-Climate Change Service and MERRA-2 provided by the Global Modeling and
-Assimilation Office. We dedicate this study to the memory of Mike J. Harvey,
-who very substantially contributed to obtaining atmospheric measurments on the
-RV \emph{Tangaroa} voyages used in this study.
+Institute and Pangaea, the AA15-16 dataset provided by the Australian Antarctic
+Division (AAD) and University of Canterbury (UC), RV \emph{Tangaroa} datasets
+provided by the National Institute of Water and Atmospheric Research and UC,
+the NBP1704 dataset provided by the National Science Foundation, Cooperative
+Institute for Research in Environmental Sciences, University of Colorado and
+UC, the HMNZSW16 dataset provided by the Royal New Zealand Navy and UC, the
+MARCUS dataset provided by the Atmospheric Radiation Measurement (ARM), AAD and
+UC, and the MICRE dataset provided by ARM, the Australian Bureau of
+Meteorology, AAD and UC. We thank the scientific staff, the crew, and everyone
+involved in collecting data on the voyages and stations, especially Kelly
+Schick, Peter Guest, John J.  Cassano, Simon Parsons, Graeme Plank, Sally
+Garrett, Jamie Halla, Sean Hartery, Mike J.  Harvey (†), Simon P.  Alexander
+and Alex Schuddeboom. We acknowledge the ICON model output provided by the
+nextGEMS project and the Deutsches Klimarechenzentrum (DKRZ), reanalysis
+dataset ERA5 provided by the Copernicus Climate Change Service and MERRA-2
+provided by the Global Modeling and Assimilation Office. We dedicate this study
+to the memory of Mike J. Harvey, who very substantially contributed to
+obtaining atmospheric measurments on the RV \emph{Tangaroa} voyages used in
+this study.
 
 \section*{Code availability}
 
@@ -1123,7 +1123,7 @@ available at \url{https://github.com/apalarcon/CyTRACK}.
 
 \section*{Data availability}
 
-The RV \emph{Polarstern} datasets are openly available from Pangaea
+The RV \emph{Polarstern} datasets are openly available on Pangaea
 (\url{https://pangaea.de}). The MARCUS and MICRE datasets are openly available
 from ARM (\url{https://www.arm.gov}). The MERRA-2 data are openly available
 from the NASA Goddard Earth Sciences (GES) Data and Information Services Center
@@ -1134,16 +1134,16 @@ Levante cluster of the DKRZ
 (\url{https://www.dkrz.de/en/systems/hpc/hlre-4-levante}) after registration at
 \url{https://luv.dkrz.de/register/}. The CERES products are available from the
 project website (\url{https://ceres.larc.nasa.gov}) and the NASA Atmospheric
-Science Data Centre (\url{https://asdc.larc.nasa.gov/project/CERES}).
-The TAN1802 data ara available on Zenodo
+Science Data Centre (\url{https://asdc.larc.nasa.gov/project/CERES}).  The
+TAN1802 data ara available on Zenodo
 (\url{https://doi.org/10.5281/zenodo.4060237}).  The other voyage and station
-data are openly available on Zenodo (). Subsetted model and reanalysis data for
-the voyage tracks and the station and data processed with the ALCF are openly
-available on Zenodo ().
+data are openly available on Zenodo ([TODO]). Subsetted model and reanalysis data
+for the voyage tracks and the station and data processed with the ALCF are
+openly available on Zenodo ([TODO]).
 
 \section*{Author contributions}
 
-TODO
+[TODO]
 
 %\footnotesize
 \fontsize{11pt}{13pt}\selectfont
