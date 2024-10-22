@@ -91,29 +91,28 @@ $^\mathsf{1}$Department of Meteorology (MISU) and Bolin Centre for Climate Resea
 
 \section*{Abstract}
 
-Global storm-resolving models (GSRMs) are developed as the forthcoming phase of
-climate modelling. Among them is a 5-km Icosahedral Nonhydrostatic Weather and
-Climate Model (ICON). Due to the resolution, parametrisations of convection and
-clouds are avoided. Standard-resolution models have substantial cloud biases
-over the Southern Ocean (SO), affecting radiation and sea surface temperature.
-We quantify how the GSRM ICON simulates clouds over the SO and contrast it with
-the ECMWF Reanalysis 5 (ERA5) and Modern-Era Retrospective analysis for
-Research and Applications, Version 2 (MERRA-2). The SO is dominated by boundary
-layer clouds, which often cannot be observed properly by speceborne instruments
-due to overlapping clouds, attenuation, and ground clutter. Instead, we use
-about 2400 days of ship-based lidar observations from 31 voyages and one
-subantarctic station. We use a ground-based lidar simulator for a like-for-like
-comparison. ICON underestimates the total cloud fraction (TCF) by about 10\%,
-with overestimation of clouds below 2 km and underestimation of clouds above 2
-km. The reanalyses underestimate TCF by about 20\%. ERA5 overestimates clouds
-below 1 km but underestimates near-surface clouds or fog. Compared to
-radiosonde observations, ICON exhibits smaller natural variability, and its
-lifting condensation level is higher, which might explain why cloud occurrence
-peaks higher in the model than in observations. SO cloud biases are still a
-substantial issue in a GSRM, even though an improvement over the
-lower-resolution reanalyses is notable. The transition from parametrisation to
-explicitly resolved convection and cloud processes might not be enough to
-address the model cloud biases.
+Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
+Among them is a 5-km Icosahedral Nonhydrostatic Weather and Climate Model
+(ICON). Due to the resolution, parametrisations of convection and clouds are
+avoided. Standard-resolution models have substantial cloud biases over the
+Southern Ocean (SO), affecting radiation and sea surface temperature.  We
+evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
+dominated by low clouds, which cannot be observed properly from space due to
+overlapping clouds, attenuation, and ground clutter.  Instead, we analysed
+about 2400 days of lidar observations from 31 voyages and a station using a
+ground-based lidar simulator.  ICON and the reanalyses underestimate the total
+cloud fraction by about 10 and 20\%, respectively. ICON and ERA5 overestimate
+the cloud occurrence peak at about 500 m, potentially explained by their
+lifting condensation level being too high.  The reanalyses strongly
+underestimate near-surface clouds or fog.  MERRA-2 tends to underestimate cloud
+occurrence at all heights. Unstable conditions are the most problematic for the
+models. In daily cloud cover, ICON and the reanalyses tend to be about 1 and 2
+oktas clearer, respectively. Compared to radiosondes, potential temperature is
+accurate in all, but ICON is too unstable over low-latitude SO and too
+moist near the surface. MERRA-2 is too humid at all heights. SO cloud biases
+are a substantial issue in the GSRM, but it is an improvement over the
+lower-resolution reanalyses. Explicitly resolved convection and cloud processes
+were not enough to address the model cloud biases.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -999,29 +998,69 @@ expect this to be much smaller than the identified model biases.
 
 \section{Discussion and conclusions}
 
-We analysed a total of about 2400 days of lidar and radiosonde data from 31
-voyages and campaigns and one subantarctic station data, covering the Atlantic,
-Australian, and New Zealand sectors of the SO over the span of 10 years. This
-dataset, together with the use of the ALCF lidar simulator, provided a fairly
-comprehensive basis for evaluating SO cloud and thermodynamic profile biases in
-the GSRM ICON and the ERA5 and MERRA-2 reanalyses. This provides a unique
-evaluation perspective different from satellite observations, one that is more
-suitable for evaluating bounary layer clouds, which are predominant in this
-region. Furthermore, we subsetted our dataset by low and high latitude bands,
-cyclonic activity, and stability in order to identify how these conditions
-relate to the biases. Our main finding corroborates previous findings of large
-boundary layer cloud biases in models and their subsequent effect on the
-radiative transfer. This also applies to the new ICON GSRM, but the biases are
-lower than in the reanalyses, despite the reanalyses having the advantage of
-assimilation of the observed meteorological conditions.  The GSRM has, on the
-other hand, the advantage of a much higher spatial resolution and, to a limited
-extent, explicit calculation of traditionally subgrid-scale processes such as
+We analysed a total of about 2400 days of lidar and 2300 radiosonde
+observations from 31 voyages/campaigns and a subantarctic station, covering the
+Atlantic, Australian, and New Zealand sectors of the SO over the span of 10
+years. This dataset, together with the use of a ground-based lidar simulator,
+provided a fairly comprehensive basis for evaluating SO cloud and thermodynamic
+profile biases in the GSRM ICON and the ERA5 and MERRA-2 reanalyses. Our
+analysis provides a unique evaluation perspective different from satellite
+observations -- one that is more suitable for evaluating bounary layer clouds,
+which are predominant in this region. Furthermore, we subsetted our dataset by
+low and high latitude bands, cyclonic activity, and stability in order to
+identify how these conditions relate to the biases.
+
+Our main finding corroborates previous findings of large boundary layer cloud
+biases in models and their subsequent effect on the radiative transfer. This
+also applies to the new GSRM ICON, but the biases are lower than in the
+reanalyses, despite the reanalyses having the advantage of assimilation of the
+observed meteorological conditions.  The GSRM has, on the other hand, the
+advantage of a much higher spatial resolution and, to a limited extent,
+explicit calculation of traditionally subgrid-scale processes such as
 convection.
+
+We show that relative to ERA5, the distribution and strength of cyclonic
+activity over the SO is well represented in ICON, but it is substantially less
+stable in terms of LTS. The latter is also manifested in the radiosonde profile
+comparison, which shows that the virtual potential temperature profiles in ICON
+are more stable than in the observations over low-latitude SO.
+
+The 31 voyages and a station show fairly similar biases in cloud occurrence by
+height in the lidar comparison, which indicates that common underlying causes
+for the biases exist regardless of longitude and season. ICON underestimates
+the total cloud fraction by about 10\%, with an overestimation of clouds below
+2 km and an underestimation of clouds above 2 km. The reanalyses also
+underestimate the total cloud fraction by about 20\%.  ERA5 overestimates cloud
+below 1 km but underestimates near-surface cloud or fog. ICON strongly
+overestimates the peak of cloud occurrence at about 500 m, which might be
+explained by the radiosonde comparison, which shows that it is too moist at
+around this height.  Similar to our results, \cite{cesana2022} showed that
+CMIP6 models also tend to underestimate cloud occurrence above 2 km over the
+SO, although their analysis in this case was limited to liquid clouds.
+
+Compared to the lidar observations, the daily cloud cover tends to be about 1
+okta lower in ICON and 2 oktas lower in the reanalyses.  Unstable conditions
+are associated with some of the greatest biases, especially in ERA5.  The
+models also underestimate the cloud cover very strongly in cyclonic conditions,
+which are very cloudy in the observations (8 oktas), but much less so in the
+models.
+
+The radiosonde observations indicate that the LCL is too high in ICON and
+reanalyses, which is probably responsible for the higher peak of clouds in the
+models and the lack of near-surface clouds or fog. The radiosonde comparison,
+however, does not seem to explain cloud biases at higher altitudes.  MERRA-2 is
+too moist at all heights.  ICON also exhibits smaller internal variability than
+the radiosonde observations. Overall, the radiosonde comparison is only
+partially explaining the identified cloud biases, and other physical causes are
+likely contributing.  This warrants further investigation, especially of
+ocean--atmosphere fluxes, shallow convection, and boundary layer turbulence.
+The lack of parametrised subgrid-scale convection in ICON might be a
+substantial issue even at the 5-km resolution.
 
 The relationship between cloud biases and radiation has a number of notable
 features. Perhaps unsurprisingly, the reanalyses exhibit the too few, too
 bright bias previously identified in models. In our results, this is
-characterised by outgoing TOA SW radiation similar to or higher than in
+characterised by outgoing TOA SW radiation similar to or higher than in the
 satellite observations, while at the same time total cloud fraction is
 substantially underestimated relative to the ground-based lidar observations.
 This feature seems to be much more pronounced in ERA5 than in MERRA-2. On the
@@ -1035,23 +1074,6 @@ being compensated by a higher cloud albedo. This can, of course, lead to
 undesirable secondary effects such as overestimated solar heating of the sea
 surface, among other factors responsible for SO SST biases in climate models
 \citep{zhang2023,luo2023}.
-
-We show that ICON underestimates the total cloud fraction by about 10\%, with
-an overestimation of clouds below 2 km and an underestimation of clouds above
-2 km. The reanalyses also underestimate the total cloud fraction by about 20\%.
-ERA5 overestimates cloud below 1 km but underestimates near-surface cloud or
-fog. In addition to lidar data, we compare radiosonde profiles acquired on the
-RV \textit{Polarstern} voyages with ICON. Notably, the model exhibits smaller
-natural variability than observations, and its lifting condensation level tends
-to be higher. This might explain why cloud occurrence is peaking higher in the
-model (at 500 m) than in observations (at the surface). Similar to our results,
-\cite{cesana2022} showed that CMIP6 also tends to underestimate cloud
-occurrence above 2 km over the SO, although their analysis in this case was
-limited to liquid clouds.  We compared radiosonde profiles acquired on the RV
-\emph{Polarstern} voyages with ICON.  The ICON model exhibits smaller internal
-variability than observations, and its LCL level tends to be higher, which
-might explain why a peak of cloud occurrence in observations is located at the
-surface, while in ICON it is located higher, corresponding to the LCL.
 
 The results imply that SO cloud biases are still a substantial issue in the
 km-scale resolution ICON model, even though an improvement over the
@@ -1069,7 +1091,7 @@ more common efforts in SO cloud microphysics and precipitation evaluation.
 \section*{Acknowledgements}
 
 PK and FB received funding from the European Union’s Horizon 2020 research and
-innovation program under a grant agreement no. 101003470, and supercomputing
+innovation program under a grant agreement no. 101003470. Supercomputing
 resources were provided by the DKRZ (project 1125 ICON-development) and the
 National Academic Infrastructure for Supercomputing in Sweden (allocation
 2023/22-202).  We acknowledge the RV \emph{Polarstern} datasets provided by the
