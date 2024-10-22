@@ -1,3 +1,5 @@
+% Related publications:
+%
 % Takasuka et al. (2024), A protocol and analysis of year-long simulations of global storm-resolving models and beyond
 % Knight et al. (2024), Cloud properties and boundary layer stability above Southern Ocean sea ice and coastal Antarctica
 % Zheng et al. (2024), Using Satellite and ARM Observations to Evaluate Cold Air Outbreak Cloud Transitions in E3SM Global Storm-Resolving Simulations
@@ -52,16 +54,6 @@
 \linenumbers
 \setsansfont{Source Sans Pro}
 \setmainfont{EB Garamond}
-%\setmainfont{Crimson Text}
-%\setmainfont{CrimsonText}[
-%	Path=./fonts/,
-%	Extension=.ttf,
-%	UprightFont=*-Regular,
-%	BoldFont=*-Bold,
-%	ItalicFont=*-Italic,
-%	BoldItalicFont=*-BoldItalic
-%]
-%\setmonofont[Scale=0.8]{Space Mono}
 \setmonofont[Scale=0.8]{SpaceMono}[
 	Path=./fonts/,
 	Extension=.ttf,
@@ -81,7 +73,6 @@
 \titleformat*{\subsection}{\normalsize\bfseries\sffamily}
 \titlespacing*{\section}{0pt}{14pt}{6pt}
 \titlespacing*{\subsection}{0pt}{13pt}{4pt}
-%\renewcommand{\bibsection}{\section*{Publications}}
 \parskip=6pt
 \parindent=0pt
 
@@ -589,7 +580,7 @@ quantities are made available on 37 pressure levels.
 
 TOA radiation quantities are taken from the Clouds and the Earth’s Radiant
 Energy System (CERES) instruments on board of the Terra and Aqua satellites
-\citep{wielicki1996,loeb2018}. In our analysis we use the adjusted all sky SW
+\citep{wielicki1996,loeb2018}. In our analysis we used the adjusted all sky SW
 and LW upwelling fluxes at TOA from the synoptic TOA and surface fluxes and
 clouds 1 degree daily edition 4A product
 (CER\_SYN1deg-Day\_Terra-Aqua-MODIS\_Edition4A)
@@ -597,15 +588,15 @@ clouds 1 degree daily edition 4A product
 
 Radiation calculations presented in the results (Section \ref{sec:results})
 were done in such a way that they always represent averages of daily means.
-This is done in order to be consistent with the CERES SYN1deg data, which are
+This was done in order to be consistent with the CERES SYN1deg data, which are
 available as daily means. Therefore, every instantaneous profile in the
-simulated lidar data is assigned a daily mean radiation value corresponding to
+simulated lidar data was assigned a daily mean radiation value corresponding to
 the day (in the Coordinated Universal Time; UTC). In turn, the average
-radiation during the entire voyage or station observation period is calculated
-as the average of the profile values. In the observed lidar data, the daily
-mean radiation value is taken from the spatially and temporally co-located
-CERES SYN1deg data of the day (in UTC). The voyage or station average is
-calculated in the same way.
+radiation during the entire voyage or station observation period were
+calculated as the average of the profile values. In the observed lidar data,
+the daily mean radiation value was taken from the spatially and temporally
+co-located CERES SYN1deg data of the day (in UTC). The voyage or station
+average was calculated in the same way.
 
 \begin{figure}[b!]
 \centering
@@ -630,7 +621,7 @@ a pseudo-random number generator to prevent authors' bias in the selection.
 \label{sec:ann}
 
 Precipitation can cause strong enough lidar backscattering to be recognised as
-a cloud by the threshold-based cloud detection method used in the ALCF. This is
+clouds by the threshold-based cloud detection method used in the ALCF. This is
 undesirable if equivalent precipitation backscatter is not included in the
 simulated lidar profiles. It was not possible to include precipitation
 simulation in the ALCF due to the absence of required fields in the ICON model
@@ -748,13 +739,13 @@ it is relatively zonally symmetric at all latitudes.  While both reanalysis and
 the model agree relatively well, differences in the strength of the local
 extremes of occurrence are notable, especially over the Amundsen Sea, which is
 more cyclonic in the reanalysis, and around Cape Adere, which is more cyclonic
-in ICON. There differences might, however, stem from the relatively short time
-periods of comparison (4 year) and the fact that the model is free running.
+in ICON. These differences might, however, stem from the relatively short time
+periods of comparison (4 year) and the fact that the model is free-running.
 
 Fig. \ref{fig:cyclone-stability}b shows a geographical distribution of the
 relatively stable and unstable conditions as determined by the LTS (Section
 \ref{sec:cyclone-stability}).  The relatively unstable conditions are prevalent
-in the mid SO (50--65°S), which might be explained by the relatively cold
+in the middle SO (50--65°S), which might be explained by the relatively cold
 near-surface air overlying relatively warm sea surface. The relatively stable
 conditions are prevalent elsewhere over the SO. The distribution is also less
 zonally symmetric than the cyclonic activity.  In the high-latitude SO, the
@@ -777,21 +768,22 @@ indicate the total cloud fraction and the number of days of data.}
 \label{sec:cloud-occurrence}
 
 We used the ALCF to derive cloud occurrence by height and the total cloud
-fraction from observations, ICON, and the two reanalyses, ERA5 and MERRA-2
-(Fig.  \ref{fig:cloud-occurrence-panel}). We aggregated the data sources
-(voyages, campaigns and stations) by calculating the averages and percentiles
-of all individual profiles (Fig.  \ref{fig:cloud-occurrence}). The analysis
+fraction from observations, ICON, ERA5 and MERRA-2 (Fig.
+\ref{fig:cloud-occurrence-panel}). In addition, we aggregated the data sources
+(voyages and stations) by calculating the averages and percentiles of all
+individual profiles, presented in Fig. \ref{fig:cloud-occurrence}. The analysis
 shows that the total cloud fraction (determined as the fraction of profiles
 with clouds at any height in the lidar cloud mask) is underestimated in ICON
-and reanalyses by about 10\% and 20\%, respectively. In particular, ICON
-overestimates cloud occurrence below 1 km and underestimates it above, MERRA-2
-underestimates cloud occurrence at all heights, especially near the surface,
-and ERA5 simulates cloud occurrence relatively well above 1 km, but strongly
-underestimates it near the surface.  We note that fog or near-surface clouds
-are strongly lacking in the reanalyses.  As shown in Fig.
+and the reanalyses by about 10\% and 20\%, respectively. When analysed by
+height, ICON overestimates cloud occurrence below 1 km and underestimates it
+above, MERRA-2 underestimates cloud occurrence at all heights, especially near
+the surface, and ERA5 simulates cloud occurrence relatively well above 1 km,
+but strongly underestimates it near the surface.  We note that fog or
+near-surface clouds are strongly lacking in the reanalyses (fog and clouds are
+both included in the cloud occurrence).  As shown in Fig.
 \ref{fig:cloud-occurrence-panel}, the biases are relatively consistent across
-the data sources and longitudes. The ICON results are overall better matching
-the observations than the reanalyses.
+the data sources and longitudes. We conclude that the ICON results are overall
+better matching the observations than the reanalyses in this metric.
 
 In the general case (Fig. \ref{fig:cloud-occurrence}a), the observations show
 cloud occurrence peaking at the surface, whereas models show a higher peak (at
@@ -800,8 +792,9 @@ show a strong drop in cloud occurrence near the surface, but this is not
 supported by the observations. ICON and ERA5 overestimate cloud occurrence at
 the peak (between 0--1 km). Above 1 km, ICON and MERRA-2 understimate cloud
 occurrence, but ERA5 is very accurate. The too high peak in models is partly
-supported by the LCL distribution, which peaks higher in the models than in the
-observations (at the surface), although this is not very pronounced.
+supported by the lifting condensation level (LCL) distribution, which peaks
+higher in the models than in the observations (at the surface), although this
+is not very pronounced.
 
 When subsetted by low- and high-latitude zones (Fig.
 \ref{fig:cloud-occurrence}b, c), we see that the low-latitude SO zone shows
@@ -839,8 +832,8 @@ ICON can be generally characterised as substantially overestimating cloud
 occurrence below 1 km and underestimating above, underestimating the total
 cloud fraction, and showing greatest biases in the relatively unstable and
 non-cyclonic condititions. It also shows a peak of cloud occurrence at higher
-altitude than obs (500 m vs. near the surface), and correspondingly, its LCL
-tends to be also higher. MERRA-2 can be generally characterised as
+altitude than observations (500 m vs. near the surface), and correspondingly,
+its LCL tends to be also higher. MERRA-2 can be generally characterised as
 underestimating cloud occurrence at nearly all altitudes as well as the total
 cloud fraction, but mostly above and below 500 m (the peak at 500 m is
 well-represented). It struggles the most in the low-latitude SO zone and in the
@@ -868,6 +861,7 @@ calculated from the set of all voyages and stations. The subsets
 \end{figure}
 
 \subsection{Cloud cover}
+\label{sec:cloud-cover}
 
 We analysed the daily cloud cover (total cloud fraction) distribution. This is
 a measure of cloudiness, irrespective of height, calculated over the course of
@@ -878,7 +872,7 @@ the fraction of cloudy profiles in the total number of profiles, expressed in
 oktas (multiples of 1/8).
 
 In Fig.  \ref{fig:cloud-cover} we show the results for the same subsets of data
-as in the previous section. Observations show the greatest representation of
+as in the previous section. Observations have the greatest representation of
 high cloud cover (5--8 oktas), peaking at 7 oktas. This is not represented by
 ICON or the reanalyses.  While ICON is the closest, it tends to be 1 okta
 clearer the observations, peaking at 6 oktas, and highly understimating days
@@ -887,19 +881,19 @@ underestimating cloud cover by about 2 oktas, and strongly understimating days
 with 7 and 8 oktas. Of the two reanalyses, MERRA-2 shows slightly higher cloud
 cover and thus is more consistent with observations.
 
-When analysed by subsets, the cyclonic subset shows the highest cloud cover,
-with 8 oktas occurring on one half of such days (Fig. \ref{fig:cloud-cover}d).
-This is not represented by ICON or the reanalyses at all. Interestingly, clear
-sky days (0 oktas) also have a local maximum peaking at about 15\% in this
-subset.  When we contrast the low- and high-latitude zones, we see that the
-high-latitude zone tends to have greater cloud cover, peaking at 8 oktas (Fig.
-\ref{fig:cloud-cover}c). The high-latitude zone also has almost no clear sky or
-small cloud cover cases (0--4 oktas). ICON and the reanalyses represent at
-least this characteristic of the distribution well for 0--3 oktas, but
-otherwise show bises similar to the general case. One of the greatest biases is
-present in ERA5 in the relatively unstable subset, in which ERA5 peaks at 3
-oktas, whereas the observations peak at 7 oktas and show negligible cloud cover
-below 5 oktas.
+When analysed by subsets, observations in the cyclonic subset show the highest
+cloud cover, with 8 oktas occurring on one half of such days (Fig.
+\ref{fig:cloud-cover}d).  This is not represented by ICON or the reanalyses at
+all. Interestingly, clear sky days (0 oktas) also have a local maximum peaking
+at about 15\% in this subset.  When we contrast the low- and high-latitude
+zones, we see that the high-latitude zone tends to have greater cloud cover,
+peaking at 8 oktas (Fig.  \ref{fig:cloud-cover}c). The high-latitude zone also
+has almost no clear sky or small cloud cover cases (0--4 oktas). ICON and the
+reanalyses represent at least this characteristic of the distribution well for
+0--3 oktas, but otherwise show bises similar to the general case. One of the
+greatest biases is present in ERA5 in the relatively unstable subset, in which
+ERA5 peaks at 3 oktas, whereas the observations peak at 7 oktas and show
+negligible cloud cover below 5 oktas.
 
 \begin{figure}[p!]
 \centering
@@ -938,14 +932,12 @@ temporally colocated profiles were taken from ICON and the reanalyses. Because
 the time period of the ICON model output was different from the observations,
 model time was chosen to be the same as the radiosonde launch time relative to
 the start of the year. The profiles were partitioned into the same subsets as
-the lidar observations: all, 40--55°S, 55+°S, cyclonic, non-cyclonic, stable,
-and unstable. The groups 40--55°S and 55+°S, cyclonic and non-cyclonic, and
-stable and unstable were mutually exclusive in pairs. Apart from relative
-humidity, we focus on comparing virtual potential temperature ($\theta_v$) due
-to its role in low-level tropospheric stability, being one of the primary
-factors affecting shallow convection and the associated low-level cloud
-formation and dissipation. The observed and model profiles of virtual potential
-temperature are shown in Fig. \ref{fig:potential-temperature}.
+above (Sections \ref{sec:cloud-occurrence} and \ref{sec:cloud-cover}).  Apart
+from relative humidity, we focus on comparing virtual potential temperature
+($\theta_v$) due to its role in low-level tropospheric stability, being one of
+the primary factors affecting shallow convection and the associated low-level
+cloud formation and dissipation. The observed and model profiles of virtual
+potential temperature are shown in Fig. \ref{fig:potential-temperature}.
 
 Overall, the mean $\theta_v$ is relatively well represented in ICON and
 MERRA-2, being only slightly colder in the mid-to-high troposophere (less
@@ -1076,26 +1068,34 @@ more common efforts in SO cloud microphysics and precipitation evaluation.
 \fontsize{12pt}{14pt}\selectfont
 \section*{Acknowledgements}
 
-We acknowledge the RV \emph{Polarstern} datasets provided by the Alfred Wegener
-Institute and Pangaea, the AA15-16 dataset provided by the Australian Antarctic
-Division (AAD) and University of Canterbury (UC), RV \emph{Tangaroa} datasets
-provided by the National Institute of Water and Atmospheric Research and UC,
-the NBP1704 dataset provided by the National Science Foundation, Cooperative
-Institute for Research in Environmental Sciences, University of Colorado and
-UC, the HMNZSW16 dataset provided by the Royal New Zealand Navy and UC, the
-MARCUS dataset provided by the Atmospheric Radiation Measurement (ARM) and AAD,
-and the MICRE dataset provided by ARM, the Australian Bureau of Meteorology,
-and AAD. We thank the scientific staff, the crew, and everyone involved in
-collecting data on the voyages and stations, especially Kelly Schick, Peter
-Guest, John J.  Cassano, Simon Parsons, Graeme Plank, Sally Garrett, Jamie
-Halla, Sean Hartery, Mike J.  Harvey (†), Simon P.  Alexander and Alex
-Schuddeboom. We acknowledge the ICON model output provided by the nextGEMS
-project and the DKRZ, reanalysis dataset ERA5 provided by the Copernicus
-Climate Change Service and MERRA-2 provided by the Global Modeling and
-Assimilation Office. We acknowledge supercomputing resources provided by the
-DKRZ.  We dedicate this study to the memory of Mike J. Harvey, who very
-substantially contributed to obtaining the atmospheric observations on the RV
-\emph{Tangaroa} voyages used in this study.
+PK and FB received funding from the European Union’s Horizon 2020 research and
+innovation programme under a grant agreement no. 101003470 and supercomputing
+resources were provided by the DKRZ (project 1125 ICON-development) and the
+National Academic Infrastructure for Supercomputing in Sweden (allocation
+2023/22-202).  We acknowledge the RV \emph{Polarstern} datasets provided by the
+Alfred Wegener Institute and Pangaea, the AA15-16 dataset provided by the
+Australian Antarctic Division (AAD) and University of Canterbury (UC), RV
+\emph{Tangaroa} datasets provided by the National Institute of Water and
+Atmospheric Research and UC, the NBP1704 dataset provided by the National
+Science Foundation, Cooperative Institute for Research in Environmental
+Sciences, University of Colorado and UC, the HMNZSW16 dataset provided by the
+Royal New Zealand Navy and UC, the MARCUS dataset provided by the Atmospheric
+Radiation Measurement (ARM) and AAD, and the MICRE dataset provided by ARM, the
+Australian Bureau of Meteorology, and AAD. We thank the scientific staff, the
+crew, and everyone involved in collecting data on the voyages and stations,
+especially Kelly Schick, Peter Guest, John J.  Cassano, Simon Parsons, Graeme
+Plank, Sally Garrett, Jamie Halla, Sean Hartery, Mike J.  Harvey (†), Simon P.
+Alexander and Alex Schuddeboom. We acknowledge the ICON model output provided
+by the nextGEMS project and the DKRZ, reanalysis dataset ERA5 provided by the
+Copernicus Climate Change Service and MERRA-2 provided by the Global Modeling
+and Assimilation Office.  Last but not least, we acknowledge the use of open
+source software Python, Cython \citep{behnel2011}, TensorFlow
+\citep{abadi2016}, Devuan GNU+Linux, parallel \citep{tange2011}, NumPy
+\citep{harris2020}, SciPy \citep{virtanen2020}, Matplotlib \citep{hunter2007},
+cartopy \citep{cartopy}, pyproj, Inkscape, Bash, GNU Fortran, HDF
+\citep{folk1999}, and NetCDF \citep{rew1990}.  We dedicate this study to the
+memory of Mike J.  Harvey, who very substantially contributed to obtaining the
+atmospheric observations on the RV \emph{Tangaroa} voyages used in this study.
 
 \section*{Code availability}
 
