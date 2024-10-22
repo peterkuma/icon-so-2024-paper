@@ -133,21 +133,20 @@ models, with horizontal grid resolutions of about 2--8 km
 storms, but smaller-scale convective plumes and smaller-scale cloud structure
 remain unresolved. At a 5-km scale, non-hydrostatic processes also become
 important, and for this reason such models are generally non-hydrostatic. The
-terms global cloud-resolving models (GCRMs), or global
-convection-permitting/-resolving models (GCPMs) are also sometimes used
-interchangeably with GSRMs but imply that clouds or convection are resolved
-explicitly, which is not entirely true for GSRMs, as this would require an even
-higher horizontal resolution \citep{satoh2019}.  Representative of these
-efforts is the DYnamics of the Atmospheric general circulation Modeled On
-Non-hydrostatic Domains (DYAMOND) project \citep{stevens2019,dyamond}, which is
-an intercomparison of nine global storm-resolving models (GSRMs) on two 40-day
-time periods in summer (1 August -- 10 September 2016) and winter (20 January -
-1 March 2020). A new one-year GSRM intercomparison is currently proposed by
-\cite{takasuka2024}, with the hope of also evaluating the seasonal cycle and
-large-scale circulation.  An alternative to using a computantionally costly
-GSRM is to train an artificial neural network on GSRM output and use it for
-subgrid-scale clouds, as done with the GSRM ICON by \cite{grundner2022};
-\cite{grundner2023}.
+terms global cloud-resolving models, or global convection-permitting/-resolving
+models are also sometimes used interchangeably with GSRMs but imply that clouds
+or convection are resolved explicitly, which is not entirely true for GSRMs, as
+this would require an even higher horizontal resolution \citep{satoh2019}.
+Representative of these efforts is the DYnamics of the Atmospheric general
+circulation Modeled On Non-hydrostatic Domains (DYAMOND) project
+\citep{stevens2019,dyamond}, which is an intercomparison of nine global
+storm-resolving models (GSRMs) on two 40-day time periods in summer (1 August
+-- 10 September 2016) and winter (20 January - 1 March 2020). A new one-year
+GSRM intercomparison is currently proposed by \cite{takasuka2024}, with the
+hope of also evaluating the seasonal cycle and large-scale circulation.  An
+alternative to using a computantionally costly GSRM is to train an artificial
+neural network on GSRM output and use it for subgrid-scale clouds, as done with
+the GSRM ICON by \cite{grundner2022}; \cite{grundner2023}.
 
 nextGEMS is a European Union--funded project \citep{nextgems} focused on the research and
 development of GSRMs at multiple modelling centres and universities in Europe.
@@ -234,35 +233,35 @@ voyage cloud and precipitation observations. They found the ICON cloud optical
 thickness underestimated relative to Himawari‐8 satellite observations, but also
 large differences in cloud top phase.
 
-In general, SST biases in the SO can originate either in the atmosphere, caused
-by too much shortwave heating of the surface, too little longwave cooling of
-the surface, or in the ocean circulation.  Interactions of both are also
-possible, due to, for example SST affecting clouds and clouds affecting the
-surface radiation.  \cite{zhang2023} have shown that SST biases have improved
-in CMIP6 compared to CMIP5 (relative to ERA5), with SST overall increasing in
-the later CMIP phase. However, over the SO this resulted in an even higher
-positive bias, especially in the Atlantic Ocean (AO) sector of the SO,
-increasing by up to 1°C.  \cite{luo2023} identified that the SO SST bias in an
-ensemble of 18 CMIP6 models originates not from the surface heat and radiation
-fluxes (using reanalyses as a reference), but from a warm bias in the Northern
-Atlantic Deep Water.
+In general, sea surface temperature (SST) biases in the SO can originate either
+in the atmosphere, caused by too much shortwave heating of the surface, too
+little longwave cooling of the surface, or in the ocean circulation.
+Interactions of both are also possible, due to, for example SST affecting
+clouds and clouds affecting the surface radiation.  \cite{zhang2023} have shown
+that SST biases have improved in CMIP6 compared to CMIP5 (relative to ERA5),
+with SST overall increasing in the later CMIP phase. However, over the SO this
+resulted in an even higher positive bias, especially in the Atlantic Ocean (AO)
+sector of the SO, increasing by up to 1°C.  \cite{luo2023} identified that the
+SO SST bias in an ensemble of 18 CMIP6 models originates not from the surface
+heat and radiation fluxes (using reanalyses as a reference), but from a warm
+bias in the Northern Atlantic Deep Water.
 
 The main aim of this study is to evaluate the GSRM version of ICON, developed
-jointly by nextGEMS, Deutscher Wetterdienst (DWD), Max-Planck-Institute for
-Meteorology (MPI-M), Deutsches Klimarechenzentrum (DKRZ), Karlsruhe Institute
-of Technology (KIT), and the Center for Climate Systems Modeling (C2SM).
-Previous studies have identified substantial large-scale biases in climate
-model clouds over the SO, affecting sea surface temperature and the Earth’s
-albedo. Our aim is to quantify how well the GSRM ICON is simulating clouds in
-this region, particularly in light of the fact that subgrid-scale clouds and
-convection are not parameterised in this model. This region is mostly dominated
-by boundary layer clouds generated by shallow convection, and these are
-problematic to observe by spaceborne lidars and radars, which are affected by
-attenuation by overlapping and thick clouds and ground clutter, respectively.
-Specifically, the radar on CloudSat and lidar on CALIPSO (neither of them
-operational any more) are affected by the abovementioned issues, resulting in a
-strong underestimation of cloud occurrence below 2 km relative to ground-based
-lidar observations \citep{mcerlich2021}.  This, in turn, can lead to systematic
+jointly by nextGEMS, Deutscher Wetterdienst, Max-Planck-Institute for
+Meteorology, Deutsches Klimarechenzentrum (DKRZ), Karlsruhe Institute of
+Technology, and the Center for Climate Systems Modeling.  Previous studies have
+identified substantial large-scale biases in climate model clouds over the SO,
+affecting sea surface temperature and the Earth’s albedo. Our aim is to
+quantify how well the GSRM ICON is simulating clouds in this region,
+particularly in light of the fact that subgrid-scale clouds and convection are
+not parameterised in this model. This region is mostly dominated by boundary
+layer clouds generated by shallow convection, and these are problematic to
+observe by spaceborne lidars and radars, which are affected by attenuation by
+overlapping and thick clouds and ground clutter, respectively.  Specifically,
+the radar on CloudSat and lidar on CALIPSO (neither of them operational any
+more) are affected by the abovementioned issues, resulting in a strong
+underestimation of cloud occurrence below 2 km relative to ground-based lidar
+observations \citep{mcerlich2021}.  This, in turn, can lead to systematic
 biases in low clouds in climate models, which are frequently evaluated against
 CloudSat--CALIPSO products. Reanalyses can also suffer from cloud biases, as
 these are usually parametrised in their atmospheric component, and also in
@@ -320,9 +319,11 @@ availability of ceilometer data was slightly smaller due to gaps in
 measurements.
 
 Missing days in the ceilometer data were HMNZSW16 (7 days): 24--27 November, 10
-December, 16--17 December 2016; MARCUS (3 days): 8, 10 November, 10 December;
-MICRE (9 days): 7--8, 29 June, 5, 16 July, 15 August, 17 October 2016, 11
-February, 21 March 2017; TAN1502 (1 day): 24 January.
+December, 16--17 December 2016; Measurements of Aerosols, Radiation, and CloUds
+over the Southern Ocean (MARCUS;  3 days): 8, 10 November, 10 December;
+Macquarie Island Cloud Radiation Experiment (MICRE; 9 days): 7--8, 29 June, 5,
+16 July, 15 August, 17 October 2016, 11 February, 21 March 2017; TAN1502 (1
+day): 24 January.
 
 The data sources contained ceilometer observations captured by the Vaisala CL51
  perating at a wavelenght of 910 nm, Vaisala CT25K operating at 905 nm, and
@@ -449,15 +450,15 @@ CL31 emulation on TAN1502. The wavelength of 910 nm is affected by water vapour
 absorption of about 20\% in the mid-latitudes \citep{wiegner2015,wiegner2019},
 but we do not expect this to be a significant issue as explained in
 \cite{kuma2021}.  The instrument data files containing raw uncalibrated
-backscatter were first converted to NetCDF with cl2nc
-(\url{https://github.com/peterkuma/cl2nc}) and then processed with the ALCF
-(Section \ref{sec:alcf}) to produce absolutely calibrated attenuated volume
-backscattering coefficinet (AVBC), cloud mask, cloud occurrence by height and
-the total cloud fraction. Because the CT25K uses a very similar wavelength to
-CL51, equivalent calculations as for CL51 were done assuming a wavelength of
-910 nm. The Vaisala CL51 and CT25K instruments were used on most of the voyages
-and stations analysed here. Fig.  \ref{fig:example}a shows an example of AVBC
-derived from the CL51 instrument data.
+backscatter were first converted to Network Common Data Form (NetCDF) with
+cl2nc (\url{https://github.com/peterkuma/cl2nc}) and then processed with the
+ALCF (Section \ref{sec:alcf}) to produce absolutely calibrated attenuated
+volume backscattering coefficinet (AVBC), cloud mask, cloud occurrence by
+height and the total cloud fraction. Because the CT25K uses a very similar
+wavelength to CL51, equivalent calculations as for CL51 were done assuming a
+wavelength of 910 nm. The Vaisala CL51 and CT25K instruments were used on most
+of the voyages and stations analysed here. Fig.  \ref{fig:example}a shows an
+example of AVBC derived from the CL51 instrument data.
 
 \begin{figure}[b!]
 \centering
@@ -568,21 +569,20 @@ precipitation; and 1-hourly average 2D radiation diagnostics
 
 ERA5 \citep{era5} is a reanalysis produced by the European Centre for
 Medium-Range Weather Forecasts (ECMWF). It is based on a numerical weather
-prediction (NWP) model Integrated Forecast System (IFS) version CY41R2.  The
-horizontal resolution is 0.25° in latitude and longitude, which is about 28 km
-in the North--South direction and 14 km in the East--West direction at 60°S.
-Internally, the model uses 137 vertical levels. Here, we use output at 1-hourly
-instantaeous time intervals, except for radiation quantities, which are
-accumulations (from these we calculate daily means).  Vertically-resolved
-quantities are made available on 37 pressure levels.
+prediction model IFS version CY41R2.  The horizontal resolution is 0.25° in
+latitude and longitude, which is about 28 km in the North--South direction and
+14 km in the East--West direction at 60°S.  Internally, the model uses 137
+vertical levels. Here, we use output at 1-hourly instantaeous time intervals,
+except for radiation quantities, which are accumulations (from these we
+calculate daily means).  Vertically-resolved quantities are made available on
+37 pressure levels.
 
 \subsection{CERES}
 
-TOA radiation quantities are taken from the Clouds and the Earth’s Radiant
-Energy System (CERES) instruments on board of the Terra and Aqua satellites
-\citep{wielicki1996,loeb2018}. In our analysis we used the adjusted all sky SW
-and LW upwelling fluxes at TOA from the synoptic TOA and surface fluxes and
-clouds 1 degree daily edition 4A product
+TOA radiation quantities are taken from the CERES instruments on board of the
+Terra and Aqua satellites \citep{wielicki1996,loeb2018}. In our analysis we
+used the adjusted all sky SW and LW upwelling fluxes at TOA from the synoptic
+TOA and surface fluxes and clouds 1 degree daily edition 4A product
 (CER\_SYN1deg-Day\_Terra-Aqua-MODIS\_Edition4A)
 \citep{doelling2013,doelling2016}.
 
@@ -738,7 +738,7 @@ expected, the strongest cyclonic activity is in the high-latitude SO zone, and
 it is relatively zonally symmetric at all latitudes.  While both reanalysis and
 the model agree relatively well, differences in the strength of the local
 extremes of occurrence are notable, especially over the Amundsen Sea, which is
-more cyclonic in the reanalysis, and around Cape Adere, which is more cyclonic
+more cyclonic in the reanalysis, and around Cape Adare, which is more cyclonic
 in ICON. These differences might, however, stem from the relatively short time
 periods of comparison (4 year) and the fact that the model is free-running.
 
