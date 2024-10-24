@@ -238,7 +238,8 @@ in the atmosphere, caused by too much shortwave heating of the surface, too
 little longwave cooling of the surface, or in the ocean circulation.
 Interactions of both are also possible, due to, for example SST affecting
 clouds and clouds affecting the surface radiation.  \cite{zhang2023} have shown
-that SST biases have improved in CMIP6 compared to CMIP5 (relative to ERA5),
+that SST biases have improved in CMIP6 compared to CMIP5 [relative to the
+European Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5; ERA5],
 with SST overall increasing in the later CMIP phase. However, over the SO this
 resulted in an even higher positive bias, especially in the Atlantic Ocean (AO)
 sector of the SO, increasing by up to 1°C.  \cite{luo2023} identified that the
@@ -276,8 +277,7 @@ Altogether, we analysed about 2400 days of data from 31 voyages, and one
 sub-Antarctic station covering diverse longitudes and latitudes of the SO. To
 achieve a like-for-like comparison with the model, we used a ground-based lidar
 simulator called the Automatic Lidar and Ceilometer Framework [ALCF;
-\cite{kuma2021}]. We contrasted the results with the European Centre for
-Medium-Range Weather Forecasts (ECMWF) Reanalysis 5 [ERA5; \cite{era5}] and the
+\cite{kuma2021}]. We contrasted the results with ERA5 \citep{era5} and the
 Modern-Era Retrospective analysis for Research and Applications, Version 2
 [MERRA-2; \cite{gelaro2017}].
 
@@ -567,15 +567,14 @@ precipitation; and 1-hourly average 2D radiation diagnostics
 
 \subsection{ERA5}
 
-ERA5 \citep{era5} is a reanalysis produced by the European Centre for
-Medium-Range Weather Forecasts (ECMWF). It is based on a numerical weather
-prediction model IFS version CY41R2.  The horizontal resolution is 0.25° in
-latitude and longitude, which is about 28 km in the North--South direction and
-14 km in the East--West direction at 60°S.  Internally, the model uses 137
-vertical levels. Here, we use output at 1-hourly instantaeous time intervals,
-except for radiation quantities, which are accumulations (from these we
-calculate daily means).  Vertically resolved quantities are made available on
-37 pressure levels.
+ERA5 \citep{era5} is a reanalysis produced by the ECMWF.  It is based on a
+numerical weather prediction model IFS version CY41R2.  The horizontal
+resolution is 0.25° in latitude and longitude, which is about 28 km in the
+North--South direction and 14 km in the East--West direction at 60°S.
+Internally, the model uses 137 vertical levels. Here, we use output at 1-hourly
+instantaeous time intervals, except for radiation quantities, which are
+accumulations (from these we calculate daily means).  Vertically resolved
+quantities are made available on 37 pressure levels.
 
 \subsection{CERES}
 
