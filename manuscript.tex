@@ -66,7 +66,7 @@
 	colorlinks=true,
 	urlcolor=blue,
 	pdftitle={Ship-based lidar evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON, and the ERA5 and MERRA-2 reanalyses},
-	pdfauthor={Peter Kuma, Frida A.-M. Bender, Adrian J. McDonald, Graeme Plank, …}
+	pdfauthor={Peter Kuma, Frida A.-M. Bender, Adrian J. McDonald, Graeme Plank, Sean Hartery, Simon Parsons, Simon P. Alexander, Alex J. Schuddeboom, …}
 }
 \bibliographystyle{abbrvnat}
 \titleformat*{\section}{\large\bfseries\sffamily}
@@ -81,11 +81,13 @@
 \fontsize{13pt}{15pt}\selectfont
 
 \begin{center} \Large \sffamily\textbf{Ship-based lidar evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON and the ERA5 and MERRA-2 reanalyses}\\[0.4cm]
-\large Peter Kuma$^\mathsf{1,}$*, Frida A.-M. Bender$^\mathsf{1}$, Adrian J. McDonald$^\mathsf{2}$, Graeme Plank$^\mathsf{2}$, Sean Hartery$^\mathsf{3}$, Alex J. Schuddeboom$^\mathsf{2}$, \ldots\\[0.4cm]
+\large Peter Kuma$^\mathsf{1,}$*, Frida A.-M. Bender$^\mathsf{1}$, Adrian J. McDonald$^\mathsf{2}$, Graeme Plank$^\mathsf{2}$, Sean Hartery$^\mathsf{3}$, Simon Parsons$^\mathsf{4}$, Simon P. Alexander$^\mathsf{5}$, Alex J. Schuddeboom$^\mathsf{2}$, \ldots\\[0.4cm]
 \small
-$^\mathsf{1}$Department of Meteorology (MISU) and the Bolin Centre for Climate Research, Stockholm University, Stockholm SE-106 91, Sweden\\
-$^\mathsf{2}$School of Physical and Chemical Sciences, University of Canterbury, Christchurch, Aotearoa/New Zealand\\[0.2cm]
-$^\mathsf{3}$Department of Physics \& Atmospheric Science, Dalhousie University, Halifax, Canada\\[0.2cm]
+$^\mathsf{1}$Department of Meteorology (MISU) and Bolin Centre for Climate Research, Stockholm University, Stockholm SE-106 91, Sweden\\
+$^\mathsf{2}$School of Physical and Chemical Sciences, University of Canterbury, Christchurch, Aotearoa/New Zealand\\
+$^\mathsf{3}$Department of Physics \& Atmospheric Science, Dalhousie University, Halifax, Canada\\
+$^\mathsf{4}$New South Wales Department of Planning and Environment, Sydney, New South Wales, Australia\\
+$^\mathsf{5}$Australian Antarctic Division, Kingston, Tasmania, Australia; Australian Antarctic Program Partnership, Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Tasmania, Australia\\[0.2cm]
 *Corresponding author: Peter Kuma (\href{mailto:peter.kuma@misu.su.se}{peter.kuma@misu.su.se})\\[0.4cm]
 \large \today\\[0.4cm]
 
@@ -1108,18 +1110,18 @@ the Atmospheric Radiation Measurement (ARM) and AAD, and the MICRE dataset
 provided by ARM, the Australian Bureau of Meteorology, and AAD. We thank the
 scientific staff, the crew, and everyone involved in collecting data on the
 voyages and stations, especially Kelly Schick, Peter Guest, John J.  Cassano,
-Simon Parsons, Sally Garrett, Jamie Halla, Sean Hartery, Mike J.  Harvey (†),
-Simon P.  Alexander, and Alex Schuddeboom. We acknowledge the ICON model output
-provided by the nextGEMS project and the DKRZ, reanalysis dataset ERA5 provided
-by the Copernicus Climate Change Service and MERRA-2 provided by the Global
-Modeling and Assimilation Office.  Last but not least, we acknowledge the use
-of open source software Python, Cython \citep{behnel2011}, TensorFlow
-\citep{abadi2016}, Devuan GNU+Linux, parallel \citep{tange2011}, NumPy
-\citep{harris2020}, SciPy \citep{virtanen2020}, Matplotlib \citep{hunter2007},
-cartopy \citep{cartopy}, pyproj, Inkscape, Bash, GNU Fortran, HDF
-\citep{folk1999}, and NetCDF \citep{rew1990}.  We dedicate this study to the
-memory of Mike J.  Harvey, who very substantially contributed to obtaining the
-atmospheric observations on the RV \emph{Tangaroa} voyages used in this study.
+Sally Garrett, Jamie Halla, and Mike J.  Harvey (†). We acknowledge the ICON
+model output provided by the nextGEMS project and the DKRZ, reanalysis dataset
+ERA5 provided by the Copernicus Climate Change Service and MERRA-2 provided by
+the Global Modeling and Assimilation Office.  Last but not least, we
+acknowledge the use of open source software Python, Cython \citep{behnel2011},
+TensorFlow \citep{abadi2016}, Devuan GNU+Linux, parallel \citep{tange2011},
+NumPy \citep{harris2020}, SciPy \citep{virtanen2020}, Matplotlib
+\citep{hunter2007}, cartopy \citep{cartopy}, pyproj, Inkscape, Bash, GNU
+Fortran, HDF \citep{folk1999}, and NetCDF \citep{rew1990}.  We dedicate this
+study to the memory of Mike J.  Harvey, who very substantially contributed to
+obtaining the atmospheric observations on the RV \emph{Tangaroa} voyages used
+in this study.
 
 \section*{Code availability}
 
