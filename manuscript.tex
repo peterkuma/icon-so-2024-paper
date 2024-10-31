@@ -96,25 +96,25 @@ $^\mathsf{5}$Australian Antarctic Division, Kingston, Tasmania, Australia; Austr
 \section*{Abstract}
 
 Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
-Among them is a 5-km Icosahedral Nonhydrostatic Weather and Climate Model
+Among them is the 5-km Icosahedral Nonhydrostatic Weather and Climate Model
 (ICON). Due to the resolution, parametrisations of convection and clouds are
 avoided. Standard-resolution models have substantial cloud biases over the
 Southern Ocean (SO), affecting radiation and sea surface temperature.  We
 evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
-dominated by low clouds, which cannot be observed properly from space due to
+dominated by low clouds, which cannot be observed accurately from space due to
 overlapping clouds, attenuation, and ground clutter.  Instead, we analysed
 about 2400 days of lidar observations from 31 voyages and a station using a
 ground-based lidar simulator.  ICON and the reanalyses underestimate the total
 cloud fraction by about 10 and 20\%, respectively. ICON and ERA5 overestimate
 the cloud occurrence peak at about 500 m, potentially explained by their
-lifting condensation level being too high.  The reanalyses strongly
+lifting condensation levels being too high.  The reanalyses strongly
 underestimate near-surface clouds or fog.  MERRA-2 tends to underestimate cloud
 occurrence at all heights. Unstable conditions are the most problematic for the
 models. In daily cloud cover, ICON and the reanalyses tend to be about 1 and 2
 oktas clearer, respectively. Compared to radiosondes, potential temperature is
-accurate in all, but ICON is too unstable over low-latitude SO and too humid in
+accurate in all, but ICON is too unstable over the low-latitude SO and too humid in
 the boundary layer. MERRA-2 is too humid at all heights. SO cloud biases are a
-substantial issue in the GSRM, but it is an improvement over the
+substantial issue in the GSRM, but are an improvement over the
 lower-resolution reanalyses. Explicitly resolved convection and cloud processes
 were not enough to address the model cloud biases.
 
@@ -125,11 +125,11 @@ Increasing climate model resolution is a common way of improving model accuracy
 \citep{mauritsen2022}. This is of course limited by the available computational
 power and a tradeoff with increasing parametrisation complexity. Current
 computational availability and acceleration from general-purpose computing on
-graphics processing units (GPGPUs) is progressing to enable km-scale (also
+graphics processing units (GPUs) is progressing to enable km-scale (also
 called k-scale) Earth system models (ESMs) and coupled atmosphere--ocean
 general circulation models (AOGCMs) in research conditions today and
 operationally in the forthcoming years. Therefore, it represents a natural
-advancement in climate modeling.  Global strom-resolving models (GSRMs) are
+advance in climate modelling.  Global storm-resolving models (GSRMs) are
 emerging as a new front in the development of high-resolution global climate
 models, with horizontal grid resolutions of about 2--8 km
 \citep{satoh2019,stevens2019}. This is enough to resolve mesoscale convective
@@ -143,7 +143,7 @@ this would require an even higher horizontal resolution \citep{satoh2019}.
 Representative of these efforts is the DYnamics of the Atmospheric general
 circulation Modeled On Non-hydrostatic Domains (DYAMOND) project
 \citep{stevens2019,dyamond}, which is an intercomparison of nine global GSRMs
-on two 40-day time periods in summer (1 August -- 10 September 2016) and winter
+over two 40-day time periods in summer (1 August -- 10 September 2016) and winter
 (20 January -- 1 March 2020). A new one-year GSRM intercomparison is currently
 proposed by \cite{takasuka2024}, with the hope of also evaluating the seasonal
 cycle and large-scale circulation.  An alternative to using a computationally
@@ -175,20 +175,20 @@ Sphere [FV3, \cite{lin2004}], the National Aeronautics and Space Administration
 \cite{khairoutdinov2003}].
 
 Multiple cloud properties have an effect on the shortwave (SW) and longwave
-(LW) radiation. On the first order, it is the total cloud fraction, cloud
-phase, and the liquid and ice water path. These are influenced by the
-atmopheric thermodynamics, convection and circulation, and indirect and direct
-effects of aerosols. On smaller orders, it is the cloud droplet size
+(LW) radiation. To first order, the total cloud fraction, cloud
+phase, and the liquid and ice water path are the most important cloud properties influencing SW and LW radiation. These properties are  in turn influenced by the
+atmospheric thermodynamics, convection and circulation, and indirect and direct
+effects of aerosols. Second order effects on SW and LW radiation are associated with the cloud droplet size
 distribution, ice crystal habit, cloud lifetime, and direct radiative
 interaction with aerosols.  In the 6$^\mathrm{th}$ phase of the Coupled Model
 Intercomparison Project [CMIP6; \cite{eyring2016}], the cloud feedback has
-increased relative to CMIP5 \citep{zelinka2020}, also being one of the main
+increased relative to CMIP5 \citep{zelinka2020}, this being one of the main
 reasons for the higher climate sensitivity of CMIP6 models.
 
 The Southern Ocean (SO) is known to be a problematic region for climate model
-biases due to reasons such as a lack of surface and in situ observations and
+biases due to a lack of surface and in situ observations and
 being a lower priority region for numerical weather prediction (NWP) and
-climate model development because it is far away from populated areas of
+climate model development because of its distance from populated areas of
 interest.  Nevertheless, radiation biases and changes over an area of its size
 have a very substantial influence on the global climate, and the SO is an
 important part of the global ocean conveyor belt.  Marine clouds have
@@ -201,17 +201,17 @@ low-latitude SO as 40--55°S and high-latitude SO as south of 55°S.
 SO radiation biases have been relatively large and systematic compared to the
 rest of the globe since at least CMIP3 \citep{trenberth2010}, and the SO SW
 cloud radiative effect (CRE) bias is still positive in eight analysed CMIP6
-models analysed by \cite{schuddeboom2021} over high-latitude SO, whereas over
-low-latitude SO it tends to be more neutral or negative in some models. Too
+models analysed by \cite{schuddeboom2021} over the high-latitude SO, whereas over
+the low-latitude SO it tends to be more neutral or negative in some models. Too
 much absorbed SW radiation over the SO was also identified in the GSRM SCREAM
 \cite{caldwell2021}. Compensating biases are possible, such as the `too few too
 bright' cloud bias, characterised by too small cloud fraction and too large
 cloud albedo \citep{wall2017,kuma2020}, previously described by
 \cite{webb2001}, \cite{weare2004}, \cite{zhang2005}, \cite{karlsson2008},
 \cite{nam2012}, \cite{klein2013}, and \cite{bender2017} in other regions and
-models. That is, a model maintains a resonable SW radiation balance by
-reflecting too much SW radiation by cloudy sky but has too little cloudy sky
-area overall. A study by \cite{konsta2022} showed that this type bias is still
+models. That is, a model maintains a reasonable SW radiation balance by
+reflecting too much SW radiation from clouds, but has too little cloud
+area overall. A study by \cite{konsta2022} showed that this type of bias is still
 present in six analysed CMIP6 models in tropical marine clouds, using the
 GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation
 (CALIPSO) Cloud Product [CALIPSO--GOCCP; \cite{chepfer2010}] and Polarization
@@ -222,25 +222,25 @@ Compensating cloud biases in the Australian Community Climate and Earth System
 Simulator (ACCESS) – Atmosphere-only model version 2 (AM2) over the SO were
 analysed by \cite{fiddes2022} and \cite{fiddes2024}.  \cite{possner2022} showed
 that over the SO, the DYAMOND GSRM ICON underestimates low-level cloud fraction
-on the order of 30\% [relative to the Moderate Resolution Imaging
-Spectroradiometer (MODIS)] and overestimates downwelling TOA SW radiation on
-the order of 10 Wm$^\mathrm{-2}$ in  [relative to the Clouds and the Earth’s
-Radiant Energy System (CERES)] in the highest model resolution run (2.5 km).
+on the order of 30\% [relative to Moderate Resolution Imaging
+Spectroradiometer (MODIS) data] and overestimates downwelling TOA SW radiation on
+by approximately 10 Wm$^\mathrm{-2}$ in  [relative to the Clouds and the Earth’s
+Radiant Energy System (CERES) data] in the highest model resolution run (2.5 km).
 \cite{zhao2022} reported a similar SW radiation bias in five analysed CMIP6
 models over high-latitude SO and the total cloud fraction underestimation on
 the order of 10\% over the entire 40--60°S SO. Recently, \cite{ramadoss2024}
-analysed 48 hours of km-scale ICON limited area model NWP simulation over a SO
-region adjacent to Tasmania agaist the Clouds, Aerosols, Precipitation,
+analysed 48 hours of km-scale ICON limited area model NWP simulations over a SO
+region adjacent to Tasmania against the Clouds, Aerosols, Precipitation,
 Radiation, and atmospherIc Composition Over the southeRn oceaN (CAPRICORN)
-voyage cloud and precipitation observations. They found the ICON cloud optical
-thickness underestimated relative to Himawari‐8 satellite observations, but
-also large differences in cloud top phase.
+voyage cloud and precipitation observations \cite{mcfarquhar2021}. They found the ICON cloud optical
+thickness was underestimated relative to Himawari‐8 satellite observations, but
+also identified large differences in cloud top phase.
 
 In general, sea surface temperature (SST) biases in the SO can originate either
 in the atmosphere, caused by too much shortwave heating of the surface, too
 little longwave cooling of the surface, or in the ocean circulation.
 Interactions of both are also possible, due to, for example SST affecting
-clouds and clouds affecting the surface radiation.  \cite{zhang2023} have shown
+clouds and clouds affecting the surface radiation. \cite{zhang2023} has shown
 that SST biases have improved in CMIP6 compared to CMIP5 [relative to the
 European Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5; ERA5],
 with SST overall increasing in the later CMIP phase. However, over the SO this
