@@ -103,8 +103,8 @@ $^\mathsf{11}$Department of Atmospheric and Oceanic Sciences, University of Colo
 
 Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
 Among them is the 5-km Icosahedral Nonhydrostatic Weather and Climate Model
-(ICON). Due to the resolution, parametrisations of convection and clouds are
-avoided. Standard-resolution models have substantial cloud biases over the
+(ICON). Due to the high resolution, parametrisations of convection and clouds
+are avoided. Standard-resolution models have substantial cloud biases over the
 Southern Ocean (SO), affecting radiation and sea surface temperature.  We
 evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
 dominated by low clouds, which cannot be observed accurately from space due to
@@ -118,9 +118,9 @@ underestimate near-surface clouds or fog.  MERRA-2 tends to underestimate cloud
 occurrence at all heights. Unstable conditions are the most problematic for the
 models. In daily cloud cover, ICON and the reanalyses tend to be about 1 and 2
 oktas clearer, respectively. Compared to radiosondes, potential temperature is
-accurate in all, but ICON is too unstable over the low-latitude SO and too humid in
-the boundary layer. MERRA-2 is too humid at all heights. SO cloud biases are a
-substantial issue in the GSRM, but are an improvement over the
+accurate in all, but ICON is too unstable over the low-latitude SO and too
+humid in the boundary layer. MERRA-2 is too humid at all heights. SO cloud
+biases are a substantial issue in the GSRM, but are an improvement over the
 lower-resolution reanalyses. Explicitly resolved convection and cloud processes
 were not enough to address the model cloud biases.
 
@@ -180,16 +180,17 @@ Sphere [FV3, \cite{lin2004}], the National Aeronautics and Space Administration
 \cite{skamarock2012}], and System for Atmospheric Modeling [SAM;
 \cite{khairoutdinov2003}].
 
-Multiple cloud properties have an effect on the shortwave (SW) and longwave
-(LW) radiation. To first order, the total cloud fraction, cloud
-phase, and the liquid and ice water path are the most important cloud properties influencing SW and LW radiation. These properties are  in turn influenced by the
+Multiple cloud properties have an effect on shortwave (SW) and longwave (LW)
+radiation. To first order, the total cloud fraction, cloud phase, and the
+liquid and ice water path are the most important cloud properties influencing
+SW and LW radiation. These properties are  in turn influenced by the
 atmospheric thermodynamics, convection and circulation, and indirect and direct
-effects of aerosols. Second order effects on SW and LW radiation are associated with the cloud droplet size
-distribution, ice crystal habit, cloud lifetime, and direct radiative
-interaction with aerosols.  In the 6$^\mathrm{th}$ phase of the Coupled Model
-Intercomparison Project [CMIP6; \cite{eyring2016}], the cloud feedback has
-increased relative to CMIP5 \citep{zelinka2020}, this being one of the main
-reasons for the higher climate sensitivity of CMIP6 models.
+effects of aerosols. Second order effects on SW and LW radiation are associated
+with the cloud droplet size distribution, ice crystal habit, cloud lifetime,
+and direct radiative interaction with aerosols.  In the 6$^\mathrm{th}$ phase
+of the Coupled Model Intercomparison Project [CMIP6; \cite{eyring2016}], the
+cloud feedback has increased relative to CMIP5 \citep{zelinka2020}, this being
+one of the main reasons for the higher climate sensitivity of CMIP6 models.
 
 The Southern Ocean (SO) is known to be a problematic region for climate model
 biases due to a lack of surface and in situ observations and
@@ -245,16 +246,16 @@ also identified large differences in cloud top phase.
 In general, sea surface temperature (SST) biases in the SO can originate either
 in the atmosphere, caused by too much shortwave heating of the surface, too
 little longwave cooling of the surface, or in the ocean circulation.
-Interactions of both are also possible, due to, for example SST affecting
-clouds and clouds affecting the surface radiation. \cite{zhang2023} has shown
-that SST biases have improved in CMIP6 compared to CMIP5 [relative to the
-European Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5; ERA5],
-with SST overall increasing in the later CMIP phase. However, over the SO this
-resulted in an even higher positive bias, especially in the Atlantic Ocean (AO)
-sector of the SO, increasing by up to 1°C.  \cite{luo2023} identified that the
-SO SST bias in an ensemble of 18 CMIP6 models originates not from the surface
-heat and radiation fluxes (using reanalyses as a reference), but from a warm
-bias in the Northern Atlantic Deep Water.
+Interactions of both are also possible, for example SST affecting clouds and
+clouds affecting the surface radiation. \cite{zhang2023} has shown that SST
+biases have improved in CMIP6 compared to CMIP5 [relative to the European
+Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5; ERA5], with SST
+overall increasing in the later CMIP phase. However, over the SO this resulted
+in an even higher positive bias, especially in the Atlantic Ocean (AO) sector
+of the SO, increasing by up to 1°C.  \cite{luo2023} identified that the SO SST
+bias in an ensemble of 18 CMIP6 models originates not from the surface heat and
+radiation fluxes (using reanalyses as a reference), but from a warm bias in the
+Northern Atlantic Deep Water.
 
 The main aim of this study is to evaluate the GSRM version of ICON, developed
 jointly by nextGEMS, Deutscher Wetterdienst, Max-Planck-Institute for
@@ -337,7 +338,7 @@ The data sources contained ceilometer observations captured by the Vaisala CL51
 operating at a wavelenght of 910 nm, the Vaisala CT25K operating at 905 nm, and
 the Lufft CHM 15k operating at 1064 nm, described in detail below (Sections
 \ref{sec:cl51} and \ref{sec:chm15k}). A ceilometer is a low-power near-infrared
-vertically pointing lidar principally designed to  measure cloud base, but they 
+vertically pointing lidar principally designed to  measure cloud base, but they
 also measure the full vertical structure of clouds as long as the laser signal
 is not attenuated by thick clouds, which can be used to infer additional
 information such as a cloud mask and cloud occurrence by height.
@@ -678,7 +679,7 @@ human-performed observations.
 Lower tropospheric stability (LTS) distribution in \textbf{(a)} ERA5 and
 \textbf{(b)} MERRA-2 calculated for the 31 voyage tracks and one station from
 the highest instantaneous temporal resolution data available. Shown is also the
-chosen dividing threshold of 12 K for the relatively stable and unstable
+chosen dividing threshold of 12 K for relatively stable and unstable
 conditions.
 }
 \label{fig:lts}
@@ -713,8 +714,8 @@ subsets by stability. We determined this by calculating lower tropospheric
 stability (LTS) as the difference between the potential temperature at 700 hPa
 and the surface.  Based on a histogram of LTS in ERA5 and MERRA-2 calculated at
 all voyage tracks and stations (Fig.  \ref{fig:lts}), we determined a dividing
-threshold of 12 K for the relatively unstable (< 12 K) and the relatively
-stable (>= 12 K) conditions.
+threshold of 12 K for relatively unstable (< 12 K) and relatively stable (>= 12
+K) conditions.
 
 \section{Results}
 \label{sec:results}
@@ -724,7 +725,7 @@ stable (>= 12 K) conditions.
 \includegraphics[width=\textwidth]{img/cyc_stab_dist.pdf}
 \caption{
 Geographical distribution of \textbf{(a, b)} cyclonic days and \textbf{(b, d)}
-the relatively stable (LTS > 12 K) time steps in \textbf{(a, c)} ERA5 in years
+relatively stable (LTS > 12 K) time steps in \textbf{(a, c)} ERA5 in years
 2010--2013 (inclusive) and \textbf{(b, d)} ICON in model years 2021--2023 (free
 running). Cyclonic days are expressed as a fraction of the number of days with
 cyclonic activity, defined as grid points located within a double radius of any
@@ -751,9 +752,9 @@ periods of comparison (4 years) and the fact that the model is free-running.
 
 Fig. \ref{fig:cyclone-stability}b shows a geographical distribution of the
 relatively stable and unstable conditions as determined by the LTS (Section
-\ref{sec:cyclone-stability}).  The relatively unstable conditions are prevalent
+\ref{sec:cyclone-stability}). Relatively unstable conditions are prevalent
 in the middle SO (50--65°S), which might be explained by the relatively cold
-near-surface air overlying the relatively warm sea surface. The relatively
+near-surface air overlying the relatively warm sea surface. Relatively
 stable conditions are prevalent elsewhere over the SO. The distribution is also
 less zonally symmetric than the cyclonic activity.  In the high-latitude SO,
 the presence of sea ice might have substantial stabilising effect
@@ -797,8 +798,8 @@ cloud occurrence peaking at the surface, whereas models show a higher peak (at
 about 500 m). The models underestimate the total cloud fraction by 10--20\% and
 show a strong drop in cloud occurrence near the surface, but this is not
 supported by the observations. ICON and ERA5 overestimate cloud occurrence at
-the peak (between 0--1 km). Above 1 km, ICON and MERRA-2 understimate cloud
-occurrence, but ERA5 is very accurate. The too high peak in models is partly
+the peak (between 0--1 km). Above 1 km, ICON and MERRA-2 underestimate cloud
+occurrence, but ERA5 is very accurate. The exaggerated peak in models is partly
 supported by the lifting condensation level (LCL) distribution, which peaks
 higher in the models than in the observations (at the surface), although this
 is not very pronounced.
@@ -810,7 +811,7 @@ zone, and this could be because higher latitudes have more unstable atmospheric
 profiles. The low- and high-latitude SO zones show similar biases in models as
 in the general case, but ERA5 does not overestimate the peak in the
 low-latitude SO zone (near-surface cloud occurrence is still strongly
-understimated).
+underestimated).
 
 When subsetted by cyclonic and non-cyclonic situations (Fig.
 \ref{fig:cloud-occurrence}d, e), we see that the cyclonic situations have a
@@ -820,15 +821,15 @@ getting the vertical profile of cloud occurrence right, but still tend to
 underestimate cloud occurrence above 1 km and near the surface. Non-cyclonic
 situations are similar to the general case.
 
-When subsetted by the relatively stable and unstable conditions (Fig.
+When subsetted by relatively stable and unstable conditions (Fig.
 \ref{fig:cloud-occurrence}f, g), as defined in Section
-\ref{sec:cyclone-stability}, we see that in the relatively stable
+\ref{sec:cyclone-stability}, we see that in relatively stable
 situations cloud occurrence peaks strongly at the surface in observations,
-compared to the relatively unstable situations, where the peak is more obtuse
-and spread across the altitudes of 0--1 km.  In the relatively stable
+compared to relatively unstable situations, where the peak is more obtuse
+and spread across the altitudes of 0--1 km.  In relatively stable
 situations, the models are doing a fairly good job, but overestimate cloud
 occurrence at the peak below 1 km; above 1 km, they show similar biases as in
-the general case.  In the relatively unstable situations, the bias in ICON is
+the general case.  In relatively unstable situations, the bias in ICON is
 very pronounced, with a much stronger peak at about 500 m, ERA5 is
 underestimating cloud occurrence below 1 km (especially near the surface), and
 MERRA-2 is underestimating it even more strongly.
@@ -837,7 +838,7 @@ In all situations, even when the models overestimate cloud occurrence at some
 altitudes, they always substantially underestimate the total cloud fraction.
 ICON can be generally characterised as substantially overestimating cloud
 occurrence below 1 km and underestimating above, underestimating the total
-cloud fraction, and showing greatest biases in the relatively unstable and
+cloud fraction, and showing greatest biases in relatively unstable and
 non-cyclonic conditions. It also shows a peak of cloud occurrence at higher
 altitude than observations (500 m vs. near the surface), and correspondingly,
 its LCL tends to be also higher. MERRA-2 can be generally characterised as
@@ -847,8 +848,8 @@ well-represented). It struggles the most in the low-latitude SO zone and in the
 relatively unstable situations. ERA5 can be generally characterised as
 representing cloud occurrence correctly above about 1--1.5 km, overestimating
 below, but underestimating near-surface cloud occurrence (0--500 m). The total
-cloud fraction is strongly understimated in all situations. It has a tendency
-towards understimation in the low-latitude SO zone and the relatively unstable
+cloud fraction is strongly underestimated in all situations. It has a tendency
+towards underestimation in the low-latitude SO zone and relatively unstable
 situations; conversely, overestimating in the high-latitude SO zone and the
 relatively stable conditions.
 
@@ -882,9 +883,9 @@ In Fig.  \ref{fig:cloud-cover} we show the results for the same subsets of data
 as in the previous section. Observations have the greatest representation of
 high cloud cover (5--8 oktas), peaking at 7 oktas. This is not represented by
 ICON or the reanalyses.  While ICON is the closest, it tends to be 1 okta
-clearer the observations, peaking at 6 oktas, and highly understimating days
+clearer the observations, peaking at 6 oktas, and highly underestimating days
 with 8 oktas.  Overall, the reanalyses show results similar to each other,
-underestimating cloud cover by about 2 oktas and strongly understimating days
+underestimating cloud cover by about 2 oktas and strongly underestimating days
 with 7 and 8 oktas. Of the two reanalyses, MERRA-2 shows slightly higher cloud
 cover and thus is more consistent with observations.
 
@@ -897,7 +898,7 @@ zones, we see that the high-latitude zone tends to have greater cloud cover,
 peaking at 8 oktas (Fig.  \ref{fig:cloud-cover}c). The high-latitude zone also
 has almost no clear sky or small cloud cover cases (0--4 oktas). ICON and the
 reanalyses represent at least this characteristic of the distribution well for
-0--3 oktas, but otherwise show bises similar to the general case. One of the
+0--3 oktas, but otherwise show biases similar to the general case. One of the
 greatest biases is present in ERA5 in the relatively unstable subset, in which
 ERA5 peaks at 3 oktas, whereas the observations peak at 7 oktas and show
 negligible cloud cover below 5 oktas.
@@ -947,7 +948,7 @@ cloud formation and dissipation. The observed and model profiles of virtual
 potential temperature are shown in Fig. \ref{fig:potential-temperature}.
 
 Overall, the mean $\theta_v$ is relatively well represented in ICON and
-MERRA-2, being only slightly colder in the mid-to-high troposophere (less
+MERRA-2, being only slightly colder in the mid-to-high troposphere (less
 stable) in ICON than in observations (Fig. \ref{fig:potential-temperature}a).
 Large differences exist, however, in the 40--55°S zone, where ICON is colder in
 $\theta_v$ by up to about 5 K and more so at higher altitudes (Fig.
@@ -971,7 +972,7 @@ humid than observations at all altitudes and in all subsets, by up to about
 Let us consider the main limitations of the presented results. The spatial
 coverage of our dataset does not include most parts of the Indian Ocean and
 Pacific Ocean sectors of the SO. Even though climatological features of the SO
-are typically relatively uniform zonally, variantions exist, such as those
+are typically relatively uniform zonally, variations exist, such as those
 related to the Antarctic Peninsula and the southern tip of South America. The
 voyages were mostly undertaken in the Austral summer months and only rarely in
 the winter months, due to the poor accesibility of this region during winter.
@@ -999,7 +1000,7 @@ properly simulated with the lidar simulator (Section \ref{sec:ann}). However,
 the approach was limited by the relatively low sensitivity of the ANN (65\%)
 and the fact that we had to choose a fixed threshold for surface precipitation
 flux in the model and reanalyses, which might not exactly correspond to
-detection by the ANN applied to obseravations. Also, we did not make an attempt
+detection by the ANN applied to observations. Also, we did not make an attempt
 to remove profiles with precipitation not reaching the surface. The above
 reasons can result in an artificial bias in the comparison, even though we
 expect this to be much smaller than the identified model biases.
@@ -1030,7 +1031,7 @@ convection.
 We show that relative to ERA5, the distribution and strength of cyclonic
 activity over the SO is well represented in ICON, but it is substantially less
 stable in terms of LTS. The latter is also manifested in the radiosonde profile
-comparison, which shows that the virtual potential temperature profiles in ICON
+comparison, showing that the virtual potential temperature profiles in ICON
 are more stable than in the observations over low-latitude SO.
 
 The 31 voyages and a station show fairly similar biases in cloud occurrence by
@@ -1041,17 +1042,16 @@ the total cloud fraction by about 10\%, with an overestimation of clouds below
 underestimate the total cloud fraction by about 20\%.  ERA5 overestimates cloud
 below 1 km but underestimates near-surface cloud or fog. ICON strongly
 overestimates the peak of cloud occurrence at about 500 m, which might be
-explained by the radiosonde comparison, which shows that it is too moist at
+explained by the radiosonde comparison, showing that it is too moist at
 around this height.  Similar to our results, \cite{cesana2022} showed that
 CMIP6 models also tend to underestimate cloud occurrence above 2 km over the
 SO, although their analysis in this case was limited to liquid clouds.
 
-Compared to the lidar observations, the daily cloud cover tends to be about 1
-okta lower in ICON and 2 oktas lower in the reanalyses.  Unstable conditions
-are associated with some of the greatest biases, especially in ERA5.  The
-models also underestimate the cloud cover very strongly in cyclonic conditions,
-which are very cloudy in the observations (8 oktas), but much less so in the
-models.
+Compared to lidar observations, the daily cloud cover tends to be about 1 okta
+lower in ICON and 2 oktas lower in the reanalyses.  Unstable conditions are
+associated with some of the greatest biases, especially in ERA5.  The models
+also underestimate the cloud cover very strongly in cyclonic conditions, which
+are very cloudy in the observations (8 oktas), but much less so in the models.
 
 The radiosonde observations indicate that the LCL is too high in ICON and
 reanalyses, which is probably responsible for the higher peak of clouds in the
