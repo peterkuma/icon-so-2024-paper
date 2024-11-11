@@ -66,7 +66,7 @@
 	colorlinks=true,
 	urlcolor=blue,
 	pdftitle={Ship-based lidar evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON, and the ERA5 and MERRA-2 reanalyses},
-	pdfauthor={Peter Kuma, Frida A.-M. Bender, Adrian J. McDonald, Graeme Plank, Sean Hartery, Simon Parsons, Simon P. Alexander, Greg M. McFarquhar, John J. Cassano, Alex J. Schuddeboom, …}
+	pdfauthor={Peter Kuma, Frida A.-M. Bender, Adrian J. McDonald, Simon P. Alexander, Greg M. McFarquhar, John J. Cassano, Graeme Plank, Sean Hartery, Simon Parsons, Sally Garrett, and Alex J. Schuddeboom}
 }
 \bibliographystyle{abbrvnat}
 \titleformat*{\section}{\large\bfseries\sffamily}
@@ -81,21 +81,22 @@
 \fontsize{13pt}{15pt}\selectfont
 
 \begin{center} \Large \sffamily\textbf{Ship-based lidar evaluation of Southern Ocean clouds in the storm-resolving general circulation model ICON and the ERA5 and MERRA-2 reanalyses}\\[0.4cm]
-\large Peter Kuma$^\mathsf{1,2}$*, Frida A.-M. Bender$^\mathsf{1,2}$, Adrian J. McDonald$^\mathsf{3}$, Graeme Plank$^\mathsf{3}$, Sean Hartery$^\mathsf{4}$, Simon Parsons$^\mathsf{5}$, Simon P. Alexander$^\mathsf{6,7}$, Greg M. McFarquhar$^\mathsf{8}$, John J. Cassano$^\mathsf{9,10,11}$, Alex J. Schuddeboom$^\mathsf{3}$, \ldots\\[0.4cm]
-\small
+\normalsize Peter Kuma$^\mathsf{1,2,\star}$, Frida A.-M. Bender$^\mathsf{1,2}$, Adrian J. McDonald$^\mathsf{3}$, Simon P. Alexander$^\mathsf{4,5}$, Greg M. McFarquhar$^\mathsf{6}$, John J. Cassano$^\mathsf{7,8,9}$, Graeme Plank$^\mathsf{3}$, Sean Hartery$^\mathsf{10}$, Simon Parsons$^\mathsf{11}$, Sally Garrett$^\mathsf{12}$, and Alex J. Schuddeboom$^\mathsf{3}$\\[0.4cm]
+\footnotesize
 $^\mathsf{1}$Department of Meteorology (MISU), Stockholm University, Stockholm,, Sweden\\
 $^\mathsf{2}$Bolin Centre for Climate Research, Stockholm University, Stockholm, Sweden\\
 $^\mathsf{3}$School of Physical and Chemical Sciences, University of Canterbury, Christchurch, Aotearoa/New Zealand\\
-$^\mathsf{4}$Department of Physics \& Atmospheric Science, Dalhousie University, Halifax, Canada\\
-$^\mathsf{5}$New South Wales Department of Planning and Environment, Sydney, New South Wales, Australia\\
-$^\mathsf{6}$Australian Antarctic Division, Kingston, Tasmania, Australia\\
-$^\mathsf{7}$Australian Antarctic Program Partnership, Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Tasmania, Australia\\
-$^\mathsf{8}$Cooperative Institute for Mesoscale Meteorological Studies, and School of Meteorology, University of Oklahoma, Norman, Oklahoma, USA\\
-$^\mathsf{9}$Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, Colorado, USA\\
-$^\mathsf{10}$National Snow and Ice Data Center, University of Colorado Boulder, Boulder, Colorado, USA\\
-$^\mathsf{11}$Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, Colorado, USA\\[0.2cm]
-*Corresponding author: Peter Kuma (\href{mailto:peter.kuma@misu.su.se}{peter.kuma@misu.su.se})\\[0.4cm]
-\large \today\\[0.4cm]
+$^\mathsf{4}$Australian Antarctic Division, Kingston, Tasmania, Australia\\
+$^\mathsf{5}$Australian Antarctic Program Partnership, Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Tasmania, Australia\\
+$^\mathsf{6}$Cooperative Institute for Mesoscale Meteorological Studies, and School of Meteorology, University of Oklahoma, Norman, Oklahoma, USA\\
+$^\mathsf{7}$Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, Colorado, USA\\
+$^\mathsf{8}$National Snow and Ice Data Center, University of Colorado Boulder, Boulder, Colorado, USA\\
+$^\mathsf{9}$Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, Colorado, USA\\[0.2cm]
+$^\mathsf{10}$Department of Physics \& Atmospheric Science, Dalhousie University, Halifax, Canada\\
+$^\mathsf{11}$New South Wales Department of Planning and Environment, Sydney, New South Wales, Australia\\
+$^\mathsf{12}$New Zealand Defence Force, Wellington, New Zealand\\
+$^\star$Corresponding author: Peter Kuma (\href{mailto:peter.kuma@misu.su.se}{peter.kuma@misu.su.se})\\[0.4cm]
+\normalsize \today\\[0.4cm]
 
 \end{center}
 
@@ -1120,23 +1121,23 @@ the Atmospheric Radiation Measurement (ARM) and AAD, and the MICRE dataset
 provided by ARM, the Australian Bureau of Meteorology, and AAD. We thank the
 scientific staff, the crew, and everyone involved in collecting data on the
 voyages and stations, especially Gert König-Langlo, Holger Schmithüsen, Roger
-Marchand, Peter Guest, Kelly Schick, Sally Garrett, Jamie Halla, Mike J.
-Harvey (†). We thank Loretta Preis for providing additional RV
-\emph{Polarstern} data.  We acknowledge the ICON model output provided by the
-nextGEMS project, Deutscher Wetterdienst, Max-Planck-Institute for Meteorology,
-DKRZ, Karlsruhe Institute of Technology, and Center for Climate Systems
-Modeling; reanalysis dataset ERA5 provided by the Copernicus Climate Change
-Service; MERRA-2 provided by the Global Modeling and Assimilation Office; CERES
-datasets provided by the NASA Langley Atmospheric Science Data Center
-Distributed Active Archive Center; and the Natural Earth dataset provided by
-naturalearthdata.com.  Last but not least, we acknowledge the use of open
-source software Python, Cython \citep{behnel2011}, TensorFlow
-\citep{abadi2016}, Devuan GNU+Linux, parallel \citep{tange2011}, NumPy
-\citep{harris2020}, SciPy \citep{virtanen2020}, Matplotlib \citep{hunter2007},
-cartopy \citep{cartopy}, pyproj, Inkscape, Bash, GNU Fortran, HDF
-\citep{folk1999}, and NetCDF \citep{rew1990}.  We dedicate this study to the
-memory of Mike J.  Harvey, who very substantially contributed to obtaining the
-atmospheric observations on the RV \emph{Tangaroa} voyages used in this study.
+Marchand, Peter Guest, Kelly Schick, Jamie Halla, Mike J.  Harvey (†). We thank
+Loretta Preis for providing additional RV \emph{Polarstern} data.  We
+acknowledge the ICON model output provided by the nextGEMS project, Deutscher
+Wetterdienst, Max-Planck-Institute for Meteorology, DKRZ, Karlsruhe Institute
+of Technology, and Center for Climate Systems Modeling; reanalysis dataset ERA5
+provided by the Copernicus Climate Change Service; MERRA-2 provided by the
+Global Modeling and Assimilation Office; CERES datasets provided by the NASA
+Langley Atmospheric Science Data Center Distributed Active Archive Center; and
+the Natural Earth dataset provided by naturalearthdata.com.  Last but not
+least, we acknowledge the use of open source software Python, Cython
+\citep{behnel2011}, TensorFlow \citep{abadi2016}, Devuan GNU+Linux, parallel
+\citep{tange2011}, NumPy \citep{harris2020}, SciPy \citep{virtanen2020},
+Matplotlib \citep{hunter2007}, cartopy \citep{cartopy}, pyproj, Inkscape, Bash,
+GNU Fortran, HDF \citep{folk1999}, and NetCDF \citep{rew1990}.  We dedicate
+this study to the memory of Mike J.  Harvey, who very substantially contributed
+to obtaining the atmospheric observations on the RV \emph{Tangaroa} voyages
+used in this study.
 
 \section*{Code availability}
 
@@ -1175,7 +1176,7 @@ The authors have made the following contributions based on the CRediT taxonomy
 (\url{https://credit.niso.org}).  PK: conceptualization, data curation, formal
 analysis, investigation, methodology, software, writing – original draft; FB:
 conceptualization, funding acquisition, project administration, supervision,
-and writing – review \& editing; AM, GP, SH, SP, SA, GM, JC, and AS: data
+and writing – review \& editing; AM, SA, GM, JC, GP, SH, SP, SG, and AS: data
 curation, investigation, resources, writing – review \& editing; [TODO]
 
 %\footnotesize
