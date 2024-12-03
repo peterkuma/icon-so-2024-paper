@@ -104,28 +104,29 @@ $^\star$Corresponding author: Peter Kuma (\href{mailto:peter.kuma@misu.su.se}{pe
 \section*{Abstract}
 
 Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
-Among them is a 5-km version of the Icosahedral Nonhydrostatic Weather and Climate Model
-(ICON). The high resolution allows for parameterizations of convection and
-clouds to be avoided. Standard-resolution models have substantial cloud biases
-over the Southern Ocean (SO), affecting radiation and sea surface temperature.
-We evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
+Among them is a 5-km version of the Icosahedral Nonhydrostatic Weather and
+Climate Model (ICON). The high resolution allows for parameterizations of
+convection and clouds to be avoided, relying instead on explicitly resolved
+processes.  Standard-resolution models have substantial cloud biases over the
+Southern Ocean (SO), affecting radiation and sea surface temperature.  We
+evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
 dominated by low clouds, which cannot be observed accurately from space due to
 overlapping clouds, attenuation, and ground clutter.  Instead, we analysed
-about 2400 days of lidar observations from 31 voyages and a station using a
-ground-based lidar simulator.  ICON and the reanalyses underestimate the total
-cloud fraction by about 10 and 20\%, respectively. ICON and ERA5 overestimate
-the cloud occurrence peak at about 500 m, potentially explained by their
-lifting condensation levels being too high.  The reanalyses strongly
-underestimate near-surface clouds or fog.  MERRA-2 tends to underestimate cloud
-occurrence at all heights. Less stable conditions are the most problematic for
-ICON and the reanalyses.  In daily cloud cover, ICON and the reanalyses tend to
-be about 1 and 2 oktas clearer, respectively. Compared to radiosondes,
-potential temperature is accurate in the reanalyses, but ICON underestimates
-stability over the low-latitude SO and too humid in the boundary layer. MERRA-2
-is too humid at all heights. SO cloud biases remain a substantial issue in the
-GSRM, but are an improvement over the lower-resolution reanalyses. Explicitly
-resolved convection and cloud processes were not enough to address the model
-cloud biases.
+about 2400 days of lidar observations from 31 voyages and a station during
+2010--2021 using a ground-based lidar simulator.  ICON and the reanalyses
+underestimate the total cloud fraction by about 10 and 20\%, respectively. ICON
+and ERA5 overestimate the cloud occurrence peak at about 500 m, potentially
+explained by their lifting condensation levels being too high.  The reanalyses
+strongly underestimate near-surface clouds or fog.  MERRA-2 tends to
+underestimate cloud occurrence at all heights. Less stable conditions are the
+most problematic for ICON and the reanalyses.  In daily cloud cover, ICON and
+the reanalyses tend to be about 1 and 2 oktas clearer, respectively. Compared
+to radiosondes, potential temperature is accurate in the reanalyses, but ICON
+underestimates stability over the low-latitude SO and too humid in the boundary
+layer. MERRA-2 is too humid at all heights. SO cloud biases remain a
+substantial issue in the GSRM, but are an improvement over the lower-resolution
+reanalyses. Explicitly resolved convection and cloud processes were not enough
+to address the model cloud biases.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -166,17 +167,17 @@ computationally costly GSRM is to train an artificial neural network on GSRM
 output and use it for subgrid-scale clouds, as done with the GSRM ICON by
 \cite{grundner2022} and \cite{grundner2023}.
 
-nextGEMS is a European Union--funded project \citep{nextgems} focused on the
+nextGEMS is a project \citep{nextgems} focused on the
 research and development of GSRMs at multiple modelling centres and
 universities in Europe.  The project also develops GSRM versions of the
 Icosahedral Nonhydrostatic Weather and Climate Model (ICON), the Integrated
 Forecasting System (IFS), and their ocean components at eddy-resolving
 resolutions: ICON-O coupled with ICON and Finite-Element/volumE Sea ice-Ocean
 Model (FESOM) and Nucleus for European Modelling of the Ocean (NEMO) coupled
-with IFS.  The project has so far produced ICON and IFS simulations in three
-cycles (Cycle 1--3) and pre-final simulation, with a final production
-simulation planned by the end of the project. nextGEMS is not the only project
-developing GSRMs. Other GSRMs (or GSRM versions of climate models) currently in
+with IFS.  The project has so far produced ICON and IFS simulations with three
+development versions called Cycle 1--3 and a pre-final version, with a final production
+version planned by the end of the project. nextGEMS is not the only project
+developing GSRMs; other GSRMs (or GSRM versions of climate models) currently in
 development include: Convection-Permitting Simulations With the E3SM Global
 Atmosphere Model [SCREAM; \cite{caldwell2021}], Atmospheric Model [NICAM;
 \cite{satoh2008}], Unified Model (UM), eXperimental System for High-resolution
@@ -193,7 +194,7 @@ Multiple cloud properties have an effect on shortwave (SW) and longwave (LW)
 radiation. To first order, the total cloud fraction, cloud phase, and the
 liquid and ice water path are the most important cloud properties influencing
 SW and LW radiation. These properties are  in turn influenced by the
-atmospheric thermodynamics, convection and circulation, and indirect and direct
+atmospheric thermodynamics, convection and circulation, and both the indirect and direct
 effects of aerosols. Second order effects on SW and LW radiation are associated
 with the cloud droplet size distribution, ice crystal habit, cloud lifetime,
 and direct radiative interaction with aerosols.  In the 6$^\mathrm{th}$ phase
@@ -225,9 +226,9 @@ GSRM SCREAM \cite{caldwell2021}. Compensating biases are possible, such as the
 too large cloud albedo \citep{wall2017,kuma2020}, previously described by
 \cite{webb2001}, \cite{weare2004}, \cite{zhang2005}, \cite{karlsson2008},
 \cite{nam2012}, \cite{klein2013}, and \cite{bender2017} in other regions and
-models. That is, a model maintains a reasonable SW radiation balance by
-reflecting too much SW radiation from clouds, but has too little cloudarea
-overall. A study by \cite{konsta2022} showed that this type of bias is still
+models, which means that a model can maintain a reasonable SW radiation balance by
+reflecting too much SW radiation from clouds, but these cover too small area.
+A study by \cite{konsta2022} showed that this type of bias is still
 present in six analysed CMIP6 models in tropical marine clouds, using the
 GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation
 (CALIPSO) Cloud Product [CALIPSO--GOCCP; \cite{chepfer2010}] and Polarization
@@ -314,7 +315,8 @@ Southern Ocean area of our analysis and its partitioning into two subsets,
 respectively.  A photo of \textbf{(b)} RV \emph{Polarstern} (© Folke Mehrtens,
 Alfred-Wegener-Institut), \textbf{(c)} Lufft CHM 15k installed on RV
 \emph{Tangaroa} (© Peter Kuma, University of Canterbury), \textbf{(d)} Vaisala
-CL51 (© Jeff Aquilina, Bureau of Meteorology).
+CL51 (© Jeff Aquilina, Bureau of Meteorology), \textbf{(e)} Vaisala CT25K at
+Macquarie Island (© Simon P.\ Alexander, Australian Antarctic Division).
 }
 \label{fig:map}
 \end{figure}
@@ -326,13 +328,13 @@ CL51 (© Jeff Aquilina, Bureau of Meteorology).
 
 Together, we analysed data from 31 voyages of RV \emph{Polarstern}, the resupply
 vessel (RSV) \emph{Aurora Australis}, RV \emph{Tangaroa}, RV \emph{Nathaniel B.
-Palmer}, Her Majesty's New Zealand Ship (HMNZS) \emph{Wellington} and one
+Palmer}, Her (now His) Majesty's New Zealand Ship (HMNZS) \emph{Wellington} and one
 sub-Antarctic station (Macquarie Island) in the SO south of 40°S between 2010
 and 2021. Fig. \ref{fig:map} shows a map of the voyages, Table
 \ref{tab:voyages} list the voyages, campaigns, and stations, and Table
 \ref{tab:voyage-references} lists references where available. Altogether, the
 voyages and station dataset comprised 2421 days of data south of 40°S, but the
-availability of ceilometer data was slightly smaller due to gaps in
+availability of ceilometer data was slightly shorter due to gaps in
 measurements.
 
 Missing days in the ceilometer data were HMNZSW16 (7 days): 24--27 November, 10
@@ -343,13 +345,16 @@ Macquarie Island Cloud Radiation Experiment (MICRE; 9 days): 7--8, 29 June, 5,
 day): 24 January.
 
 The data sources contained ceilometer observations captured by the Vaisala CL51
-operating at a wavelength of 910 nm, the Vaisala CT25K operating at 905 nm, and
-the Lufft CHM 15k operating at 1064 nm, described in detail below (Sections
+and CT25K, and the Lufft CHM 15k, described in detail below (Sections
 \ref{sec:cl51} and \ref{sec:chm15k}). A ceilometer is a low-power near-infrared
 vertically pointing lidar principally designed to  measure cloud base, but they
 also measure the full vertical structure of clouds as long as the laser signal
 is not attenuated by thick clouds, which can be used to infer additional
-information such as a cloud mask and cloud occurrence by height.
+information such as a cloud mask and cloud occurrence by height.  We note that
+during the MICRE campaign, the ceilometers Vaisala CT25K and CL51 were
+installed at the Macquarie Island station concurrently, but in our analysis we
+only used the CT25K data obtained from the Atmospheric Radiation Measurement
+(ARM) data archive.
 
 Apart from lidar observations, radiosondes were launched on weather balloons at
 regular synoptic times on the RV \emph{Polarstern}, MARCUS, NBP17024, TAN1702,
@@ -455,7 +460,7 @@ TAN1802  & \cite{kremser2020,kremser2021} \\
 \subsection{Vaisala CL51 and CT25K}
 \label{sec:cl51}
 
-The Vaisala CL51 (photo in Fig. \ref{fig:map}d) and CT25K are ceilometers
+The Vaisala CL51 and CT25K (photos in Fig. \ref{fig:map}d, e) are ceilometers
 operating at a near-infrared wavelength of 910 nm and 905 nm, respectively.
 The CL51 can also be configured to emulate the Vaisala CL31. The maximum range is
 15.4 km (CL51), 7.7 km (CL31 emulation mode with 5 m vertical resolution), and
@@ -750,8 +755,7 @@ of cyclonic days as determined by the cyclone tracking algorithm applied to the
 ERA5 reanalysis and ICON data (Section \ref{sec:cyclone-stability}). As
 expected, the strongest cyclonic activity is in the high-latitude SO zone, and
 it is relatively zonally symmetric at all latitudes.  While both reanalysis and
-the model agree relatively well, differences in the strength of the local
-extremes of occurrence are notable, especially over the Amundsen Sea, which is
+the model agree relatively well, there are clear differences particularly in the highest occurence rate regions -- over the Amundsen Sea, which is
 more cyclonic in the reanalysis, and around Cape Adare, which is more cyclonic
 in ICON. These differences might, however, stem from the relatively short time
 periods of comparison (4 years) and the fact that the model is free-running.
@@ -796,7 +800,7 @@ but strongly underestimates it near the surface.  We note that fog or
 near-surface clouds are strongly underestimated in the reanalyses (fog and clouds are
 both included in the cloud occurrence).  As shown in Fig.
 \ref{fig:cloud-occurrence-panel}, the biases are relatively consistent across
-the data sources and longitudes. We conclude that the ICON results ch the observations better than the reanalyses in this metric.
+the data sources and longitudes. We conclude that the ICON results match the observations better than the reanalyses in this metric.
 
 For all observations considered (Fig. \ref{fig:cloud-occurrence}a), the data show
 cloud occurrence peaking at the surface, whereas the models show a higher peak (at
@@ -822,14 +826,15 @@ When subsetted by cyclonic and non-cyclonic situations (Fig.
 larger amount of observed cloudiness, including peak and total cloud
 fraction. In these situations, the model vertical profiles of cloud occurrence compare well with observations, but still tend to
 underestimate cloud occurrence above 1 km and near the surface. Non-cyclonic
-situations are similar to the general case.
+situations are similar to the general case, partially also because they form
+the majority of cases.
 
 When subsetted by relatively stable and unstable conditions (Fig.
 \ref{fig:cloud-occurrence}f, g), as defined in Section
 \ref{sec:cyclone-stability}, we see that in relatively stable
 situations cloud occurrence peaks strongly at the surface in observations,
-compared to relatively unstable situations, where the peak is more obtuse
-and spread across the altitudes of 0--1 km.  In relatively stable
+compared to relatively unstable situations, where the peak is more diffuse
+between 0 and 1 km.  In relatively stable
 situations, the models do a fairly good job, but overestimate cloud
 occurrence at the peak below 1 km; above 1 km, they show similar biases as in
 the general case.  In relatively unstable situations, the bias in ICON is
@@ -884,7 +889,7 @@ In Fig.  \ref{fig:cloud-cover} we show the results for the same subsets of data
 as in Section \ref{sec:cloud-occurrence}. Observations display the highest proportion of
 high cloud cover values (5--8 oktas), peaking at 7 oktas. This pattern is not represented by
 ICON or either reanalyses.  While ICON is closest to matching the observed distribution, it tends to be 1 okta
-clearer than the observations, peaking at 6 oktas, and highly underestimating
+clearer than the observations, peaking at 6 oktas, and substantially underestimating
 days with 8 oktas.  Overall, the reanalyses show results similar to each other,
 underestimating cloud cover by about 2 oktas and strongly underestimating days
 with 7 and 8 oktas. Of the two reanalyses, MERRA-2 shows slightly higher cloud
@@ -936,10 +941,14 @@ occurrence and the number of profiles in each subset.
 
 We analysed about 2300 radiosonde profiles south of 40°S from the 24 RV
 \emph{Polarstern} voyages, MARCUS, NBP1704, TAN1702, and TAN1802. Spatially and
-temporally colocated profiles were taken from ICON and the reanalyses. Because
-the time period of the ICON model output was different from the observations,
-model time was chosen to be the same as the radiosonde launch time relative to
-the start of the year. The profiles were partitioned into the same subsets as
+temporally colocated profiles were taken from ICON and the reanalyses.
+Because the time period covered by the ICON model output (2021--2024) was
+different from the time period covered by the observations (2010--2021), when
+comparing with the model, we first had to remap the observation time to model
+time by taking the same time relative to the start of the year. Consequently,
+we also had four virtual/model profiles (one for each year of 2021--2024) for
+each observed profile.
+The profiles were partitioned into the same subsets as
 above (Sections \ref{sec:cloud-occurrence} and \ref{sec:cloud-cover}).  Apart
 from relative humidity, we focus on comparing virtual potential temperature
 ($\theta_v$) due to its role in low-level tropospheric stability, being one of
@@ -1085,7 +1094,7 @@ surface, among other factors responsible for SO SST biases in climate models
 The results imply that SO cloud biases are still a substantial issue even in the
 km-scale resolution ICON model, even though an improvement over the
 lower-resolution reanalyses is notable. More effort is needed to improve the
-model cloud simulations in this fast-changing and understudied region. However, this analysis suggests that the
+model cloud simulations in this understudied region. However, this analysis suggests that the
 transition from models with parametrised convection and clouds to
 storm-resolving models might not solve these biases without additional effort.
 Evaluation of ocean--atmosphere heat, moisture, and momentum fluxes against in-situ observations over the SO and comparison of GSRM simulations against
@@ -1115,7 +1124,7 @@ of Water and Atmospheric Research and UC, the NBP1704 dataset provided by the
 National Science Foundation, Cooperative Institute for Research in
 Environmental Sciences, University of Colorado and UC, the HMNZSW16 dataset
 provided by the Royal New Zealand Navy and UC, the MARCUS dataset provided by
-the Atmospheric Radiation Measurement (ARM) and AAD, and the MICRE dataset
+ARM and AAD, and the MICRE dataset
 provided by ARM, the Australian Bureau of Meteorology, and AAD.  Technical,
 logistical, and ship support for MARCUS and MICRE were provided by the AAD
 through Australian Antarctic Science projects 4292 and 4387, and we thank
