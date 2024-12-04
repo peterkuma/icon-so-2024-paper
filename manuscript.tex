@@ -558,11 +558,12 @@ vertical levels and 3-hourly instantaneous temporal resolution.
 
 Unlike current general circulation models (GCMs), the storm-resolving version
 of ICON does not use convective and cloud parameterization but relies on
-explicit simulation of convection and clouds on the model grid. While this
-makes the code development simpler without having to rely on uncertain
-parameterizations, it can miss smaller-scale clouds below the grid resolution.
-Turbulence and cloud microphysics are still parameterized in this model. To
-account for the radiative effects of subgrid-scale clouds, a cloud
+explicit simulation of convection and clouds on the model grid. Subgrid-scale
+clouds are not resolved, and the grid cell cloud fraction is always either 0 or
+100\%. While this makes the code development simpler without having to rely on
+uncertain parameterizations, it can miss smaller-scale clouds below the grid
+resolution.  Turbulence and cloud microphysics are still parameterized in this
+model. To account for the radiative effects of subgrid-scale clouds, a cloud
 inhomogeneity factor is introduced in the model which scales down the cloud
 liquid water for radiative calculations. It ranges from 0.4 at lower
 tropospheric stability (LTS) of 0 K to 0.8 at 30 K. In addition, vertical
