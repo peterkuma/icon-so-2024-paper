@@ -207,7 +207,7 @@ priority region for numerical weather prediction (NWP) and climate model
 development because of its distance from populated areas.  Nevertheless,
 radiation biases and changes over an area of its size have a substantial
 influence on the global climate, and the SO is an important part of the global
-ocean conveyor belt.  Marine clouds have a disproportionate effect on top of
+ocean conveyor belt. In general, marine clouds have a disproportionate effect on top of
 atmosphere (TOA) SW radiation due to the relatively low albedo of the sea
 surface.  The relative longitudinal symmetry of the SO means that model cloud
 biases tend to be similar across longitudes.  Here, we conventionally refer to
@@ -257,9 +257,9 @@ In general, sea surface temperature (SST) biases in the SO can originate either
 in the atmosphere, caused by too much shortwave heating of the surface, too
 little longwave cooling of the surface, or in the ocean circulation.
 Interactions of both are also possible, for example SST affecting clouds and
-clouds affecting the surface radiation. \cite{zhang2023} have shown that SST
-biases have improved in CMIP6 compared to CMIP5 [relative to the European
-Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5; ERA5], with SST
+clouds affecting the surface radiation. Using the European
+Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5 (ERA5) as a reference, \cite{zhang2023} have shown that SST
+biases have improved in CMIP6 compared to CMIP5, with SST
 overall increasing in the later CMIP phase. However, over the SO this resulted
 in an even higher positive bias, especially in the Atlantic Ocean (AO) sector
 of the SO, increasing by up to 1°C.  \cite{luo2023} identified that the SO SST
@@ -467,8 +467,8 @@ The CL51 can also be configured to emulate the Vaisala CL31. The maximum range i
 30 m in CT25K observations. The sampling (temporal) resolution is configurable, and in our
 datasets is approximately 6 s for CL51 on AA15‐16, 16 s for CT25K on MARCUS and
 MICRE, 36 s for CL51 on RV \emph{Polarstern}, and about 2.37 s for CL51 with
-CL31 emulation on TAN1502. The wavelength of 910 nm is affected by water vapour
-absorption of about 20\% in the mid-latitudes \citep{wiegner2015,wiegner2019},
+CL31 emulation on TAN1502. The wavelengths of 905 and 910 nm are affected by water vapour
+absorption of about 20\% in the mid-latitudes \citep{wiegner2015,wiegner2019}, with 910 nm affected more strongly,
 but we do not expect this to be a significant issue as explained in
 \cite{kuma2021}.  The instrument data files containing raw uncalibrated
 backscatter were first converted to Network Common Data Form (NetCDF) with
@@ -546,7 +546,7 @@ derived from ECHAM6 \citep{stevens2013}, and the ocean component ICON-O
 \citep{korn2022}. Earlier runs of the GSRM ICON from DYAMOND were evaluated by
 \cite{mauritsen2022}.
 
-Here, we use a free-running (i.e., \emph{not} nudged or using prescribed SST)
+Here, we use a free-running (i.e., the weather situation in the model does not correspond to reality)
 coupled GSRM simulation made for the purpose of climate projection.  nextGEMS
 has so far produced four cycles of model runs. We used a Cycle 3 run
 \emph{ngc3028} produced in 2023 \citep{nextgems2023a,nextgems2023b} for a model
@@ -574,7 +574,7 @@ The Modern-Era Retrospective analysis for Research and Applications, Version 2
 (MERRA-2) is a reanalysis produced by the Global Modeling and Assimilation
 Office at the NASA Goddard Space Flight Center \citep{gelaro2017}.  It uses
 version 5.12.4 of the Goddard Earth Observing System (GEOS) atmospheric model
-\citep{rienecker2008,molod2015}. The reanalysis output analysed here is
+\citep{rienecker2008,molod2015}. Non-convective clouds (condensation, autoconversion, and evaporation) are parametrised using a prognostic scheme \citep{bacmeister2006}, and sub-grid cloud fraction is determined using total water distribution and a critical relative humidity threshold. The reanalysis output analysed here is
 available at a spatial resolution of 0.5° of latitude and 0.625° of longitude,
 which is about 56 km in the North--South direction and 35 km in the East--West
 direction at 60°S. The number of vertical model levels is 72. Here, we use the
@@ -799,7 +799,7 @@ but strongly underestimates it near the surface.  We note that fog or
 near-surface clouds are strongly underestimated in the reanalyses (fog and clouds are
 both included in the cloud occurrence).  As shown in Fig.
 \ref{fig:cloud-occurrence-panel}, the biases are relatively consistent across
-the data sources and longitudes. We conclude that the ICON results ch the observations better than the reanalyses in this metric.
+the data sources and longitudes. We conclude that the ICON results  the observations better than the reanalyses in this metric.
 
 For all observations considered (Fig. \ref{fig:cloud-occurrence}a), the data show
 cloud occurrence peaking at the surface, whereas the models show a higher peak (at
