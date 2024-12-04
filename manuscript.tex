@@ -535,6 +535,7 @@ simulated Vaisala CL51 backscatter from ERA5 data, corresponding to a day of
 measurements by the instrument on the PS81/3 voyage.
 
 \subsection{ICON}
+\label{sec:icon}
 
 A coupled (atmosphere--ocean) GSRM version of the ICON model is in development
 at the nextGEMS project \citep{hohenegger2023}. ICON is an exceptionally
@@ -553,13 +554,20 @@ has so far produced four cycles of model runs. We used a Cycle 3 run
 time period of 20 January 2020 to 22 July 2025, of which we analysed the period 2021--2024 (inclusive). While a Cycle 4 run was available, we could not
 use it due to a lack of availability of the necessary variables. The horizontal
 resolution of ngc3028 is about 5 km.  The model output is available on 90
-vertical levels and 3-hourly instantaneous temporal resolution.  Unlike current
-general circulation models (GCMs), the storm-resolving version of ICON does not
-use convective and cloud parameterization but relies on explicit simulation of
-convection and clouds on the model grid. While this makes the code development
-simpler without having to rely on uncertain parameterizations, it can miss
-smaller-scale clouds below the grid resolution.  Turbulence and cloud
-microphysics are still parameterized in this model.
+vertical levels and 3-hourly instantaneous temporal resolution.
+
+Unlike current general circulation models (GCMs), the storm-resolving version
+of ICON does not use convective and cloud parameterization but relies on
+explicit simulation of convection and clouds on the model grid. While this
+makes the code development simpler without having to rely on uncertain
+parameterizations, it can miss smaller-scale clouds below the grid resolution.
+Turbulence and cloud microphysics are still parameterized in this model. To
+account for the radiative effects of subgrid-scale clouds, a cloud
+inhomogeneity factor is introduced in the model which scales down the cloud
+liquid water for radiative calculations. It ranges from 0.4 at lower
+tropospheric stability (LTS) of 0 K to 0.8 at 30 K. In addition, vertical
+mixing is enhanced in unstable and humid lower-tropospheric conditions, which
+reduces the amount of shallow clouds.
 
 Because the model is free-running, weather and climate oscillations (such as
 the El Niño--Southern Oscillation) are not expected to be equivalent to reality
@@ -721,7 +729,7 @@ were used as the input to CyTRACK, because the model is free-running, and thus
 the pressure and wind fields are different from reality.
 
 In addition to the above, we partitioned our data into two mutually exclusive
-subsets based on lower tropospheric stability (LTS), which is derived as the difference between the potential temperature at 700 hPa
+subsets based on LTS, which is derived as the difference between the potential temperature at 700 hPa
 and the surface.  Based on a histogram of LTS in ERA5 and MERRA-2 calculated at
 all voyage tracks and stations (Fig.  \ref{fig:lts}), we determined a dividing
 threshold of 12 K for relatively unstable (< 12 K) and relatively stable (>= 12
@@ -1079,13 +1087,16 @@ This feature seems to be much more pronounced in ERA5 than in MERRA-2. On the
 other hand, this relationship is not present in ICON. This model generally
 predicts smaller outgoing TOA SW radiation and smaller total cloud fraction
 than observations, and the deficit of outgoing TOA SW radiation is
-approximately proportional to the deficit of the total cloud fraction. While this
-might be a welcome feature and an improvement over previous models, it does
-mean that the outgoing TOA SW radiation is overall underestimated instead of
-being compensated by a higher cloud albedo. This can, of course, lead to
+approximately proportional to the deficit of the total cloud fraction. While
+this might be a welcome feature and an improvement over previous models, it
+does mean that the outgoing TOA SW radiation is overall underestimated instead
+of being compensated by a higher cloud albedo.  This can, of course, lead to
 undesirable secondary effects such as overestimated solar heating of the sea
 surface, among other factors responsible for SO SST biases in climate models
-\citep{zhang2023,luo2023,hyder2018}.
+\citep{zhang2023,luo2023,hyder2018}.  To some extent, the cloud albedo might be
+reduced in the model artifically by the application of an inhomogeneity factor
+to lower cloud liquid water in the radiative transfer calculations (Sec.
+\ref{sec:icon}).
 
 The results imply that SO cloud biases are still a substantial issue even in the
 km-scale resolution ICON model, even though an improvement over the
