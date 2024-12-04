@@ -556,7 +556,7 @@ resolution of ngc3028 is about 5 km.  The model output is available on 90
 vertical levels and 3-hourly instantaneous temporal resolution.  Unlike current
 general circulation models (GCMs), the storm-resolving version of ICON does not
 use convective and cloud parameterization but relies on explicit simulation of
-convection and clouds on the model grid. While this makes the code development
+convection and clouds on the model grid. Subgrid-scale clouds are not resolved, and the grid cell cloud fraction is always either 0 or 100\%. While this makes the code development
 simpler without having to rely on uncertain parameterizations, it can miss
 smaller-scale clouds below the grid resolution.  Turbulence and cloud
 microphysics are still parameterized in this model.
