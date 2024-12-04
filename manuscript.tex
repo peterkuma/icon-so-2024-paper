@@ -107,7 +107,7 @@ Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
 Among them is a 5-km version of the Icosahedral Nonhydrostatic Weather and
 Climate Model (ICON). The high resolution allows for parameterizations of
 convection and clouds to be avoided, relying instead on explicitly resolved
-processes.  Standard-resolution models have substantial cloud biases over the
+processes, except for, among others, microphysics and turbulence.  Standard-resolution models have substantial cloud biases over the
 Southern Ocean (SO), affecting radiation and sea surface temperature.  We
 evaluated SO clouds in ICON and the ERA5 and MERRA-2 reanalyses.  The SO is
 dominated by low clouds, which cannot be observed accurately from space due to
@@ -118,14 +118,13 @@ underestimate the total cloud fraction by about 10 and 20\%, respectively. ICON
 and ERA5 overestimate the cloud occurrence peak at about 500 m, potentially
 explained by their lifting condensation levels being too high.  The reanalyses
 strongly underestimate near-surface clouds or fog.  MERRA-2 tends to
-underestimate cloud occurrence at all heights. Less stable conditions are the
-most problematic for ICON and the reanalyses.  In daily cloud cover, ICON and
+underestimate cloud occurrence at all heights. Conditions of weak stability are associated with the largest errors in ICON and the reanalyses.  In daily cloud cover, ICON and
 the reanalyses tend to be about 1 and 2 oktas clearer, respectively. Compared
 to radiosondes, potential temperature is accurate in the reanalyses, but ICON
 underestimates stability over the low-latitude SO and too humid in the boundary
 layer. MERRA-2 is too humid at all heights. SO cloud biases remain a
 substantial issue in the GSRM, but are an improvement over the lower-resolution
-reanalyses. Explicitly resolved convection and cloud processes were not enough
+reanalyses. Explicitly resolved convection and cloud processes (except microphysics) were not enough
 to address the model cloud biases.
 
 \section{Introduction}
@@ -170,7 +169,7 @@ output and use it for subgrid-scale clouds, as done with the GSRM ICON by
 nextGEMS is a project \citep{nextgems} focused on the
 research and development of GSRMs at multiple modelling centres and
 universities in Europe.  The project also develops GSRM versions of the
-Icosahedral Nonhydrostatic Weather and Climate Model (ICON), the Integrated
+Icosahedral Nonhydrostatic Weather and Climate Model (ICON; \cite{hohenegger2023}), the Integrated
 Forecasting System (IFS), and their ocean components at eddy-resolving
 resolutions: ICON-O coupled with ICON and Finite-Element/volumE Sea ice-Ocean
 Model (FESOM) and Nucleus for European Modelling of the Ocean (NEMO) coupled
@@ -800,7 +799,7 @@ but strongly underestimates it near the surface.  We note that fog or
 near-surface clouds are strongly underestimated in the reanalyses (fog and clouds are
 both included in the cloud occurrence).  As shown in Fig.
 \ref{fig:cloud-occurrence-panel}, the biases are relatively consistent across
-the data sources and longitudes. We conclude that the ICON results match the observations better than the reanalyses in this metric.
+the data sources and longitudes. We conclude that the ICON results ch the observations better than the reanalyses in this metric.
 
 For all observations considered (Fig. \ref{fig:cloud-occurrence}a), the data show
 cloud occurrence peaking at the surface, whereas the models show a higher peak (at
