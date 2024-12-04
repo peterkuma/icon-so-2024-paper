@@ -588,13 +588,13 @@ precipitation; and 1-hourly average 2D radiation diagnostics
 \subsection{ERA5}
 
 ERA5 \citep{era5} is a reanalysis produced by the ECMWF.  It is based on a
-numerical weather prediction model IFS version CY41R2.  The horizontal
+numerical weather prediction model IFS version CY41R2.  It uses the \cite{tiedtke1993} prognostic cloud scheme and \cite{forbes2014} for mixed-phase clouds. The horizontal
 resolution is 0.25° in latitude and longitude, which is about 28 km in the
 North--South direction and 14 km in the East--West direction at 60°S.
 Internally, the model uses 137 vertical levels. Here, we use output at 1-hourly
 instantaneous time intervals, except for radiation quantities, which are
 accumulations (from these we calculate daily means).  Vertically resolved
-quantities are made available on 37 pressure levels. It uses the \cite{tiedtke1993} prognostic cloud scheme and \cite{forbes2014} for mixed-phase clouds.
+quantities are made available on 37 pressure levels.
 
 \subsection{CERES}
 
@@ -681,7 +681,7 @@ rate (26\%) was made to match observations. The receiver operating
 characteristic curve is shown in Fig. \ref{fig:ann}c. We considered these rates
 satisfactory for the purpose of filtering precipitation profiles. Fig.
 \ref{fig:ann}d shows examples of the predicted precipitation compared to
-human-performed observations.
+human-performed observations. The main ANN (`ANN` in Fig. \ref{fig:ann}) was trained on all data, and ancillary ANNs (`ANN2` in Fig \ref{fig:ann}) were trained on all data except for each voyage. These were used for testing the results relative to each voyage.
 
 \begin{figure}[b!]
 \centering
@@ -708,8 +708,8 @@ relatively arbitrary due to the very large variability of ECs \citep{neu2013}.
 We used the mean sea level pressure field and horizontal wind speed fields as
 input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
 thresholds as well as tracking across time steps to identify cyclone centres
-and radii. With this information, we could classify geographical areas as
-either cyclonic or non-cyclonic. Due to a relatively small total area covered,
+and radii in each time step. With this information, we could classify geographical areas as
+either cyclonic or non-cyclonic. Due to a relatively small total area covered by cyclones (as identified by the cyclone centre and radius),
 we chose a circle of a double radius (relative to one identified by CyTRACK)
 centred at the cyclone centre as a cyclonic area for every time step and
 cyclone. All other areas were identified as non-cyclonic. For identifying
@@ -746,15 +746,12 @@ cyclone on a given day (UTC), as identified by CyTRACK.
 
 \subsection{Cyclonic activity and stability}
 
-Here, we briefly describe the results of the cyclonic activity and stability
-distribution, which is relevant for the subsequent analysis, because these
-conditions are used for subsetting our dataset. Fig.
-\ref{fig:cyclone-stability}a, b show a geographical distribution of the fraction
+Fig. \ref{fig:cyclone-stability}a, b show a geographical distribution of the fraction
 of cyclonic days as determined by the cyclone tracking algorithm applied to the
 ERA5 reanalysis and ICON data (Section \ref{sec:cyclone-stability}). As
 expected, the strongest cyclonic activity is in the high-latitude SO zone, and
 it is relatively zonally symmetric at all latitudes.  While both reanalysis and
-the model agree relatively well, there are clear differences particularly in the highest occurence rate regions -- over the Amundsen Sea, which is
+the model agree relatively well, there are clear differences particularly in the highest occurrence rate regions -- over the Amundsen Sea, where the Amundsen Sea low is located \cite{turner2013} and which is
 more cyclonic in the reanalysis, and around Cape Adare, which is more cyclonic
 in ICON. These differences might, however, stem from the relatively short time
 periods of comparison (4 years) and the fact that the model is free-running.
@@ -762,7 +759,7 @@ periods of comparison (4 years) and the fact that the model is free-running.
 Fig. \ref{fig:cyclone-stability}c, d show a geographical distribution of the
 relatively stable and unstable conditions as determined by the LTS (Section
 \ref{sec:cyclone-stability}). Relatively unstable conditions are prevalent
-in the middle SO (50--65°S), which might be explained by the relatively cold
+in the mid-to-high SO (with respect to our SO partitioning; 50--65°S), which might be explained by the relatively cold
 near-surface air overlying the relatively warm sea surface. Relatively
 stable conditions are prevalent elsewhere over the SO. The distribution is also
 less zonally symmetric than the cyclonic activity.  In the high-latitude SO,
@@ -938,7 +935,7 @@ occurrence and the number of profiles in each subset.
 
 \subsection{Thermodynamic profiles}
 
-We analysed about 2300 radiosonde profiles south of 40°S from the 24 RV
+In order to link the cloud biases to the local physical conditions, we analysed about 2300 radiosonde profiles south of 40°S from the 24 RV
 \emph{Polarstern} voyages, MARCUS, NBP1704, TAN1702, and TAN1802. Spatially and
 temporally colocated profiles were taken from ICON and the reanalyses.
 Because the time period covered by the ICON model output (2021--2024) was
@@ -991,7 +988,7 @@ simulation available. Moreover, the simulation is free-running, which means
 that observations had to be temporally mapped to this time period (at the same
 time relative to the start of the year) for the comparison. For these reasons,
 one can expect the results to be slightly different due to reasons unrelated to
-model biases, such as different weather conditions and the phase of climate
+model biases, such as different weather conditions, partially accounted for by the cyclone and stability subsetting, and the phase of climate
 oscillations such as the ENSO in the observations and the model.
 
 Ground-based lidar observations are affected by attenuation by thick cloud
