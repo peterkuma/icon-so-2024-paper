@@ -124,12 +124,12 @@ MERRA-2 tends to underestimate cloud occurrence at all heights.  In daily cloud
 cover, ICON and the reanalyses tend to be about 1 and 2 oktas clearer,
 respectively.  Conditions of weak stability are associated with the largest
 errors in ICON and the reanalyses.  Compared to radiosondes, potential
-temperature is accurate in the reanalyses, but ICON underestimates stability
-over the low-latitude SO and too humid in the boundary layer. MERRA-2 is too
-humid at all heights. SO cloud biases remain a substantial issue in the GSRM,
-but are an improvement over the lower-resolution reanalyses. Explicitly
-resolved convection and cloud processes (except microphysics) were not enough
-to address the model cloud biases.
+temperature is accurate in the reanalyses to about 0.5 K, but ICON
+underestimates stability over the low-latitude SO and too humid in the boundary
+layer. MERRA-2 is too humid at all heights. SO cloud biases remain a
+substantial issue in the GSRM, but are an improvement over the lower-resolution
+reanalyses. Explicitly resolved convection and cloud processes (except
+microphysics) were not enough to address the model cloud biases.
 
 \section{Introduction}
 \label{sec:introduction}
@@ -219,7 +219,14 @@ atmosphere (TOA) SW radiation due to the relatively low albedo of the sea
 surface.  The relative longitudinal symmetry of the SO means that model cloud
 biases tend to be similar across longitudes.  Here, we conventionally refer to
 the SO as ocean regions south of 40°S, low-latitude SO as 40--55°S and
-high-latitude SO as south of 55°S.
+high-latitude SO as south of 55°S. The reason for this dividing latitude
+is to split the SO into about two equal zones, as well as the results by
+\cite{schuddeboom2021} (Fig. 2b), showing a contrast in CMIP model radiation
+biases, \citep{schuddeboom2019} (Fig. 2) and \cite{kuma2020} (Fig. 3) showing
+contrasting radiation biases in the Hadley Centre Global Environmental Model
+between these two zones. The findings of \cite{niu2024}, however, support a
+different dividing line of 62º based on cloud condensation nuclei
+concentration.
 
 SO radiation biases have been relatively large and systematic compared to the
 rest of the globe since at least CMIP3 \citep{trenberth2010}, and the SO SW
@@ -829,14 +836,14 @@ shows that the total cloud fraction (determined as the fraction of profiles
 with clouds at any height in the lidar cloud mask) is underestimated in ICON by
 about 10\% and in the reanalyses by about 20\%. When analysed by height, ICON
 overestimates cloud occurrence below 1 km and underestimates it above, MERRA-2
-underestimates cloud occurrence at all heights, especially near the surface,
-and ERA5 simulates cloud occurrence relatively well above 1 km, but strongly
-underestimates it near the surface.  We note that fog or near-surface clouds
-are strongly underestimated in the reanalyses (fog and clouds are both included
-in the cloud occurrence).  As shown in Fig.  \ref{fig:cloud-occurrence-panel},
-the biases are relatively consistent across the data sources and longitudes. We
-conclude that the ICON results  the observations better than the reanalyses in
-this metric.
+underestimates cloud occurrence at all heights by up to about 10\%, especially
+near the surface, and ERA5 simulates cloud occurrence relatively well above 1
+km, but strongly underestimates it near the surface.  We note that fog or
+near-surface clouds are strongly underestimated in the reanalyses (fog and
+clouds are both included in the cloud occurrence).  As shown in Fig.
+\ref{fig:cloud-occurrence-panel}, the biases are relatively consistent across
+the data sources and longitudes. We conclude that the ICON results  the
+observations better than the reanalyses in this metric.
 
 For all observations considered (Fig. \ref{fig:cloud-occurrence}a), the data
 show cloud occurrence peaking at the surface, whereas the models show a higher
@@ -844,12 +851,12 @@ peak (at about 500 m). The models generally underestimate the total cloud
 fraction by 10--20\% and show a strong reduction in cloud occurrence near the
 surface, which is not supported by the observations. ICON and ERA5 overestimate
 cloud occurrence at their peak (between 0--1 km). Above 1 km, ICON and MERRA-2
-underestimate cloud occurrence, but ERA5 is very accurate. The exaggerated peak
-in models is partly supported by the lifting condensation level (LCL)
-distribution, which peaks higher in the models than in the observations (at the
-surface), although this is not very pronounced. This is indicative of
-near-surface relatively humidity being often close to saturation in the
-observations but not in the models.
+underestimate cloud occurrence, but ERA5 is accurate to about 3\% or less. The
+exaggerated peak in models is partly supported by the lifting condensation
+level (LCL) distribution, which peaks higher by about 200 m in the models than
+in the observations (at the surface), although this is not very pronounced.
+This is indicative of near-surface relatively humidity being often close to
+saturation in the observations but not in the models.
 
 When subsetted by latitude (Fig.  \ref{fig:cloud-occurrence}b, c), we see that
 the low-latitude SO zone displays a stronger peak of cloud occurrence near the
@@ -861,11 +868,13 @@ occurrence is still strongly underestimated).
 
 When subsetted by cyclonic and non-cyclonic situations (Fig.
 \ref{fig:cloud-occurrence}d, e), we see that the cyclonic situations have a
-larger amount of observed cloudiness, including peak and total cloud fraction.
-In these situations, the model vertical profiles of cloud occurrence compare
-well with observations, but still tend to underestimate cloud occurrence above
-1 km and near the surface. Non-cyclonic situations are similar to the general
-case, partially also because they form the majority of cases.
+larger amount of observed cloudiness, including peak and total cloud fraction,
+both by about 7\%.  In the cyclonic situations, the model vertical profiles of
+cloud occurrence compare well with observations, but they peak higher by about
+200 m and stronger by about 8\%. The reanalyses still tend to underestimate
+cloud occurrence above 1 km by about 5\% and near the surface by about 14\%.
+Non-cyclonic situations are similar to the general case, partially also because
+they form the majority of cases.
 
 When subsetted by conditions of weak and strong stability (Fig.
 \ref{fig:cloud-occurrence}f, g), as defined in Section
@@ -876,12 +885,13 @@ km.  It is work mentioning that conditions of strong stability might be
 associated with the formation of advection fog, such as in situation of warm
 air advection from the north over colder sea surface, thus inducing fog
 formation by cooling of the warm and humid air by the cold surface.  In
-situations of strong stability, the models do a fairly good job, but
-overestimate cloud occurrence at the peak below 1 km; above 1 km, they show
-similar biases as in the general case.  In situations of weak stability, the
-bias in ICON is very pronounced, with a much stronger peak at about 500 m, ERA5
-underestimates cloud occurrence below 1 km (especially near the surface), and
-MERRA-2 underestimates cloud occurrence even more strongly.
+situations of strong stability, the models have smaller biases than in weak
+stability, with overestimated peak by up to 12\%, underestimated cloud
+occurrence above 1 km by up to 5\% and underestimated cloud occurrence near the
+surface by about 11\%.  In situations of weak stability, the bias in ICON is
+very pronounced, with a much stronger peak at about 500 m, ERA5 underestimates
+cloud occurrence below 1 km (especially near the surface), and MERRA-2
+underestimates cloud occurrence even more strongly.
 
 In all situations, even when the models overestimate cloud occurrence at some
 altitudes, they always substantially underestimate the total cloud fraction.
@@ -936,8 +946,9 @@ to matching the observed distribution, it tends to be 1 okta clearer than the
 observations, peaking at 6 oktas, and substantially underestimating days with 8
 oktas.  Overall, the reanalyses show results similar to each other,
 underestimating cloud cover by about 2 oktas and strongly underestimating days
-with 7 and 8 oktas. Of the two reanalyses, MERRA-2 shows slightly higher cloud
-cover and thus is more consistent with observations.
+with 7 and 8 oktas. Of the two reanalyses, MERRA-2 has slightly higher cloud
+cover then ERA5, by about 6\% at 6 octas, which makes it more consistent with
+observations.
 
 When analysed by subsets, observations in the cyclonic subset show the highest
 cloud cover, with 8 oktas occurring on one half of such days (Fig.
@@ -1001,9 +1012,9 @@ the primary factors affecting shallow convection and the associated low-level
 cloud formation and dissipation. The observed and model profiles of virtual
 potential temperature are shown in Fig. \ref{fig:potential-temperature}.
 
-Overall, the mean $\theta_v$ is very well represented in ICON and MERRA-2,
-being only slightly colder in the mid-to-high troposphere (less stable) in ICON
-than in observations (Fig. \ref{fig:potential-temperature}a).  Larger
+Overall, the mean $\theta_v$ is accurate less than 0.5 K in ICON and MERRA-2,
+being only colder by up to 2 K in the mid-to-high troposphere (less stable) in
+ICON than in observations (Fig. \ref{fig:potential-temperature}a).  Larger
 differences exist, however, in the 40--55°S zone, where ICON is colder by about
 5 K at higher altitudes (Fig.  \ref{fig:potential-temperature}b). In other
 subsets, the bias is relatively small. MERRA-2 is very close to the
