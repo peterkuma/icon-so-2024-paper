@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.95684827"
-     inkscape:cx="490.15086"
-     inkscape:cy="326.07051"
+     inkscape:zoom="1.4331138"
+     inkscape:cx="294.81259"
+     inkscape:cy="881.99553"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
@@ -4902,11 +4902,11 @@
        id="tspan408"
        style="font-weight:bold;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"
        x="179.68878"
-       y="250.38921">(g) Unstable</tspan><tspan
+       y="250.38921">(g) Weak stability</tspan><tspan
        sodipodi:role="line"
        style="font-weight:normal;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"
        x="179.68878"
-       y="254.79892"
+       y="254.79893"
        id="tspan6253">RFO = 40%</tspan><tspan
        sodipodi:role="line"
        style="font-weight:normal;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"
@@ -5469,11 +5469,11 @@
        id="tspan404"
        style="font-weight:bold;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"
        x="72.648399"
-       y="250.40816">(f) Stable</tspan><tspan
+       y="250.40816">(f) Strong stability</tspan><tspan
        sodipodi:role="line"
        style="font-weight:normal;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"
        x="72.648399"
-       y="254.81787"
+       y="254.81789"
        id="tspan6255">RFO = 60%</tspan><tspan
        sodipodi:role="line"
        style="font-weight:normal;font-size:3.52778px;text-align:end;text-anchor:end;stroke-width:0.264583"

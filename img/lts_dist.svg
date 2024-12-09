@@ -8,7 +8,7 @@
    version="1.1"
    id="svg13051"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="lts-dist.svg"
+   sodipodi:docname="lts_dist.svg"
    inkscape:export-filename="lts-dist.png"
    inkscape:export-xdpi="358.55533"
    inkscape:export-ydpi="358.55533"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="527.5"
-     inkscape:cy="275"
+     inkscape:zoom="1.4568991"
+     inkscape:cx="800.67316"
+     inkscape:cy="182.57956"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
@@ -1752,47 +1752,47 @@
        id="path17831" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="38.751713"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="47.216187"
        y="22.71953"
        id="text17835"><tspan
          sodipodi:role="line"
          id="tspan17833"
-         style="stroke-width:0.264583"
-         x="38.751713"
-         y="22.71953">unstable</tspan></text>
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="47.216187"
+         y="22.71953">weak stability</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="104.50116"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="110.2337"
        y="22.71953"
        id="text17839"><tspan
          sodipodi:role="line"
          id="tspan17837"
-         style="stroke-width:0.264583"
-         x="104.50116"
-         y="22.71953">stable</tspan></text>
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="110.2337"
+         y="22.71953">strong stability</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="243.59489"
+       x="249.44456"
        y="22.71953"
        id="text17897"><tspan
          sodipodi:role="line"
          id="tspan17895"
-         style="stroke-width:0.264583"
-         x="243.59489"
-         y="22.71953">stable</tspan></text>
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="249.44456"
+         y="22.71953">strong stability</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';stroke-width:0.264583"
-       x="177.97623"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="186.42705"
        y="22.71953"
        id="text17901"><tspan
          sodipodi:role="line"
          id="tspan17899"
-         style="stroke-width:0.264583"
-         x="177.97623"
-         y="22.71953">unstable</tspan></text>
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="186.42705"
+         y="22.71953">weak stability</tspan></text>
   </g>
 </svg>

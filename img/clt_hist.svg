@@ -26,8 +26,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.4651422"
-     inkscape:cx="252.53521"
-     inkscape:cy="260.04302"
+     inkscape:cx="279.49506"
+     inkscape:cy="596.52913"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
@@ -10336,7 +10336,7 @@
        id="tspan408"
        style="font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
        x="90.537682"
-       y="156.76491">(g) Unstable</tspan></text><path
+       y="156.76491">(g) Weak stability</tspan></text><path
      d="M 0,203.36687 H 80.000001 V 151.36978 H 0 Z"
      style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352777"
      id="path45990" /><text
@@ -11125,7 +11125,7 @@
        id="tspan404"
        style="font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
        x="10.53768"
-       y="156.88968">(f) Stable</tspan></text><path
+       y="156.88968">(f) Strong stability</tspan></text><path
      d="M 49.731845,42.652913 H 118.23225 V 1.817833 H 49.731845 Z"
      style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352777"
      id="path28111" /><g
