@@ -104,13 +104,12 @@ $^\star$Corresponding author: Peter Kuma (\href{mailto:peter.kuma@misu.su.se}{pe
 \section*{Abstract}
 
 Global storm-resolving models (GSRMs) are the next avenue of climate modelling.
-Among them is a 5-km version of the Icosahedral Nonhydrostatic Weather and
-Climate Model (ICON). The high resolution means that parameterizations of
-convection and clouds including subgrid-scale clouds are forgone, relying on
-explicit their simulation, but still using microphysics and turbulence
-parametrization.  Standard-resolution (10--100-km) models, which use
+Among them is a 5-km horizontal resolution version of the Icosahedral Nonhydrostatic Weather and
+Climate Model (ICON). This high resolution means that parameterizations of
+convection and clouds including subgrid-scale clouds are not required, though microphysics and turbulence
+parametrizations are still needed.  Standard-resolution (10--100-km) models, which use
 subgrid-scale convection and cloud parametrization, have substantial cloud
-biases over the Southern Ocean (SO), affecting radiation and sea surface
+biases over the Southern Ocean (SO), adversely affecting radiation and sea surface
 temperature.  We evaluated SO clouds in ICON and the ERA5 and MERRA-2
 reanalyses.  The SO is dominated by low clouds, which cannot be observed
 accurately from space due to overlapping clouds, attenuation, and ground
@@ -122,10 +121,10 @@ about 500 m, potentially explained by their lifting condensation levels being
 too high.  The reanalyses strongly underestimate near-surface clouds or fog.
 MERRA-2 tends to underestimate cloud occurrence at all heights.  In daily cloud
 cover, ICON and the reanalyses tend to be about 1 and 2 oktas clearer,
-respectively.  Conditions of weak stability are associated with the largest
-errors in ICON and the reanalyses.  Compared to radiosondes, potential
+respectively. The largest
+errors in ICON and the reanalyses occur during periods of weak stability.  Compared to radiosondes, potential
 temperature is accurate in the reanalyses to about 0.5 K, but ICON
-underestimates stability over the low-latitude SO and too humid in the boundary
+underestimates stability over the low-latitude SO and is too humid in the boundary
 layer. MERRA-2 is too humid at all heights. SO cloud biases remain a
 substantial issue in the GSRM, but are an improvement over the lower-resolution
 reanalyses. Explicitly resolved convection and cloud processes (except
@@ -134,23 +133,23 @@ microphysics) were not enough to address the model cloud biases.
 \section{Introduction}
 \label{sec:introduction}
 
-Increasing climate model resolution is one way of improving model accuracy of
-representation of the climate system \citep{mauritsen2022}. It has been
+Increasing climate model resolution is one way of improving the accuracy of
+the representation of the climate system in models \citep{mauritsen2022}. It has been
 practiced since the advent of climate modelling as more computational power,
 memory, and storage capacity become available. It is, however, often not as
 easy as changing the grid size because of the complex interplay between model
 dynamics and physics, which necessitates adjusting and tuning all components
-together.  Increasing resolution is of course limited by the available
+together. Increasing resolution is of course limited by the available
 computational power and a trade-off with increasing parameterization
-complexity, which is another way of improving model accuracy.  Current
+complexity, which is another way of improving model accuracy. Current
 computational availability and acceleration from general-purpose computing on
-graphics processing units (GPUs) is progressing to enable km-scale (also called
+graphics processing units (GPUs) has progressed to enable km-scale (also called
 k-scale) Earth system models (ESMs) and coupled atmosphere--ocean general
-circulation models (AOGCMs) in research conditions today and operationally in
-the forthcoming years.  Therefore, it represents a natural advance in climate
-modelling.  Global storm-resolving models (GSRMs) are emerging as a new front
+circulation models (AOGCMs) for research today and will become operational in
+the future. Therefore, it represents a natural advance in climate
+modelling. Global storm-resolving models (GSRMs) are emerging as a new front
 in the development of high-resolution global climate models, with horizontal
-grid resolutions of about 2--8 km \citep{satoh2019,stevens2019}. This is enough
+grid resolutions of about 2--8 km \citep{satoh2019,stevens2019}. This resolution is enough
 to resolve mesoscale convective storms, but smaller-scale convective plumes and
 cloud structure remain unresolved. At an approximately 5-km scale,
 non-hydrostatic processes also become important \citep{weisman1997}, and for
@@ -170,8 +169,8 @@ computationally costly GSRM is to train an artificial neural network on GSRM
 output and use it for subgrid-scale clouds, as done with the GSRM ICON by
 \cite{grundner2022} and \cite{grundner2023}.
 
-nextGEMS is a project \citep{nextgems} focused on the research and development
-of GSRMs at multiple modelling centres and universities in Europe.  The project
+The nextGEMS project \citep{nextgems} focuses on the research and development
+of GSRMs at multiple modelling centres and universities in Europe. The project
 also develops GSRM versions of the Icosahedral Nonhydrostatic Weather and
 Climate Model (ICON; \cite{hohenegger2023}), the Integrated Forecasting System
 [IFS; \cite{ifs2023}], and their ocean components at eddy-resolving
@@ -197,7 +196,7 @@ Sphere [FV3, \cite{lin2004}], the National Aeronautics and Space Administration
 Multiple cloud properties have an effect on shortwave (SW) and longwave (LW)
 radiation. To first order, the total cloud fraction, cloud phase, and the
 liquid and ice water path are the most important cloud properties influencing
-SW and LW radiation. These properties are  in turn influenced by the
+SW and LW radiation. These properties are in turn influenced by the
 atmospheric thermodynamics, convection and circulation, and both the indirect
 and direct effects of aerosols. Second order effects on SW and LW radiation are
 associated with the cloud droplet size distribution, ice crystal habit, cloud
@@ -211,23 +210,22 @@ The Southern Ocean (SO) is known to be a problematic region for climate model
 biases \citep{schuddeboom2021,hyder2018,cesana2022,zhao2022} due to a lack of
 surface and in situ observations and being a lower priority region for
 numerical weather prediction (NWP) and climate model development because of its
-distance from populated areas.  Nevertheless, radiation biases and changes over
+distance from populated areas. Nevertheless, radiation biases and changes over
 an area of its size have a substantial influence on the global climate
 \citep{rintoul2011}, such as affecting the Earth radiation balance, ocean heat
-and carbon uptake \citep{williams2023}, and the SO is an important part of the
+and carbon uptake \citep{williams2023}, and the SO is also an important part of the
 global ocean conveyor belt \citep{wang2014}. In general, marine clouds have a
 disproportionate effect on top of atmosphere (TOA) SW radiation due to the
 relatively low albedo of the sea surface.  The relative longitudinal symmetry
 of the SO means that model cloud biases tend to be similar across longitudes.
 
-Here, we conventionally refer to the SO as ocean regions south of 40°S,
+Here, we refer to the SO as ocean regions south of 40°S,
 low-latitude SO as 40--55°S and high-latitude SO as south of 55°S. The reason
 for this dividing latitude is to split the SO into about two equal zones, as
-well as the results by \cite{schuddeboom2021} (Fig. 2b), showing a contrast in
-CMIP model radiation biases, \cite{schuddeboom2019} (Fig. 2) and
-\cite{kuma2020} (Fig. 3) showing contrasting radiation biases in the Hadley
-Centre Global Environmental Model, and \cite{cesana2022} showing contrasting
-cloud biases due to the 0°C isotherm reaching the surface at 55°S. The findings
+well as the results by \cite{schuddeboom2021} (Fig. 2b) which show a contrast in
+CMIP model radiation biases. \cite{schuddeboom2019} (Fig. 2) and
+\cite{kuma2020} (Fig. 3) also show contrasting radiation biases in the Hadley
+Centre Global Environmental Model, which is also supported by \cite{cesana2022} which  displays contrasting cloud biases due to the 0°C isotherm reaching the surface at 55°S. The findings
 of \cite{niu2024}, however, support a different dividing line of 62°S based on
 cloud condensation nuclei concentration.
 
@@ -244,7 +242,7 @@ too large cloud albedo \citep{wall2017,kuma2020}, previously described by
 \cite{nam2012}, \cite{klein2013}, and \cite{bender2017} in other regions and
 models, which means that a model can maintain a reasonable SW radiation balance
 by reflecting too much SW radiation from clouds, but these cover too small
-area.  A study by \cite{konsta2022} showed that this type of bias is still
+area. A study by \cite{konsta2022} showed that this type of bias is still
 present in six analysed CMIP6 models in tropical marine clouds, using the
 GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation
 (CALIPSO) Cloud Product [CALIPSO--GOCCP; \cite{chepfer2010}] and Polarization
@@ -260,7 +258,7 @@ on the order of 30\% [relative to Moderate Resolution Imaging Spectroradiometer
 10 Wm$^\mathrm{-2}$ [relative to the Clouds and the Earth’s Radiant Energy
 System (CERES) data] in the highest model resolution run (2.5 km).
 \cite{zhao2022} reported a similar SW radiation bias in five analysed CMIP6
-models over high-latitude SO and the total cloud fraction underestimation on
+models over the high-latitude SO and an underestimation of total cloud fraction on
 the order of 10\% over the entire 40--60°S SO. Recently, \cite{ramadoss2024}
 analysed 48 hours of km-scale ICON limited area model NWP simulations over a SO
 region adjacent to Tasmania against the Clouds, Aerosols, Precipitation,
@@ -273,11 +271,11 @@ phase.
 In general, sea surface temperature (SST) biases in the SO can originate either
 in the atmosphere \citep{hyder2018}, caused by too much shortwave heating of
 the surface, too little longwave cooling of the surface, or in the ocean
-circulation.  Interactions of both are also possible, for example SST affecting
+circulation. Interactions of both are also possible, for example SST affecting
 clouds and clouds affecting the surface radiation. Using the European Centre
 for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5 (ERA5) as a reference,
 \cite{zhang2023} have shown that SST biases have improved in CMIP6 compared to
-CMIP5, with SST overall increasing in the later CMIP phase. However, over the
+CMIP5, with SST overall increasing in CMIP6. However, over the
 SO this resulted in an even higher positive bias, especially in the Atlantic
 Ocean (AO) sector of the SO, increasing by up to 1°C.  \cite{luo2023}
 identified that the SO SST bias in an ensemble of 18 CMIP6 models originates
@@ -285,31 +283,30 @@ not from the surface heat and radiation fluxes (using reanalyses as a
 reference), but from a warm bias in the Northern Atlantic Deep Water.
 
 The main aim of this study is to evaluate the GSRM version of ICON. ICON
-developed and maintained jointly by Deutscher Wetterdienst,
+is developed and maintained jointly by Deutscher Wetterdienst,
 Max-Planck-Institute for Meteorology, Deutsches Klimarechenzentrum (DKRZ),
 Karlsruhe Institute of Technology, and the Center for Climate Systems Modeling.
 Previous studies have identified substantial large-scale biases in climate
 model clouds over the SO, affecting sea surface temperature and the Earth’s
-albedo. Our aim is to quantify how well the GSRM ICON is simulating clouds in
+albedo. Our aim is to quantify how well the GSRM ICON simulates clouds in
 this region, particularly in light of the fact that subgrid-scale clouds and
 convection are not parameterized in this model. This region is mostly dominated
 by boundary layer clouds generated by shallow convection, and these are
 problematic to observe by spaceborne lidars and radars, which are affected by
 attenuation by overlapping and thick clouds \citep{mace2009,medeiros2010} and
 ground clutter \citep{marchand2008}, respectively.  Specifically, the radar on
-CloudSat and lidar on CALIPSO (neither of which are nowoperational) are
-affected by the abovementioned issues, resulting in a strong underestimation of
+CloudSat and lidar on CALIPSO (neither of which are now operational) are
+affected by the above mentioned issues, resulting in a strong underestimation of
 cloud occurrence below 2 km relative to ground-based lidar observations
 \citep{mcerlich2021}.  We hypothesise that this, in turn, can lead to
 systematic biases in low clouds in climate models, which are frequently
 evaluated against CloudSat--CALIPSO products. Reanalyses can also suffer from
 cloud biases, as these are usually parametrised in their atmospheric component,
-and also in regions where input observations are sparse.  This makes them a
+and also in regions where input observations are sparse. This makes them a
 problematic reference for clouds over the SO, and any biases relative to a
 reanalysis should be interpreted with caution. Instead, we chose to use a large
 set of ship-based observations conducted with ceilometers and lidars on board
-of the RV \emph{Polarstern} and other voyages and stations as a reference for
-the model evaluation.
+the RV \emph{Polarstern} and other voyages and stations as a reference for model evaluation.
 
 Altogether, we analysed about 2400 days of data from 31 voyages, and one
 sub-Antarctic station covering diverse longitudes and latitudes of the SO. To
@@ -349,7 +346,7 @@ resupply vessel (RSV) \emph{Aurora Australis}, RV \emph{Tangaroa}, RV
 \emph{Nathaniel B.  Palmer}, Her (now His) Majesty's New Zealand Ship (HMNZS)
 \emph{Wellington} and one sub-Antarctic station (Macquarie Island) in the SO
 south of 40°S between 2010 and 2021. Fig. \ref{fig:map} shows a map of the
-voyages, Table \ref{tab:voyages} list the voyages, campaigns, and stations, and
+voyages, Table \ref{tab:voyages} lists the voyages, campaigns, and stations, and
 Table \ref{tab:voyage-references} lists references where available. Altogether,
 the voyages and station dataset comprised 2421 days of data south of 40°S, but
 the availability of ceilometer data was slightly shorter due to gaps in
@@ -365,7 +362,7 @@ day): 24 January.
 The data sources contained ceilometer observations captured by the Vaisala CL51
 and CT25K, and the Lufft CHM 15k, described in detail below (Sections
 \ref{sec:cl51} and \ref{sec:chm15k}). A ceilometer is a low-power near-infrared
-vertically pointing lidar principally designed to  measure cloud base, but they
+vertically pointing lidar principally designed to measure cloud base, but they
 also measure the full vertical structure of clouds as long as the laser signal
 is not attenuated by thick clouds, which can be used to infer additional
 information such as a cloud mask and cloud occurrence by height.  We note that
@@ -487,7 +484,7 @@ and 30 m in CT25K observations. The sampling (temporal) resolution is
 configurable, and in our datasets is approximately 6 s for CL51 on AA15‐16, 16
 s for CT25K on MARCUS and MICRE, 36 s for CL51 on RV \emph{Polarstern}, and
 about 2.37 s for CL51 with CL31 emulation on TAN1502. The wavelengths of 905
-and 910 nm are affected by water vapour absorption of about 20\% in the
+and 910 nm are both affected by water vapour absorption of about 20\% in the
 mid-latitudes \citep{wiegner2015,wiegner2019}, with 910 nm affected more
 strongly, but we do not expect this to be a significant issue as explained in
 \cite{kuma2021}.  The instrument data files containing raw uncalibrated
@@ -506,7 +503,7 @@ example of AVBC derived from the CL51 instrument data.
 \includegraphics[width=\textwidth]{img/example.png}
 \caption{
 An example of attenuated volume backscattering coefficient (AVBC) \textbf{(a)}
-measured by CL51 during 24 hours on the PS81/3 voyage and \textbf{(b)} an
+measured by a CL51 during 24 hours on the PS81/3 voyage and \textbf{(b)} an
 equivalent AVBC simulated with the ALCF from ERA5 data during the same time
 period. The red line identifies the cloud mask determined by the ALCF.
 }
@@ -531,7 +528,7 @@ cloud mask, cloud occurrence by height, and the total cloud fraction. The CHM
 The Automatic Lidar and Ceilometer Framework (ALCF) is a ground-based lidar
 simulator and a tool for processing observed lidar data, supporting various
 instruments and models \citep{kuma2021}. It performs radiative transfer
-calculations to derive equivalent lidar AVBC in an atmospheric model, which can
+calculations to derive equivalent lidar AVBC from an atmospheric model, which can
 then be compared with observed AVBC. For this purpose, it takes the cloud
 fraction, liquid and ice mass mixing ratio, temperature, and pressure model
 fields as an input and is run offline (on the model output rather than inside
@@ -559,7 +556,7 @@ measurements by the instrument on the PS81/3 voyage.
 \label{sec:icon}
 
 A coupled (atmosphere--ocean) GSRM version of the ICON model is in development
-at the nextGEMS project \citep{hohenegger2023}. ICON is an exceptionally
+as part of the nextGEMS project \citep{hohenegger2023}. ICON is an exceptionally
 versatile model, allowing for simulations ranging from coarse-resolution ESM
 simulations, GSRM simulations, limited area model simulations, to large eddy
 simulations (LES), for both weather prediction and climate projections. ICON
@@ -621,8 +618,8 @@ diagnostics (M2T1NXRAD) for radiation quantities \citep{merra2}.
 
 \subsection{ERA5}
 
-ERA5 \citep{era5} is a reanalysis produced by the ECMWF.  It is based on a
-numerical weather prediction model IFS version CY41R2.  It uses the
+ERA5 \citep{era5} is a reanalysis produced by ECMWF.  It is based on a
+numerical weather prediction model IFS version CY41R2. It uses the
 \cite{tiedtke1993} prognostic cloud scheme and \cite{forbes2014} for
 mixed-phase clouds. The horizontal resolution is 0.25° in latitude and
 longitude, which is about 28 km in the North--South direction and 14 km in the
@@ -676,12 +673,11 @@ a pseudo-random number generator to prevent authors' bias in the selection.
 
 Precipitation can cause strong enough lidar backscattering to be recognised as
 clouds by the threshold-based cloud detection method used in the ALCF. This is
-undesirable if equivalent precipitation backscatter is not included in the
-simulated lidar profiles. It was not possible to include precipitation
-simulation in the ALCF due to the absence of required fields in the ICON model
+undesirable as equivalent precipitation backscatter is not included in the
+simulated lidar profiles due to the absence of required fields in the ICON model
 output and the reanalysis data (the liquid and ice precipitation mass mixing
 ratios). The required radiation calculations for precipitation are also
-currently not implemented in the ALCF, even though this is a planned future
+currently not implemented in the ALCF, but are a planned future
 addition.  In order to achieve a fair comparison of observations with model
 output, we exclude observed and simulated lidar profiles with precipitation
 either manually or using an automated method. It is relatively difficult to
@@ -699,16 +695,16 @@ presence or absence are expected to be reliable but only cover a limited set of
 times. Therefore, it was desirable to implement a method of detecting
 precipitation from observed backscatter profiles alone.
 
-On the RV \emph{Polarstern} voyages, regular human-performed synoptic
+On the RV \emph{Polarstern} voyages, regular manual synoptic
 observations were available and included precipitation presence or absence and
 type. We used this dataset to train a convolutional artificial neural network
-(ANN) to recognise profiles with precipitation from lidar backscatter (Fig.
+(ANN) to recognise profiles with precipitation from lidar backscatter data (Fig.
 \ref{fig:ann}a), implemented in the TensorFlow ANN framework
 \citep{tensorflow}. Samples of short time intervals (10 min) of near-surface
 lidar backscatter (0–250 m) were classified as clear, rain, snow, and fog,
 using the synoptic observations as a training dataset (Fig.  \ref{fig:ann}b).
 From these, a binary, mutually exclusive classification of profiles as
-precipitating (rain or snow) or dry (clear or fog) was derived.  For detecting
+precipitating (rain or snow) or dry (clear or fog) was derived. For detecting
 model and reanalysis precipitation, we used a fixed threshold for surface
 precipitation flux of 0.1 mm h$^{-1}$ (the ANN was not used).
 
@@ -743,8 +739,7 @@ extratropical and polar cyclones (ECs and PCs) over the SO in the reanalysis
 and ICON data. We used the open source cyclone tracking package CyTRACK
 \citep{perez-alarcon2024}.  Generally, what constitutes an EC is considered
 relatively arbitrary due to the very large variability of ECs \citep{neu2013}.
-We used the mean sea level pressure field and horizontal wind speed fields as
-input to the CyTRACK algorithm. The algorithm uses pressure and wind speed
+The CyTRACK algorithm uses mean sea level pressure and wind speed
 thresholds as well as tracking across time steps to identify cyclone centres
 and radii in each time step. With this information, we could classify
 geographical areas as either cyclonic or non-cyclonic. Due to a relatively
@@ -755,7 +750,7 @@ and cyclone. All other areas were identified as non-cyclonic. For identifying
 cyclones in the observations and the reanalyses, ERA5 pressure and wind fields
 were used as the input to CyTRACK.  This is justified by the fact that the
 large-scale pressure and wind fields in ERA5 are likely sufficiently close to
-reality. For identifying cyclones in ICON, its own pressure and wind fields
+reality \cite{mcerlich2023}. For identifying cyclones in ICON, its own pressure and wind fields
 were used as the input to CyTRACK, because the model is free-running, and thus
 the pressure and wind fields are different from reality. Subsetting by
 proximity to cyclones is a relatively crude measure because it does not take
